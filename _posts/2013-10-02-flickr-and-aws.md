@@ -1,3 +1,8 @@
+---
+layout: post
+title: Flickr and AWS
+---
+
 When Flickr announced that they were giving everyone a terabyte of space for their photos, I decided to copy mine to the service.
 Since I have almost 60GB of 32,000 photos, uploading them from my PC would have taken a long time.
 Since I already had a backup of my photos on AWS S3, I decided to write a distributed app to run on AWS EC2 to copy the photos from S3 to Flickr.
