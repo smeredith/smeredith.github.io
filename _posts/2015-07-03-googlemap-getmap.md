@@ -116,11 +116,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         setUpMap();
