@@ -10,8 +10,8 @@ Then I refactor the code in several steps to a multithreaded version that will t
 ## Setup
 
 For this code, I use C++ in Visual Studio 2013.
-To decode jpg files into bitmaps, I use Microsoft's Windows Imaging Component (WIC) http://msdn.microsoft.com/en-us/library/windows/desktop/ee719902(v=vs.85).aspx.
-For multithreading, I use Microsoft's Parallel Patterns Library (PPL) http://msdn.microsoft.com/en-us/library/dd492418.aspx.
+To decode jpg files into bitmaps, I use Microsoft's Windows Imaging Component (WIC) <http://msdn.microsoft.com/en-us/library/windows/desktop/ee719902(v=vs.85).aspx>.
+For multithreading, I use Microsoft's Parallel Patterns Library (PPL) <http://msdn.microsoft.com/en-us/library/dd492418.aspx>.
 I assume you know about the C++ standard library and how to use lambdas.
 
 ## Problem Statement
@@ -90,7 +90,7 @@ On my machine, it can compute the average color for a 100 million pixel image in
 However, it leaves 7 of my 8 processors idle while doing it.
 This algorithm is a good candidate for parallel processing.
 
-Microsoft has a library called _Parallel Patterns Library_ (http://msdn.microsoft.com/en-us/library/dd492418.aspx) that offers help in converting normal loops into parallel loops.
+Microsoft has a library called _Parallel Patterns Library_ (<http://msdn.microsoft.com/en-us/library/dd492418.aspx>) that offers help in converting normal loops into parallel loops.
 It has a `parallel_for()` that is similar to a normal for loop and a `parallel_for_each()` that operates on STL containers.
 It will require a little extra refactoring but I chose the `parallel_for_each()` version for this exercise because it is a little faster.
 So the first step is to refactor the hand-rolled for loop into a `std::for_each()` loop and make sure that works.
@@ -273,7 +273,7 @@ But the resulting performance gain is substantial and the PPL will automatically
 Now I just need a few thousand more cores.
 
 I have included the full source of both the initial serial version and the parallel version of the function below.
-For the full project, please see http://www.github.com/smeredith/averagecolor.
+For the full project, please see <http://www.github.com/smeredith/averagecolor>.
 Look for the release tagged "blog" to get the exact version discussed here.
 You will find other experiments in the project testing the performance of different concurrency techniques on this same problem.
 The code has since been refactored so that it's not all one function but it should be close enough for you to understand the changes.
