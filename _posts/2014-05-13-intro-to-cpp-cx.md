@@ -67,7 +67,7 @@ WinRT classes can use these types in their public interfaces.
 You can call ToString() on them.
 Note that String and Boolean are absent from this list; they are in the Platform namespace.
 
-See http://msdn.microsoft.com/en-us/library/windows/apps/hh700121.aspx.
+See <http://msdn.microsoft.com/en-us/library/windows/apps/hh700121.aspx>.
 
 ## Platform Namespace
 
@@ -84,14 +84,14 @@ Platform::WeakReference
 ```
 etc…
 
-For the complete list, see: http://msdn.microsoft.com/en-US/library/windows/apps/hh710417.aspx
+For the complete list, see: <http://msdn.microsoft.com/en-US/library/windows/apps/hh710417.aspx>.
 
 ## Windows Namespace
 
 The Windows namespace contains the Windows API.
 It's best to just point to the API reference.
 
-See http://msdn.microsoft.com/en-US/library/windows/apps/br211377.aspx
+See <http://msdn.microsoft.com/en-US/library/windows/apps/br211377.aspx>.
 
 ## Platform::Collections Namespace
 
@@ -105,7 +105,7 @@ Platform::Collections::Vector
 Platform::Collections::Map
 ```
 
-See http://msdn.microsoft.com/en-US/library/windows/apps/hh710418.aspx
+See <http://msdn.microsoft.com/en-US/library/windows/apps/hh710418.aspx>.
 
 ## Authoring WinRT Classes in C++/CX
 
@@ -159,27 +159,27 @@ The compiler will emit code to catch this exception, turn it back into an HRESUL
 To do this, it has to also convert your original return result into an out param.
 You can avoid this overhead on the WinRT class side of the boundary by using WRL instead of C++/CX because you author your methods to return HRESULTs and use an out param from the start.
 
-See http://msdn.microsoft.com/en-us/library/hh699870.aspx
+See <http://msdn.microsoft.com/en-us/library/hh699870.aspx>.
 
 ## Partial Classes
 
 Partial classes are included to support XAML so that tools can generate part of a class definition in one file and a developer can write the rest of it in another.
 
-See http://msdn.microsoft.com/en-us/library/hh755808.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755808.aspx>.
 
 ## Properties
 
 Properties are accessor methods of a WinRT class that appear as public data members to the class consumer.
 These can have implementations or map directly to data members.
 
-See http://msdn.microsoft.com/en-us/library/hh755807.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755807.aspx>.
 
 ## Delegates
 
 The "delegate" keyword is used to declare a type to describe a function signature.
 You use this when you want to pass function pointers to WinRT classes for event handler callbacks.
 
-See http://msdn.microsoft.com/en-us/library/hh755798.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755798.aspx>.
 
 ## Events
 
@@ -189,7 +189,7 @@ The class itself "fires the event" which triggers calls to each event handler in
 The "-=" operator is used to remove event handlers.
 Events can be customized using add(), remove(), and raise().
 
-See http://msdn.microsoft.com/en-us/library/hh755799.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755799.aspx>.
 
 ## Interfaces
 
@@ -200,20 +200,20 @@ Other WinRT classes and structs may derive from and implement an interface.
 Generic interfaces are similar to template classes.
 Generic interfaces must be private, but specializations may be published as WinRT classes.
 
-See http://msdn.microsoft.com/en-us/library/hh755792.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755792.aspx>.
 
 ## Implicit Casting
 
 In C++/CX, you can cast from a ^ pointer of a WinRT class to a ^ pointer of any other interface it implements.
 The compiler emits code to call QueryInterface() for this.
 
-See http://msdn.microsoft.com/en-us/library/hh755802.aspx
+See <http://msdn.microsoft.com/en-us/library/hh755802.aspx>.
 
 ## More Info
 
-If you are new to C++/CX, watch this video first: Under the covers with C++ for Metro style apps http://channel9.msdn.com/Events/BUILD/BUILD2011/TOOL-690C
+If you are new to C++/CX, watch this video first: Under the covers with C++ for Metro style apps <http://channel9.msdn.com/Events/BUILD/BUILD2011/TOOL-690C>.
 
-C++/CX language reference: http://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx
+C++/CX language reference: <http://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx>.
 
 ## PS
 
