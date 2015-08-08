@@ -168,7 +168,7 @@ I ran the test multiple times, and while the times varied slightly, the followin
 2. GetFileHashesParallelFiles: 2.5 sec
 3. GetFileHashesParallelFilesAndDirs: 1.7 sec
 
-Graph of time to complete each function.
+![_config.yml]({{ site.baseurl }}/images/parallel-world-completetime.png)
 
 My test machine has 8 cores and slow disk I/O.
 The test data has a low level of directory nesting, with about 1300 files in 29 directories, and an average size of about 850KB.
