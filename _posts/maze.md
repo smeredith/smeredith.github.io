@@ -25,12 +25,17 @@ We use "north" to refer a cell "above" another cell, "east" to refer to a cell t
 ## Uses for the Data Structure
 
 When choosing a data structure it can be useful to list the things you expect it to do.
-For now we want to:
-* Generate a valid maze.
+At this point, we don't know many details about how we will do things.
+But for now, we want to:
 * Print the layout of the maze to the console.
+This will probably involve visiting each cell and determining if it is connected to its neighbors.
+* Generate a valid maze.
+There will be multiple options here.
+We'll have to revisit this later.
 
 Later we will want to:
 * Solve the maze.
+This will probably involve determining if two arbitrary nodes are connected.
 
 ## A Graph
 
@@ -42,7 +47,7 @@ TODO: insert a diagram of maze to graph.
 
 Does this help us?
 Let's see.
-Graphs are typically represented using an adjacency list or an adjacency matrix.
+A graph is often represented using an adjacency list or an adjacency matrix.
 
 ### Adjacency List
 
@@ -60,7 +65,7 @@ It could work, but let's keep exploring.
 ### Adjacency Matrix
 
 For a maze with n number of nodes, picture a matrix labeled 0-n across the top and 0-n down the left size.
-For each position x,y in the matrix, the table will contain a 1 if x and y are connected or a 0 if x and y are not connected.
+For each position x,y in the matrix, the table will contain a 1 if nodes x and y are connected or a 0 if nodes x and y are not connected.
 
 TODO: insert a diagram.
 
@@ -72,3 +77,5 @@ The matrix holds zeros and ones, so we only need one bit for each position.
 However, we need n² bits.
 This will be a very sparse matrix because each node can only have four neighbors.
 This is very inefficient use of space.
+It might be fine for the typical mazes we expect a human to solve, but lets assume we must support Mazes of Unusual Size.
+
