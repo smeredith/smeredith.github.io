@@ -4,11 +4,12 @@ title: Choosing a Data Structure
 ---
 
 A few years ago my friend Arnold told me that whenever he learns a new programming language, he writes code in that language to solve the same specific problem.
+Sort of like an extended Hello World.
 That problem can be stated as follows:
 > Write a program to generate and print a maze, where each room is connected to every other without cycles.
-This is a nice size problem for what Arnold does with it.
-As it turns out, there are a few simple ways to extend it to explore some interesting programming topics.
-To start with, in this article I am going to discuss choosing a data structure to represent a maze as needed for the basic problem as stated.
+
+This problem is a nice one to explore a few programming topics and opens the door for expansion into other interesting ones.
+In this article I am going to discuss choosing a data structure to represent a maze as needed for the basic problem as stated.
 
 ## Requirements and Vocabulary
 
@@ -33,16 +34,17 @@ But for now we know we want to:
 * Generate a valid maze.
 There will be multiple ways to generate mazes with different characteristics.
 * Print the layout of the maze to the console.
-This will probably involve visiting each cell and determining if it is connected to its neighbors.
+This will probably involve visiting each cell and determining if it is connected to its neighbors with passages or blocked with walls.
 
 Later we will want to:
 * Solve the maze.
 This will probably involve determining if two arbitrary nodes are connected.
 But since this isn't a requirement yet, we won't add methods for this at this point.
+YAGNI.
 
 ## Ad Hoc
 
-The first data structure that comes to mind is an array of cells, where each cell contains a bit to track each of connections to the north, east, south, and west.
+The first data structure that comes to mind is an array of cells, where each cell contains bits to track each of connections to the north, east, south, and west.
 This works.
 It is space efficient and discovering if the connection between two cells is a passage or a wall is determined by simply looking at the properties of one of the two cells.
 You must take care that the connections between adjacent cells remain in sync.
@@ -66,8 +68,8 @@ A graph is often represented using an adjacency list or an adjacency matrix.
 
 In an adjacency list, each node carries a list of those nodes it is connected to.
 So the main part of our data structure would be a vector of nodes, where each node contains a vector of neighboring nodes.
-The vector or neighbors will be small: a node can be connected to one, two, or three others.
-Determining if two nodes are connected requires indexing the vector of nodes to find the first node, and then searching its small vector of neighbors for the second.
+The vector of neighbors will be small: a node can be connected to one, two, or three others.
+Determining if two nodes t and u are connected requires indexing the vector of nodes to find node t, and then searching its small vector of neighbors for node u.
 Finding a node's connected neighbors requires indexing the vector of nodes to find the node then walking the small vector of neighbors.
 This is not too complicated.
 
@@ -83,13 +85,13 @@ For each position x,y in the matrix, the table will contain a 1 if nodes x and y
 
 ![_config.yml]({{ site.baseurl }}/images/choosing-a-datastructure-matrix.png)
 
-Determining if two nodes are connected is looking in at a single position in the matrix to see if it is a 1.
+Determining if two nodes are connected is indexing a single position in the matrix to see if it is a 1.
 Finding a node's neighbors is walking that node's row looking for ones.
 Again, this is not too complicated.
 
 The matrix holds zeros and ones, so we only need one bit for each position.
 However, we need n² bits.
-This will be a very sparse matrix because each node can only have four neighbors.
+This will be a very sparse matrix because each node can only have four possible neighbors.
 This is an inefficient use of space.
 It might be fine for the typical mazes we expect a human to solve, but lets assume we must support Mazes of Unusual Size.
 We can do better.
@@ -105,8 +107,7 @@ And let's label the horizontal walls in the same fashion, but starting with n in
 ![_config.yml]({{ site.baseurl }}/images/choosing-a-datastructure-wall-labels-horiz.png)
 
 Note that we are interested in the walls between two cells, so we don't care about the walls that surround the maze.
-Those will always be closed.
-We include the walls at the right and bottom edges of the maze because it makes finding the wall between a given set of cells easy.
+We include the walls at the right and bottom edges of the maze in our numbering because it makes finding the wall between a given set of cells easy.
 We never actually use those values.
 
 To represent the walls, we only need a vector of bits `walls` where 0 represents a passage between two cells and 1 represents a wall.
@@ -117,16 +118,17 @@ If cells v and w are adjacent in the same column, then to find out if there is a
 For example, to see if there is a passage between cell 2 and 5, look at the value of walls[n + 2].
 
 As a variation, we could keep two vectors: one for the horizontal walls and one for the vertical walls.
-This allows for slightly faster lookup for the horizontal walls.
-However, in practice it is convenient for the entire wall configuration to be contained in a single vector so that's what I will do.
+This allows for slightly faster lookup for the horizontal walls because you don't need to perform an addition.
+However, in practice it is convenient for the entire wall configuration to be contained in a single vector.
 
-I like this "Vector or Edges" representation best because it is efficient, easy to understand, and simple to code.
+Of the options considered, I like this "Vector of Edges" representation best because it is efficient, easy to understand, and simple to code.
 
-## Sample Implementation
+## Sample Implementation of "Vector of Edges"
 
-Here is a sample implementation in C++.
+Here is a sample implementation of the "Vector of Edges" design in C++.
 I have omitted the details of creating the wall configuration and printing the maze.
-We can visit those template function implementations later.
+We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit .
+
 I recognize that the std::vector<bool> specialization has some peculiarities, but for our purposes it is fine.
 I considered std::bitset but I want to configure the size of mazes at runtime.
 
@@ -211,8 +213,11 @@ class Maze
 };
 
 ```
+Notice that the entire state of a maze is width, height, and a vector of bits describing its walls.
+(`numCells` is an optimization to reduce the number of width * height calculations to one.)
+The methods provided are limited to what I needed to implement traverse() to generate and print a maze.
+
 ## Conclusion
 
 We looked a four possible data structures to use for the representation of a maze.
 Of those considered, I like the "Vector of Edges" because it is simple and efficient.
-
