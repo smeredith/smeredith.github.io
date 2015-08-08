@@ -10,7 +10,7 @@ description: A software development blob by Steve Meredith
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 # avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
-
+avatar: https://avatars1.githubusercontent.com/u/6439539?v=3&s=460
 #
 # Flags below are optional
 #
@@ -18,12 +18,12 @@ description: A software development blob by Steve Meredith
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email: steve@bitmine.org
   facebook:
   flickr:
-  github:
+  github: smeredith
   instagram:
-  linkedin:
+  linkedin: steve-meredith
   pinterest:
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: 
