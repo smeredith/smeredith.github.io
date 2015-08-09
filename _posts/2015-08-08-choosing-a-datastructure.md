@@ -31,30 +31,32 @@ We use "north" to refer a cell "above" another cell, "east" to refer to a cell t
 When choosing a data structure it can be useful to list the things you expect it to do.
 At this point, we don't know many details about how we will do things.
 But for now we know we want to:
+
 * Generate a valid maze.
 There will be multiple ways to generate mazes with different characteristics.
+
 * Print the layout of the maze to the console.
 This will probably involve visiting each cell and determining if it is connected to its neighbors with passages or blocked with walls.
 
 Later we will want to:
 * Solve the maze.
 This will probably involve determining if two arbitrary nodes are connected.
-But since this isn't a requirement yet, we won't add methods for this at this point.
+But since this isn't a requirement yet, we won't add functions for this now.
 YAGNI.
 
 ## Ad Hoc
 
 The first data structure that comes to mind is an array of cells, where each cell contains bits to track each of connections to the north, east, south, and west.
 This works.
-It is space efficient and discovering if the connection between two cells is a passage or a wall is determined by simply looking at the properties of one of the two cells.
-You must take care that the connections between adjacent cells remain in sync.
+It is space efficient and discovering if the connection between two cells is a passage or a wall is determined by simply indexing the array and looking at the properties of one of the two cells.
+When generating the maze, you must take care that the connections between adjacent cells remain in sync.
 That is, if cell t says there is a passage to cell u, then cell u must say that there is a passage to cell t.
 This data structure is redundant in that the connection between two adjacent cells is tracked by both cells.
 And it feels awkward.
 
 ## A Graph
 
-The type of maze we are discussing may be though of as a graph.
+The type of maze we are discussing may be thought of as a graph.
 The cells are nodes and the passages between cells are the edges.
 Any cell may be chosen as the root and the nodes can be labeled with the cell number.
 
@@ -93,7 +95,7 @@ The matrix holds zeros and ones, so we only need one bit for each position.
 However, we need n² bits.
 This will be a very sparse matrix because each node can only have four possible neighbors.
 This is an inefficient use of space.
-It might be fine for the typical mazes we expect a human to solve, but lets assume we must support Mazes of Unusual Size.
+It might be fine for the typical mazes we expect a human to solve, but let's assume we must support Mazes of Unusual Size.
 We can do better.
 
 ## Vector of Edges
@@ -129,8 +131,8 @@ Here is a sample implementation of the "Vector of Edges" design in C++.
 I have omitted the details of creating the wall configuration and printing the maze.
 We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit https://github.com/smeredith/maze/tree/choosing-a-datastructure.
 
-I recognize that the std::vector<bool> specialization has some peculiarities, but for our purposes it is fine.
-I considered std::bitset but I want to configure the size of mazes at runtime.
+I recognize that the `std::vector<bool>` specialization has some peculiarities, but for our purposes it is fine.
+I considered `std::bitset` but I want to configure the size of mazes at runtime.
 
 ```cpp
 #pragma once
@@ -153,9 +155,9 @@ class Maze
         Maze(std::size_t width, std::size_t height, Func generateWalls) :
             width(width),
             height(height),
-            numCells(width*height)
+            numCells(width*height),
+            walls(generateWalls(*this))
         {
-            walls = generateWalls(*this);
         }
 
         // The number of cells in this maze.
@@ -211,13 +213,13 @@ class Maze
         // Initialized in the ctor.
         std::vector<bool> walls;
 };
-
 ```
 Notice that the entire state of a maze is width, height, and a vector of bits describing its walls.
-(`numCells` is an optimization to reduce the number of width * height calculations to one.)
-The methods provided are limited to what I needed to implement traverse() to generate and print a maze.
+(The data member `numCells` is an optimization to reduce the number of `width * height` calculations to one.)
+The member functions provided are limited to what I needed to generate the maze and to implement `traverse()` to print it.
 
 ## Conclusion
 
 We looked a four possible data structures to use for the representation of a maze.
+We did a casual analysis of each.
 Of those considered, I like the "Vector of Edges" because it is simple and efficient.
