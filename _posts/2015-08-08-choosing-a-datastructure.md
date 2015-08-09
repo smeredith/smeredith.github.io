@@ -39,6 +39,7 @@ There will be multiple ways to generate mazes with different characteristics.
 This will probably involve visiting each cell and determining if it is connected to its neighbors with passages or blocked with walls.
 
 Later we will want to:
+
 * Solve the maze.
 This will probably involve determining if two arbitrary nodes are connected.
 But since this isn't a requirement yet, we won't add functions for this now.
@@ -56,7 +57,7 @@ And it feels awkward.
 
 ## A Graph
 
-The type of maze we are discussing may be thought of as a graph.
+The mazes we are discussing may be thought of as undirected acyclic graphs.
 The cells are nodes and the passages between cells are the edges.
 Any cell may be chosen as the root and the nodes can be labeled with the cell number.
 
