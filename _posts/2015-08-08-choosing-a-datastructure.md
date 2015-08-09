@@ -127,7 +127,7 @@ Of the options considered, I like this "Vector of Edges" representation best bec
 
 Here is a sample implementation of the "Vector of Edges" design in C++.
 I have omitted the details of creating the wall configuration and printing the maze.
-We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit .
+We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit https://github.com/smeredith/maze/tree/choosing-a-datastructure.
 
 I recognize that the std::vector<bool> specialization has some peculiarities, but for our purposes it is fine.
 I considered std::bitset but I want to configure the size of mazes at runtime.
