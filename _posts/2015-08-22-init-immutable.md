@@ -91,6 +91,8 @@ The passed-in function returns a representation of the internal wall layout of t
 I chose to pass the new `Maze` object to the function as a parameter because its public member functions for determining relationships beteen cells for a maze of the given dimentions.
 This is safe because C++ guarantees the order of member creation.
 
+// TODO: insert code subset here
+
 I like this approach because Maze clients can create new algorithms for initializing mazes without any changes to the `Maze` class.
 It satisfies the "open/closed" principle.
 The `Maze` class takes no dependencies on the initialization algorithms.
@@ -100,6 +102,15 @@ True.
 However, all I have done is fixed the interface to the initialization function.
 We are free to change the internals of `Maze` if we like; we would just have to convert return value of the initialization function if we did so.
 Client code would not have to change.
+
+Note that I have chosen to use a function template to allow passing the initialization function to the constructor.
+This allows me to pass any callable object that takes the right parameter and returns the right thing.
+I could have used C function pointer systax here.
+Or I could have defined an interface and required initialization functors to implement it.
+But by using a function template, I can pass in functions or functors.
+For now, my initialization algorithms are functions because that's the simpliest thing that could possible work for this discussion.
+I guarantee that as this design emergers/evolves, I will change these to functors.
+But for now, we assume YAGNI.
 
 You may feel uneasy that my initialization function returns an `std::vector` by value and that it would be expensive to copy.
 Good instinct.
