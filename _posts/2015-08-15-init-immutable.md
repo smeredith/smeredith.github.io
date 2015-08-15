@@ -36,7 +36,7 @@ For this discussion, I have implemented two creation algorithms, which is enough
 The first algorithm uses a data structure named _disjoint sets_.
 This algorithm creates mazes with many short dead ends.
 We can discuss the details of the data structure and the algorithm in the future.
-If you are curious now, you examine the code: <https://github.com/smeredith/maze/tree/init-immutable>.
+If you are curious now, you can examine the code: <https://github.com/smeredith/maze/tree/init-immutable>.
 
 Here is an example of a maze created using this algorithm:
 
