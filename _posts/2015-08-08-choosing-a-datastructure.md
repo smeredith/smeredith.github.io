@@ -130,7 +130,7 @@ Of the options considered, I like this "Vector of Edges" representation best bec
 
 Here is a sample implementation of the "Vector of Edges" design in C++.
 I have omitted the details of creating the wall configuration and printing the maze.
-We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit https://github.com/smeredith/maze/tree/choosing-a-datastructure.
+We can visit those template function implementations later, but if you want to see the source code for those right now, you can visit <https://github.com/smeredith/maze/tree/choosing-a-datastructure>.
 
 I recognize that the `std::vector<bool>` specialization has some peculiarities, but for our purposes it is fine.
 I considered `std::bitset` but I want to configure the size of mazes at runtime.
@@ -224,3 +224,4 @@ The member functions provided are limited to what I needed to generate the maze 
 We looked a four possible data structures to use for the representation of a maze.
 We did a casual analysis of each.
 Of those considered, I like the "Vector of Edges" because it is simple and efficient.
+In the [http://www.bitmine.org/init-immutable/](next article), I discuss why I am passing an initialization function in to the constructor.
