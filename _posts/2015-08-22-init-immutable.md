@@ -94,7 +94,7 @@ I'd like a different approach.
 ### Dependency Injection
 With this strategy, we pass an initialization function into the constructor of `Maze`.
 The passed-in function returns a representation of the internal wall layout of the maze.
-I chose to pass the new `Maze` object to the function as a parameter because its public member functions for determining relationships between cells for a maze of the given dimensions.
+I chose to pass the new `Maze` object to the function as a parameter because it has member functions that are useful to the initialization logic.
 This is safe because C++ guarantees the order of member creation.
 
 The basics of the `Maze` class look like this:
@@ -144,7 +144,7 @@ This allows me to pass any callable object that takes the right parameter and re
 I could have used C function pointer syntax here.
 Or I could have defined a class interface and required initialization functors to implement it.
 But by using a function template, I can pass in functions or functors.
-For now, my initialization algorithms are functions because that's the simplest thing that could possible work for this discussion.
+For now, my initialization algorithms are free functions because that's the simplest thing that could possible work for this discussion.
 I guarantee that as this design emerges/evolves, I will change these to functors.
 But for now, we assume YAGNI.
 
