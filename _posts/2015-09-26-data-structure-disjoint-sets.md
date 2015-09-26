@@ -8,7 +8,7 @@ In Kruskal's algorithm, it is used in this way to build a minimal spanning tree.
 Building a maze is similar to applying Kruskal's algorithm except we use random edges instead of shortest edges.
 I'll discuss how to build a maze this way in the future.
 This article will discuss the data structure.
-For more articles using mazes to discuss programming topics, see [Choosing a Data Structure](http://www.bitmine.org/choosing-a-datastructure/) and [A Strategy for Initializing Immutable Objects](http://www.bitmine.org/init-immutable/).
+For previous articles using mazes to discuss programming topics, see [Choosing a Data Structure](http://www.bitmine.org/choosing-a-datastructure/) and [A Strategy for Initializing Immutable Objects](http://www.bitmine.org/init-immutable/).
 
 In mathematics, sets are disjoint if they have no members in common.
 Think of a Disjoint Sets data structure as a collection of such sets.
