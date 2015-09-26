@@ -42,15 +42,15 @@ This keeps the implementation simple.
 Upon creation there will be `numElements` sets, each containing one element, the representative for that set.
 That means that initially `findSet(n)` returns n for all n < numElements.
 
-Now if we call `unionSets(0,1)`, then `findSet(0)` and `findSet(1)` will both return 0 or both return 1, depending on the implementation.
-This return value is the representative for the new set containing {0,1}.
-If we then call `unionSets(findSet(0), 2)` there will be one set that contains {0,1,2} and single-element sets for each of the remaining elements greater than 2.
+Now if we call `unionSets(0,1)`, then `findSet(0)` and `findSet(1)` will both return *0* or both return *1*, depending on the implementation.
+This return value is the representative for the new set containing *{0,1}*.
+If we then call `unionSets(findSet(0), 2)` there will be one set that contains *{0,1,2}* and single-element sets for each of the remaining elements greater than 2.
 Note that `unionSets()` takes representatives as arguments.
-So we can't simply call `unionSets(0,2)` after we called `unionSets(0,1)` because the representative for that first set may be 0 or 1.
+So we can't simply call `unionSets(0,2)` after we called `unionSets(0,1)` because the representative for that first set may be *0* or *1*.
 We could find the representative on behalf of the caller in the implementation of `unionSets()`, but doing so would impose a performance penalty on those callers who don't need it.
 The proper mechanism here is an assertion that the parameters are in fact representatives.
 
-If we continue to call `unionSets(findSet(0), n)` repeatedly for the rest of the values of n < numElements-1, `findSet(n)` will return the same value for every n because there will be only one set.
+If we continue to call `unionSets(findSet(0), n)` repeatedly for the rest of the values of *n < numElements-1*, `findSet(n)` will return the same value for every *n* because there will be only one set.
 
 ## Implementation
 
@@ -58,16 +58,16 @@ The way I have chosen to implement this is to use a `vector<size_t>` where each 
 Links are followed this way until an index is found that "points" to itself, indicating that it is the representative.
 
 Initially, each element contains its own index.
-For example, the vector v is initialized to `{0,1,2,3,...,numElements-1}`.
-This means each of numElements set contains one element and the representative for set n is n because v[n] == n.
-Once we call `unionSets(0,1)` the vector might look like this: `{0,0,2,3,...,numElements-1}`.
-v[1] "points" to v[0] and v[0] points to itself, so 0 is the representative of the set {0,1}.
-`findSet(0)` and `findSet(1)` both return 0.
+For example, the vector v is initialized to *{0,1,2,3,...,numElements-1}*.
+This means each of numElements set contains one element and the representative for set *n* is *n* because *v[n] == n*.
+Once we call `unionSets(0,1)` the vector might look like this: *{0,0,2,3,...,numElements-1}*.
+`v[1]` "points" to `v[0]` and `v[0]` points to itself, so *0* is the representative of the set *{0,1}*.
+`findSet(0)` and `findSet(1)` both return *0*.
 
-To continue the example, if we then call `unionSets(findSet(0),2)`, the vector might look like this: `{0,0,2,3,...,numElements-1}`.
-v[2] points to v[1] and v[1] points to v[0] and v[0] points to itself.
-So 0 is the representative for the set containing {0,1,2}.
-Note that the vector could also be represented as `{0,0,0,3,...,numElements-1}` and the result would be the same: v[1] and v[2] both point directly to their representative.
+To continue the example, if we then call `unionSets(findSet(0),2)`, the vector might look like this: *{0,0,2,3,...,numElements-1}*.
+`v[2]` points to `v[1]` and `v[1]` points to `v[0]` and `v[0]` points to itself.
+So *0* is the representative for the set containing *{0,1,2}*.
+Note that the vector could also be represented as *{0,0,0,3,...,numElements-1}* and the result would be the same: `v[1]` and `v[2]` both point directly to their representative.
 This is an implementation detail and an optimization opportunity.
 `findSet()` could perform better if each element in a set pointed directly to its representative rather than having to traverse a tree to the root each time.
 This is referred to as "path compression."
