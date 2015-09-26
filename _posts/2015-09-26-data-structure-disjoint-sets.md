@@ -148,7 +148,7 @@ DisjointSets::DisjointSets(size_t numberElements)
 }
 ```
 
-The call to `std::iota()` in the constructor initializes the vector to {0,1,2,3...,numberElements-1}.
+The call to `std::iota()` in the constructor initializes the vector to *{0,1,2,3...,numberElements-1}*.
 
 ## Applications
 
