@@ -15,20 +15,20 @@ Initially, each set contains only one element.
 Once you initialize the data structure with the number of sets, there are only two supported operations: you can ask the data structure which set an element is in and you can merge two of the sets.
 The data structure is sometimes called "Union-Find" after these operations.
 
-To use the `find` operation, you must understand the notion of a "representative" element.
+To use the `findSet` operation, you must understand the notion of a "representative" element.
 The data structure chooses one element as the representative for a set.
-So if element *a* and element *b* are in the same set, and the data structure has chosen *a* as the representative, then both `disjointSets.find(a)` and `disjointSets.find(b)` will return *a*.
+So if element *a* and element *b* are in the same set, and the data structure has chosen *a* as the representative, then both `disjointSets.findSet(a)` and `disjointSets.findSet(b)` will return *a*.
 
 ## Usage
 
-In C++, the class interface for such a data structure might look something like this:
+In C++, the class interface for such a data structure might look like this:
 
 ```cpp
 class DisjointSets {
     public:
         DisjointSets(size_t numElements);
         size_t findSet(size_t element);
-        void unionSets(size_t set1, size_t set2);
+        void unionSets(size_t rep1, size_t rep2);
     private:
         std::vector<std::size_t> nodes;
 };
@@ -75,9 +75,9 @@ When I measured the affect of this optimization on a large test problem, the exe
 The implementation of `unionSets()` can be as simple as:
 
 ```cpp
-void DisjointSets::unionSets(size_t set1, size_t set2)
+void DisjointSets::unionSets(size_t rep1, size_t rep2)
 {
-    nodes[set2] = set1;
+    nodes[rep2] = rep1;
 }
 ```
 
@@ -117,19 +117,21 @@ But now we have to worry about overflowing the stack.
 Since the compiler can't eliminate the recursion any more, we can rewrite the function ourselves as a loop.
 
 ```cpp
-size_t DisjointSets::findSet2(size_t element)
+size_t DisjointSets::findSet(size_t element)
 {
+    size_t orig = element;
+
     while (nodes[element] != element) {
-        size_t previous = element;
         element = nodes[element];
-        nodes[previous] = element;
     }
+
+    nodes[orig] = element;
 
     return element;
 }
 ```
 
-This is only slightly faster the recursive version but is safer because we no longer have to worry about the stack.
+This is slightly slower the recursive version but is safer because we no longer have to worry about the stack.
 
 For completeness, our constructor looks like this:
 
@@ -141,7 +143,7 @@ DisjointSets::DisjointSets(size_t numberElements)
 }
 ```
 
-The constructor initializes the vector as {0,1,2,3...,numberElements-1}.
+The constructor initializes the vector to {0,1,2,3...,numberElements-1}.
 
 ## Applications
 
@@ -153,12 +155,13 @@ Here are a couple other applications of the data structure.
 We can use disjoint sets to answer the question, "Given a graph, how many disconnected subgraphs does it contain?"
 
 Simply iterate each edge, add both connected vertices to the data structure, then count the number of sets.
-To do this, your implementation would need to track the number of sets, decrementing it each time a union is performed, and providing an interface to retrieve the count.
+To do this, your implementation could track the number of sets, decrementing it each time a union is performed, and provide a member function to retrieve the count.
+Or you could use it as-is and call `findSet()` iteratively after adding the vertices and then count the number of unique representatives it returns.
 
 ### Detecting a Cycle
 
-We can use disjoint sets to answer the question, "Given a graph, are there any cycles?"
-This is how Kruskal's algorithm uses it.
+We can use disjoint sets to answer the general question, "Given a graph, are there any cycles?"
+This is similar to how Kruskal's algorithm uses it.
 
 Again, iterate each edge in the graph.
 We call `findSet()` for each of the two vertices of the edges.
