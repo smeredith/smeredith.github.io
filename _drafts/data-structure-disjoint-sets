@@ -5,22 +5,23 @@ title: Data Structure: Disjoint-Sets
 
 The most common use I have found for this data structure is to determine if adding a specific edge to a graph would form a cycle.
 In Kruskal's algorithm, it is used in this way to build a minimal spanning tree.
-Building a maze is similar to applying Kruskal's algorithm.
+Building a maze is similar to applying Kruskal's algorithm except we use random edges instead of shortest edges.
 I'll visit how to build a maze this way in the future.
 This article will discuss the data structure.
 
 In mathematics, sets are disjoint if they have no members in common.
 Think of a Disjoint Sets data structure as a collection of such sets.
+Initially, each set contains only one element.
 Once you initialize the data structure with the number of sets, there are only two supported operations: you can ask the data structure which set an element is in and you can merge two of the sets.
 The data structure is sometimes called "Union-Find" after these operations.
 
 To use the `find` operation, you must understand the notion of a "representative" element.
 The data structure chooses one element as the representative for a set.
-So if element *a* and elememnt *b* are in the same set, and the data structure has choosen *a* as the representative, then both `disjointSets.find(a)` and `disjointSets.find(b)` will both return *a*.
+So if element *a* and element *b* are in the same set, and the data structure has chosen *a* as the representative, then both `disjointSets.find(a)` and `disjointSets.find(b)` will return *a*.
 
 ## Usage
 
-In C++, the public part of a class interface for such a data structure might look something like this:
+In C++, the class interface for such a data structure might look something like this:
 
 ```cpp
 class DisjointSets {
@@ -28,6 +29,8 @@ class DisjointSets {
         DisjointSets(size_t numSets);
         size_t findSet(size_t element);
         void unionSets(size_t set1, size_t set2);
+    private:
+        std::vector<std::size_t> nodes;
 };
 ```
 
@@ -43,25 +46,70 @@ This return value is the representative for the new set containing 0 and 1.
 If we then call `unionSets(findSet(0), 2)` there will be one set that contains {0,1,2} and single-element sets for each of the remaining elements > 2.
 Note that `unionSets()` takes representatives as arguments.
 So we can't simply call `unionSets(0,2)` after we called `unionSets(0,1)` because the representative for that first set may be 0 or 1.
+We could find the representative on behalf of the caller in the implementation of unionSets(), but doing so would impose a performance penalty on those callers who don't need it.
+The proper mechanism here is an assertion that the parameters are in fact representatives.
 
 If we continue to call `unionSets(findSet(0), n)` repeatedly for the rest of the values of n < numSets-1, `findSet(n)` will return the same value for every n because there will be only one set.
 
 ## Implementation
 
-The way I have chosen to implement this is to use a `vector<size_t>` where each element contains either its own index position, indicating that it is a representative, or the index to a different position in the vector which should be used as a link to follow to find the representative.
+The way I have chosen to implement this is to use a `vector<size_t>` where each element contains either its own index position, indicating that it is a representative, or the index to a parent position in the vector which should be used as a link to follow to find the representative.
 Links are followed this way until an index is found that "points" to itself, indicating that it is the representative.
-For example, the vector v is initialized as `{0,1,2,3,...,numSets-1}`.
 
-Each element contains its own index.
-This means each set contains one element and representative for set n is n because v[n] == n.
-Once we call `unionSets(0,1)` the vector will look like this: `{0,0,2,3,...,numSets-1}`.
+Initially, each element contains its own index.
+For example, the vector v is initialized as `{0,1,2,3,...,numSets-1}`.
+This means each set contains one element and the representative for set n is n because v[n] == n.
+Once we call `unionSets(0,1)` the vector might look like this: `{0,0,2,3,...,numSets-1}`.
 v[1] "points" to v[0] and v[0] points to itself, so 0 is the representative of the set {0,1}.
 `findSet(0)` and `findSet(1)` both return 0.
 
-To continue the example, if we then call `unionSets(0,2)`, the vector will look like this: `{0,0,2,3,...,numSets-1}`.
+To continue the example, if we then call `unionSets(0,2)`, the vector might look like this: `{0,0,2,3,...,numSets-1}`.
 v[2] points to v[1] and v[1] points to v[0] and v[0] points to itself.
 So 0 is the representative for the set containing {0,1,2}.
 Note that the vector could also be represented as `{0,0,0,3,...,numSets-1}` and the result would be the same: v[1] and v[2] both point to their representative.
-This is an implementation detail that we will discuss later.
+This is an implementation detail and an optimization opportunity.
+`findSet()` could perform better if each element in a set pointed directly to its representative rather than having to traverse a tree of parents each time.
+When I measured the affect of this optimization on a large test problem, the execution time dropped from over 100 seconds to 1 second.
 
+The implementation of `unionSets()` can be as simple as:
 
+```cpp
+void DisjointSets::unionSets(size_t set1, size_t set2)
+{
+    nodes[set2] = set1;
+}
+```
+
+A recursive implementation of `findSet()` can be as simple as:
+
+```cpp
+size_t DisjointSets::findSet(size_t element)
+{
+    if (nodes[element] == element) {
+        return element;
+    }
+
+    // Optimization: point directly to representative.
+    return nodes[element] = findSet(nodes[element]);
+}
+```
+
+Note that this is tail recursion so the compiler can turn this into a loop.
+
+For completeness, our constructor looks like this:
+
+```cpp
+DisjointSets::DisjointSets(size_t numberElements)
+    : nodes(numberElements)
+{
+    iota(begin(nodes), end(nodes), 0);
+}
+```
+
+## Another Application
+
+In addition to the applications I mentioned in the introduction, this data structure can be used to answer the question, "given a graph, how many disconnected subgraphs are there?"
+Simply iterate each edge and add both vertices to the data structure, then count the number of sets.
+To do this, you would need your implementation to track the number of sets, decrementing it each time a union is performed.
+
+## Conclusion
