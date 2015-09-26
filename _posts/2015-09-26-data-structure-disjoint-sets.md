@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure: Disjoint-Sets
+title: Data Structure, Disjoint-Sets
 ---
 
 The most common use I have found for the *Disjoint Sets* data structure is to determine if adding a specific edge to a graph would form a cycle.
