@@ -6,16 +6,16 @@ title: Data Structure: Disjoint-Sets
 The most common use I have found for this data structure is to determine if adding a specific edge to a graph would form a cycle.
 In Kruskal's algorithm, it is used in this way to build a minimal spanning tree.
 Building a maze is similar to applying Kruskal's algorithm except we use random edges instead of shortest edges.
-I'll visit how to build a maze this way in the future.
+I'll discuss how to build a maze this way in the future.
 This article will discuss the data structure.
 
 In mathematics, sets are disjoint if they have no members in common.
-Think of a Disjoint Sets data structure as a collection of such sets.
+Think of a *disjoint sets* data structure as a collection of such sets.
 Initially, each set contains only one element.
 Once you initialize the data structure with the number of sets, there are only two supported operations: you can ask the data structure which set an element is in and you can merge two of the sets.
 The data structure is sometimes called "Union-Find" after these operations.
 
-To use the `findSet` operation, you must understand the notion of a "representative" element.
+To use the `findSet()` operation, you must understand the notion of a "representative" element.
 The data structure chooses one element as the representative for a set.
 So if element *a* and element *b* are in the same set, and the data structure has chosen *a* as the representative, then both `disjointSets.findSet(a)` and `disjointSets.findSet(b)` will return *a*.
 
@@ -26,27 +26,28 @@ In C++, the class interface for such a data structure might look like this:
 ```cpp
 class DisjointSets {
     public:
-        DisjointSets(size_t numElements);
-        size_t findSet(size_t element);
-        void unionSets(size_t rep1, size_t rep2);
+        DisjointSets(std::size_t numElements);
+        std::size_t findSet(std::size_t element);
+        void unionSets(std::size_t rep1, std::size_t rep2);
+
     private:
         std::vector<std::size_t> nodes;
 };
 ```
 
-Note that we are dealing with elements of type `size_t`.
+Note that we are dealing with elements of type `size_t` as this can represent the maximum number of elements we can keep in a vector.
 If there is satellite data it can be stored elsewhere in a vector indexed by these elements.
 This keeps the implementation simple.
 
 Upon creation, there will be `numElements` sets, each containing one element, the representative for that set.
-That means that initially, `findSet(n)` returns n for all n < numElements.
+That means that initially `findSet(n)` returns n for all n < numElements.
 
 Now if we call `unionSets(0,1)`, then `findSet(0)` and `findSet(1)` will both return 0 or both return 1, depending on the implementation.
 This return value is the representative for the new set containing {0,1}.
 If we then call `unionSets(findSet(0), 2)` there will be one set that contains {0,1,2} and single-element sets for each of the remaining elements greater than 2.
 Note that `unionSets()` takes representatives as arguments.
 So we can't simply call `unionSets(0,2)` after we called `unionSets(0,1)` because the representative for that first set may be 0 or 1.
-We could find the representative on behalf of the caller in the implementation of unionSets(), but doing so would impose a performance penalty on those callers who don't need it.
+We could find the representative on behalf of the caller in the implementation of `unionSets()`, but doing so would impose a performance penalty on those callers who don't need it.
 The proper mechanism here is an assertion that the parameters are in fact representatives.
 
 If we continue to call `unionSets(findSet(0), n)` repeatedly for the rest of the values of n < numElements-1, `findSet(n)` will return the same value for every n because there will be only one set.
@@ -57,16 +58,16 @@ The way I have chosen to implement this is to use a `vector<size_t>` where each 
 Links are followed this way until an index is found that "points" to itself, indicating that it is the representative.
 
 Initially, each element contains its own index.
-For example, the vector v is initialized as `{0,1,2,3,...,numElements-1}`.
-This means each set contains one element and the representative for set n is n because v[n] == n.
+For example, the vector v is initialized to `{0,1,2,3,...,numElements-1}`.
+This means each of numElements set contains one element and the representative for set n is n because v[n] == n.
 Once we call `unionSets(0,1)` the vector might look like this: `{0,0,2,3,...,numElements-1}`.
 v[1] "points" to v[0] and v[0] points to itself, so 0 is the representative of the set {0,1}.
 `findSet(0)` and `findSet(1)` both return 0.
 
-To continue the example, if we then call `unionSets(0,2)`, the vector might look like this: `{0,0,2,3,...,numElements-1}`.
+To continue the example, if we then call `unionSets(findSet(0),2)`, the vector might look like this: `{0,0,2,3,...,numElements-1}`.
 v[2] points to v[1] and v[1] points to v[0] and v[0] points to itself.
 So 0 is the representative for the set containing {0,1,2}.
-Note that the vector could also be represented as `{0,0,0,3,...,numElements-1}` and the result would be the same: v[1] and v[2] both point to their representative.
+Note that the vector could also be represented as `{0,0,0,3,...,numElements-1}` and the result would be the same: v[1] and v[2] both point directly to their representative.
 This is an implementation detail and an optimization opportunity.
 `findSet()` could perform better if each element in a set pointed directly to its representative rather than having to traverse a tree of parents each time.
 This is referred to as "path compression."
@@ -131,7 +132,8 @@ size_t DisjointSets::findSet(size_t element)
 }
 ```
 
-This is slightly slower the recursive version but is safer because we no longer have to worry about the stack.
+This is slightly slower than the recursive version because the path compression is less aggressive, but is safer because we no longer have to worry about the stack.
+We could improve the path compression in this version at the expense of making it a little harder to read, but the gain would be small and so I'll skip that for now.
 
 For completeness, our constructor looks like this:
 
@@ -143,7 +145,7 @@ DisjointSets::DisjointSets(size_t numberElements)
 }
 ```
 
-The constructor initializes the vector to {0,1,2,3...,numberElements-1}.
+The call to `std::iota()` in the constructor initializes the vector to {0,1,2,3...,numberElements-1}.
 
 ## Applications
 
@@ -173,3 +175,4 @@ Once you have visited each edge and have not stopped then there are no cycles.
 
 There aren't many use cases for the disjoint sets data structure, but it is really useful in solving certain graph problems.
 It can be implemented in a few lines of code and made fast by adding path compression.
+File this away somewhere so it will be handy when you need it.
