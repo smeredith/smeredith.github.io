@@ -8,6 +8,7 @@ In Kruskal's algorithm, it is used in this way to build a minimal spanning tree.
 Building a maze is similar to applying Kruskal's algorithm except we use random edges instead of shortest edges.
 I'll discuss how to build a maze this way in the future.
 This article will discuss the data structure.
+For more articles using mazes to discuss programming topics, see [Choosing a Data Structure](http://www.bitmine.org/choosing-a-datastructure/) and [A Strategy for Initializing Immutable Objects](http://www.bitmine.org/init-immutable/).
 
 In mathematics, sets are disjoint if they have no members in common.
 Think of a Disjoint Sets data structure as a collection of such sets.
@@ -40,7 +41,7 @@ If there is satellite data it can be stored elsewhere in a vector indexed by the
 This keeps the implementation simple.
 
 Upon creation there will be `numElements` sets, each containing one element, the representative for that set.
-That means that initially `findSet(n)` returns n for all n < numElements.
+That means that initially `findSet(n)` returns *n* for all *n < numElements*.
 
 Now if we call `unionSets(0,1)`, then `findSet(0)` and `findSet(1)` will both return *0* or both return *1*, depending on the implementation.
 This return value is the representative for the new set containing *{0,1}*.
@@ -178,3 +179,4 @@ Once we have visited each edge and have not stopped then there are no cycles.
 There aren't many uses for the Disjoint Sets data structure, but it is really useful in solving certain graph problems.
 It can be implemented in a few lines of code and made efficient by adding path compression.
 File this away somewhere so it will be handy when you need it.
+The code can be found [here](https://github.com/smeredith/maze/tree/disjoint-sets).
