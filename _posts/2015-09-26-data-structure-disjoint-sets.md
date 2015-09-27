@@ -72,6 +72,7 @@ Note that the vector could also be represented as *{0,0,0,3,...,numElements-1}* 
 This is an implementation detail and an optimization opportunity.
 `findSet()` could perform better if each element in a set pointed directly to its representative rather than having to traverse a tree to the root each time.
 This is referred to as "path compression."
+It is implemented in `findSet()` such that each find compresses the tree a little if possible so that future finds will be faster.
 When I measured the effect of this optimization on a large test problem, the execution time dropped from over 100 seconds to 1 second.
 
 The implementation of `unionSets()` can be as simple as:
@@ -173,6 +174,13 @@ We call `findSet()` for each of the two vertices of the edges.
 If the two calls return the same representative, then there is already a path between the vertices and adding the vertex in question would create a cycle and we have answered the question and can stop.
 If not, we call `unionSets()` for the two vertices and continue with the next edge.
 Once we have visited each edge and have not stopped then there are no cycles.
+
+## Functional Programming
+
+As an experiment, I wanted to see what would happen to the performance if changed `unionSets()` to return a new `DisjointSet` object instead of modifying the current one.  I kept the path compression optimization in `findSet()`, which is technically a side effect, but only because I wanted the experiment to terminate in a reasonable amount of time in this experiment.
+The time to run a large test case increased from 2 sec to 1337 sec when I switched to the functional approach.
+I am curious to know how this could be implemented in a functional programming language with good performance.
+If you have any ideas, please let me know in the comments.
 
 ## Conclusion
 
