@@ -6,7 +6,8 @@ title: A Strategy for Initializing Immutable Objects
 In my last article, [Choosing a Data Structure](http://www.bitmine.org/choosing-a-datastructure/), I created an immutable class.
 I stated that client code must be able to initialize instances of this class.
 That initialization is harder than passing in a few variables--some non-trivial logic is involved.
-In this article I will discuss several ways to approach initialization, with one being better than the rest.
+In this article we will discuss several ways to approach initialization, with one being better than the rest.
+A design emerges as it might in real life.
 
 ## Class Maze
 Recall that the class under discussion is `Maze`: a class with the single responsibility of storing the configuration of a maze.
@@ -33,10 +34,9 @@ There are various algorithms which can be used to create maze configurations wit
 I want client code to be able to choose the algorithm at run time or to use an algorithm of its own.
 For this discussion, I have implemented two creation algorithms, which is enough to force the design to support this variability.
 
-The first algorithm uses a data structure named _disjoint sets_.
+The first algorithm uses a data structure named _Disjoint Sets_.
 This algorithm creates mazes with many short dead ends.
-We can discuss the details of the data structure and the algorithm in the future.
-If you are curious now, you can examine the code: <https://github.com/smeredith/maze/tree/init-immutable>.
+I discuss the details of the data structure in [this article.](http://www.bitmine.org/data-structure-disjoint-sets/)
 
 Here is an example of a maze created using this algorithm:
 
@@ -94,10 +94,10 @@ I'd like a different approach.
 ### Dependency Injection
 With this strategy, we pass an initialization function into the constructor of `Maze`.
 The passed-in function returns a representation of the internal wall layout of the maze.
-I chose to pass the new `Maze` object to the function as a parameter because it has member functions that are useful to the initialization logic.
+We could pass the new `Maze` object to the function as a parameter because it has member functions that are useful to the initialization logic.
 This is safe because C++ guarantees the order of member creation.
 
-The basics of the `Maze` class look like this:
+The basics of the `Maze` class would look like this:
 
 ```cpp
 // A Maze instance is immutable.
@@ -127,7 +127,6 @@ class Maze final
         std::vector<bool> walls;
 };
 ```
-For the full source, see <https://github.com/smeredith/maze/tree/init-immutable>.
 
 I like this approach because Maze clients can create new algorithms for initializing mazes without any changes to the `Maze` class.
 It satisfies the "open/closed" principle.
@@ -145,22 +144,97 @@ I could have used C function pointer syntax here.
 Or I could have defined a class interface and required initialization functors to implement it.
 But by using a function template, I can pass in functions or functors.
 For now, my initialization algorithms are free functions because that's the simplest thing that could possible work for this discussion.
-I guarantee that as this design emerges/evolves, I will change these to functors.
+I guarantee that as this design emerges/evolves, I would change these to functors.
 But for now, we assume YAGNI.
 
-You may feel uneasy that my initialization function returns an `std::vector` by value and that it would be expensive to copy.
+### Refactor
+
+Something bothers me about this approach: it feels weird that we pass "this" to the maze generation algorithms.
+They need it because they need the dimensions and they need the utility functions to find the neighboring cell numbers and wall numbers in their algorithms.
+Let's refactor `Maze` class into two classes: `MazeDims` to hold the dimensions and utility functions, and a `Maze` class to hold a `MazeDims` instance and the walls.
+Now maze generation algorithms can take a `MazeDims` instance to do their work.
+To simplify things a little more, let's pass the output `vector<bool>` of walls from the maze generation functions to the `Maze` constructor instead of passing in a function.
+
+This is the full `MazeDims` class:
+
+```cpp
+class MazeDims final {
+    public:
+        enum class Direction {
+            north,
+            east,
+            south,
+            west
+        };
+
+        MazeDims(std::size_t width, std::size_t height);
+
+        // The number of cells in this maze.
+        std::size_t size() const { return numCells; }
+
+        // Returns true if there is a neighbor to the 'direction' of the given cell.
+        std::size_t hasNeighboringCell(std::size_t cell, Direction direction) const;
+
+        // Get the neighbor to the 'direction' of the given cell.
+        std::size_t neighboringCell(std::size_t cell, Direction direction) const;
+
+        // Get the wall to the 'direction' of the given cell.
+        std::size_t wallIndexInDirection(std::size_t cell, MazeDims::Direction direction) const;
+
+    private:
+        std::size_t mazeWidth;
+        std::size_t mazeHeight;
+        std::size_t numCells;
+};
+```
+The `Maze` class is reduced to this:
+
+```cpp
+class Maze final
+{
+    public:
+        Maze(MazeDims mazeDims, std::vector<bool> walls) :
+            mazeDims(mazeDims),
+            walls(walls)
+        {
+        }
+
+    private:
+        // The width, height, and total number of cells.
+        MazeDims mazeDims;
+
+        // The walls of the maze are represented as vector of bools, where the
+        // wall to the east of cell n is wall n, and the wall to the south of
+        // cell n is wall numCells + n.  True means there is a wall between two
+        // cells.  False means there is a passage between two cells.
+        // Initialized in the ctor.
+        std::vector<bool> walls;
+};
+```
+
+Usage of these classes would look like this:
+
+```cpp
+MazeDims mazeDims(11, 15);
+Maze maze(mazeDims, wallGeneratorDisjointSets(mazeDims));
+```
+
+You may feel uneasy that the maze generation functions return an `std::vector<bool>` by value and that it would be expensive to copy.
 Good instinct.
-How many times will this initialization function be called?
+But how many times will this initialization function be called?
 We don't know, but probably very few: once per the creation of a new `Maze` object.
 But perhaps you are on the lookout for "premature pessimisations" and would prefer me to create the vector on the heap and return a `std::unique_ptr`.
-Sure, I could.
+Sure, we could.
 But return by value here makes the code simpler.
 The truth is that the vector will not be copied at all because of _Return Value Optimization._
-So I'll keep the return by value and get both the performance and simplicity.
+So we'll keep the return by value and get both the performance and simplicity.
 
 ## Conclusion
 
 In this exercise, we looked at an immutable class that we want to be configurable by user code.
 We examined several possible techniques to meet our requirements and ruled them out one by one until we landed on one we liked: dependency injection.
+Then we refactored to simplify the approach to passing in a fully-built configuration object instead of a service to create one.
 Remember: you don't have to invent everything every time you come across a new design problem.
 Consider existing patterns and see if anything works while maintaining principles of good design.
+
+For the full source, including the code to print the maze to the console, see <https://github.com/smeredith/maze/tree/init-immutable>.
