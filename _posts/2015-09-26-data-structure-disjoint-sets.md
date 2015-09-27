@@ -177,7 +177,7 @@ Once we have visited each edge and have not stopped then there are no cycles.
 
 ## Functional Programming
 
-As an experiment, I wanted to see what would happen to the performance if changed `unionSets()` to return a new `DisjointSet` object instead of modifying the current one.  I kept the path compression optimization in `findSet()`, which is technically a side effect, but only because I wanted the experiment to terminate in a reasonable amount of time in this experiment.
+As an experiment, I wanted to see what would happen to the performance if changed `unionSets()` to return a new `DisjointSet` object instead of modifying the current one.  I kept the path compression optimization in `findSet()`, which is technically a side effect, but only because I wanted the experiment to terminate in a reasonable amount of time.
 The time to run a large test case increased from 2 sec to 1337 sec when I switched to the functional approach.
 I am curious to know how this could be implemented in a functional programming language with good performance.
 If you have any ideas, please let me know in the comments.
