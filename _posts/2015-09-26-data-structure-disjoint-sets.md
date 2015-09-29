@@ -151,6 +151,17 @@ DisjointSets::DisjointSets(size_t numberElements)
 
 The call to `std::iota()` in the constructor initializes the vector to *{0,1,2,3...,numberElements-1}*.
 
+## Another Optimization: Union by Rank
+
+You should know that there is one more opportunity for optimization here.
+When merging two sets, we have two options.
+We can make the longer chain one element longer, or we can make the shorter chain one element longer.
+Since we would like shorter chains on average when following them to representative elements in `findSet()`, we should grow the shorter chain instead of growing the longer chain.
+In our current implementation, we don't take that into account and we just chain one to the other based on the order of the parameters.
+I'm not going to show how to implement the optimization here in order to keep it simple.
+Note that in my measurements, each of the two optimizations, path compression and union by rank, alone provide a huge performance win.
+When used together, the second optimization only provides a very small increase in performance over implementing just one or the other.
+
 ## Applications
 
 In the introduction, I mentioned Kruskal's algorithm and generating a maze.
