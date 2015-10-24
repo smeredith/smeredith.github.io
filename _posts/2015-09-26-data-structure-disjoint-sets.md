@@ -199,3 +199,5 @@ There aren't many uses for the Disjoint Sets data structure, but it is really us
 It can be implemented in a few lines of code and made efficient by adding path compression.
 File this away somewhere so it will be handy when you need it.
 The code can be found [here](https://github.com/smeredith/maze/tree/disjoint-sets).
+
+To read about using Disjoint-Sets to create a maze, see the next article, [Using Disjoint-Sets](http://www.bitmine.org/disjoint-sets-usage/).
