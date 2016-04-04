@@ -40,6 +40,7 @@ class DatabaseConnection {
 };
 ```
 Next, we have two concrete classes that implement that interface.
+
 ```cpp
 class SqlServerConnection final : public DatabaseConnection {
   public:
@@ -165,6 +166,7 @@ class SqlServerConnection final : public DatabaseConnection {
 };
 ```
 We need to do this for `AccessConnection` as well.
+
 ```cpp
 class AccessConnection final : public DatabaseConnection {
   public:
@@ -177,7 +179,7 @@ class AccessConnection final : public DatabaseConnection {
     }
 };
 ```
-And of course we need this new function in the `DatabaseConnection` interface as well.
+And of course we need this new function in the `DatabaseConnection` interface too.
 
 ## Generalize what we just did to get the Visitor pattern
 
@@ -205,6 +207,7 @@ class DatabaseConnectionVisitor {
 };
 ```
 Alternatively, we could use a unique function name for each concrete class parameter instead of overloading.
+
 ```cpp
 class DatabaseConnectionVisitor {
   public:
@@ -217,6 +220,7 @@ This alternative naming convention is common, but I use overloading in this disc
 ## ConnectionTypeCounter repackaged as a visitor
 
 This is what we started with:
+
 ```cpp
 class ConnectionTypeCounter {
   public:
@@ -229,6 +233,7 @@ class ConnectionTypeCounter {
 };
 ```
 This is our new visitor class:
+
 ```cpp
 class CountConnectionTypeVisitor final : public DatabaseConnectionVisitor {
   public:
@@ -246,6 +251,7 @@ Those that do need it are limited to the parameter's public interface.
 ## Need a new virtual function in the original class hierarchy to accept the visitor
 
 The function that takes a visitor object is named `accept()`.
+
 ```cpp
 class DatabaseConnection {
   public:
@@ -285,6 +291,7 @@ This hierarchy is now "visitable."
 ## Last step: pass a concrete visitor to each element in the collection
 
 Create an instance of the visitor and pass it to each element of the collection.
+
 ```cpp
 void countConnectionTypes(const std::vector<std::shared_ptr<DatabaseConnection>>& connections)
 {
