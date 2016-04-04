@@ -215,7 +215,7 @@ class DatabaseConnectionVisitor {
 ```
 This alternative naming convention is common, but I use overloading in this discussion.
 
-## ConnectionTypeCounter repackaged as a visitor
+## `ConnectionTypeCounter` repackaged as a visitor
 
 This is what we started with:
 
