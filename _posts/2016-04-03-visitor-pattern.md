@@ -3,8 +3,6 @@ layout: post
 title: The Visitor Design Pattern
 ---
 
-## Introduction
-
 If you come across an instance of the Visitor pattern in somebody's code and you aren't familiar with it, you might find it hard to decipher.
 You might even question the sanity of the implementer.
 What I want to do here is present the problem the Visitor pattern is designed to solve, and then invent the pattern from scratch in order to solve it.
