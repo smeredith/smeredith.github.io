@@ -10,17 +10,19 @@ I made these notes on the process in order to help you should you want to do the
 
 This machine has a 32-bit processor and 2GB of RAM.
 It requires the i386 installer image.
-I used the FreeBSD-11.0-RELEASE-i386-disc1.iso to create a CD and installed from there.
+I used FreeBSD-11.0-RELEASE-i386-disc1.iso to create a CD and installed from that.
 
-You'll need a wired network connection to complete the installation, so attach to an ethernet network before performing the installation.
+I needed a wired network connection to complete the installation, so I attached to an ethernet network before performing the installation.
 
 In the "Distribution Select" dialog, I added "src" to the already selected "ports" option.
-The primary reason for this was so that I could build the WiFi card firmware, which requires these file.
+The primary reason for this was so that I could later build the WiFi card firmware, which requires these file.
 
-In the "Partitioning" dialog, I tried both "Auto (UFS)" and "Auto (ZFS)" and took the defaults for each.
-I am now using ZFS, but either will work.
+In the "Partitioning" dialog, I selected "Auto (ZFS)" and took the defaults.
+"Auto (UFS)" will also work.
 
 I selected "sshd," "ntpd", "powerd", and "dumpdev" at the "System Configuration" dialog.
+
+I ended up with a 2 GB swap file, which is fine.
 
 ## Desktop Environment
 
@@ -29,19 +31,19 @@ Cinnamon is too slow to use, but the others are fine.
 
 ## WiFi
 
-NOTE: The keyboard hotkey to toggle WiFi (function-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
+**NOTE:** _The keyboard hotkey to toggle WiFi (function-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
 If you can't get WiFi to work, try this hotkey to see if it might be disabled.
-You can disable the hotkey via the BIOS if you wish.
+You can disable the hotkey via the BIOS if you wish._
 
 The WiFi card in this laptop is a Broadcom BCM4311 802.11b/g WLAN.
-We want to use the "bwn" driver for this.
+The correct driver for this is "bwn".
 
 ### Update the firmware
 
 First, I updated the firmware on the WiFi card.
-This didn't seem to affect the operation of the card under Windows, so if you need to reinstall that OS in the future, it should be fine.
+This didn't seem to affect the operation of the card under Windows when I later booted to Windows.
 
-To update the firmware, you need the kernel source.
+To update the firmware, kernel sources are required.
 If you didn't check the "src" box during installation, you can download the version that matched your installed version and extract the files:
 
     $ fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/386/11.0-RELEASE/src.txz
@@ -64,9 +66,9 @@ I added the following two lines to `/etc/rc.conf`
     wlans_bwn0="wlan0"
     ifconfig_wlan0="WPA DHCP"
 
-This assumes I am using WPA and DHCP.
+This is because I am using WPA and DHCP.
 
-I created the file named `etc/wpa_supplicant.conf` and added my SSID and password:
+I created a file named `/etc/wpa_supplicant.conf` and added my SSID and password:
 
     network={
         ssid="my_SSID"
@@ -81,7 +83,7 @@ You should see an IPv4 address when you use:
 
     $ ifconfig wlan0
 
-### Connect to an AP
+### Connect to a different AP
 
 I installed the GUI app "wifimgr" to connect to other WiFi access points:
 
@@ -94,16 +96,17 @@ I installed Chromium and Firefox.
 Chromium has a bug which make it unusable: about half the time, loading a page hangs a tab.
 The only way to recover is to kill the tab.
 
-Firefox appears to work correctly.
+Firefox works correctly.
 It is also faster and uses less memory than Chromium.
 
 ## Performance
 
 Performance is surprisingly good.
+Booting talkes longer than it does on Windows.
 YouTube in HD is a weak point: the machine has difficulty keeping up.
 But is no different than how the machine behaves with Windows installed.
 I think the CPU just isn't fast enough.
 
 The HDD is also limiting factor.
 I replaced it with an SSD and performance is even better.
-The laptop is also quieter as the SSD must run cooler than the HDD and the nearby fan doesn't run.
+The laptop is also quieter because the fan near the disk does not turn on.
