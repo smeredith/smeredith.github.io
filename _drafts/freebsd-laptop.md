@@ -3,22 +3,22 @@ layout: post
 title: Installing FreeBSD 11 on a Dell Inspiron E1505
 ---
 
-I recently install FreeBSD 11.0-RELEASE on an old Dell Inspiron E1505.
+I recently installed FreeBSD 11.0-RELEASE on an old Dell Inspiron E1505.
 I made these notes on the process in order to help you should you want to do the same.
 
 ## Installation
 
 This machine has a 32-bit processor and 2GB of RAM.
 It requires the i386 installer image.
-I used the disc1.iso to create a CD and installed from there.
+I used the FreeBSD-11.0-RELEASE-i386-disc1.iso to create a CD and installed from there.
 
-You'll need a wired network connection to complete the installation, so attach an ethernet connection before performing the installation.
+You'll need a wired network connection to complete the installation, so attach to an ethernet network before performing the installation.
 
 In the "Distribution Select" dialog, I added "src" to the already selected "ports" option.
 The primary reason for this was so that I could build the WiFi card firmware, which requires these file.
 
 In the "Partitioning" dialog, I tried both "Auto (UFS)" and "Auto (ZFS)" and took the defaults for each.
-I am using ZFS, but either will work.
+I am now using ZFS, but either will work.
 
 I selected "sshd," "ntpd", "powerd", and "dumpdev" at the "System Configuration" dialog.
 
@@ -38,40 +38,54 @@ We want to use the "bwn" driver for this.
 
 ### Update the firmware
 
-First, you need to update the firmware on the WiFi card.
-This didn't seem to affect the operation of the card under Windows so if you need to reinstall that OS in the future, it should be fine.
+First, I updated the firmware on the WiFi card.
+This didn't seem to affect the operation of the card under Windows, so if you need to reinstall that OS in the future, it should be fine.
 
 To update the firmware, you need the kernel source.
 If you didn't check the "src" box during installation, you can download the version that matched your installed version and extract the files:
 
-    fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/386/11.0-RELEASE/src.txz
-    tar -C / -xzvf src.txz
+    $ fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/386/11.0-RELEASE/src.txz
+    $ tar -C / -xzvf src.txz
 
 You don't need to build the kernel, but the files are required for the next step, building and installing the WiFi firmware:
 
-    cd /usr/ports/net/bwn-firmware-kmod
-    make install clean
+    # cd /usr/ports/net/bwn-firmware-kmod
+    # make install clean
 
 ### Enable WiFi
 
-Add these two lines to `/boot/loader.conf`:
+I added these two lines to `/boot/loader.conf`:
 
     if_bwn_load="YES"
     bwn_v4_ucode_load="YES"
 
-Add the following two lines to `/etc/rc.conf`
+I added the following two lines to `/etc/rc.conf`
 
     wlans_bwn0="wlan0"
     ifconfig_wlan0="WPA DHCP"
 
-This assumes you are using WPA.
+This assumes I am using WPA and DHCP.
+
+I created the file named `etc/wpa_supplicant.conf` and added my SSID and password:
+
+    network={
+        ssid="my_SSID"
+        psk="my_password"
+    }
+
+I unplugged the ethernet cable and rebooted.
 When you reboot with these settings, you should see the WiFi LED on the keyboard light up.
+The LED is lit when the interface is "up," even if WiFi is disabled by the keyboard shortcut.
+
+You should see an IPv4 address when you use:
+
+    $ ifconfig wlan0
 
 ### Connect to an AP
 
-Install the GUI app "wifimgr" to connect to WiFi access points:
+I installed the GUI app "wifimgr" to connect to other WiFi access points:
 
-    pkg install wifimgr
+    # pkg install wifimgr
 
 ## Browser
 
@@ -81,7 +95,7 @@ Chromium has a bug which make it unusable: about half the time, loading a page h
 The only way to recover is to kill the tab.
 
 Firefox appears to work correctly.
-It is also faster and uses less memory and Chromium.
+It is also faster and uses less memory than Chromium.
 
 ## Performance
 
@@ -92,3 +106,4 @@ I think the CPU just isn't fast enough.
 
 The HDD is also limiting factor.
 I replaced it with an SSD and performance is even better.
+The laptop is also quieter as the SSD must run cooler than the HDD and the nearby fan doesn't run.
