@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing FreeBSD on a Dell Inspiron E1505
+title: Installing FreeBSD 11 on a Dell Inspiron E1505
 ---
 
 I recently install FreeBSD 11.0-RELEASE on an old Dell Inspiron E1505.
@@ -18,7 +18,9 @@ In the "Distribution Select" dialog, I added "src" to the already selected "port
 The primary reason for this was so that I could build the WiFi card firmware, which requires these file.
 
 In the "Partitioning" dialog, I tried both "Auto (UFS)" and "Auto (ZFS)" and took the defaults for each.
-Either will work.
+I am using ZFS, but either will work.
+
+I selected "sshd," "ntpd", "powerd", and "dumpdev" at the "System Configuration" dialog.
 
 ## Desktop Environment
 
@@ -27,8 +29,12 @@ Cinnamon is too slow to use, but the others are fine.
 
 ## WiFi
 
-Be aware that the keyboard hotkey to toggle WiFi (function-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
-If you can't get WiFi to work, try this hot key to see if it might be disabled.
+NOTE: The keyboard hotkey to toggle WiFi (function-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
+If you can't get WiFi to work, try this hotkey to see if it might be disabled.
+You can disable the hotkey via the BIOS if you wish.
+
+The WiFi card in this laptop is a Broadcom BCM4311 802.11b/g WLAN.
+We want to use the "bwn" driver for this.
 
 ### Update the firmware
 
@@ -53,7 +59,20 @@ Add these two lines to `/boot/loader.conf`:
     if_bwn_load="YES"
     bwn_v4_ucode_load="YES"
 
-### Connect
+Add the following two lines to `/etc/rc.conf`
+
+    wlans_bwn0="wlan0"
+    ifconfig_wlan0="WPA DHCP"
+
+This assumes you are using WPA.
+When you reboot with these settings, you should see the WiFi LED on the keyboard light up.
+
+### Connect to an AP
+
+Install the GUI app "wifimgr" to connect to WiFi access points:
+
+    pkg install wifimgr
+
 ## Browser
 
 I installed Chromium and Firefox.
