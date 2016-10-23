@@ -84,6 +84,7 @@ The right edge can be used for scrolling.
 * The blue mouse pointer stick works to move the mouse.
 * The speakers work.
 * USB works.
+* The DVD drive works for reading and creating disks.
 
 ## What doesn't work
 
