@@ -119,6 +119,8 @@ The laptop is also quieter because the fan near the disk does not turn on.
 * Some of the fn number pad keys (/, *, -, +) work.
 * The fn brightness controls on the up and down arrow keys work.
 * The DVD drive works.
+* The speakers.
+* The headphones jack.
 
 ## What doesn't work
 
@@ -143,4 +145,5 @@ It is possible that I just don't know how to configure these things.
 
 I've only had FreeBSD installed for a couple of weeks, but this is a completely usable laptop.
 With the SSD, it is usually completely silent.
+
 If you have this setup yourself, I'd love to hear your experience.
