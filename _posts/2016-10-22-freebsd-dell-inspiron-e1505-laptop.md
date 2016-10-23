@@ -15,7 +15,6 @@ I used FreeBSD-11.0-RELEASE-i386-disc1.iso to create a CD and installed from tha
 I needed a wired network connection to complete the installation, so I attached to an ethernet network before performing the installation.
 
 In the "Distribution Select" dialog, I added "src" to the already selected "ports" option.
-The primary reason for this was so that I could later build the WiFi card firmware, which requires these file.
 
 In the "Partitioning" dialog, I selected "Auto (ZFS)" and took the defaults.
 "Auto (UFS)" will also work.
@@ -31,9 +30,9 @@ Cinnamon is too slow to use, but the others are fine.
 
 ## WiFi
 
-**NOTE:** _The keyboard hotkey to toggle WiFi (function-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
-If you can't get WiFi to work, try this hotkey to see if it might be disabled.
-You can disable the hotkey via the BIOS if you wish._
+**NOTE:** _The keyboard hotkey to toggle WiFi (fn-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
+If you can't get WiFi to work, try this hotkey to see if WiFi might be disabled.
+You can disable the hotkey altogether via the BIOS if you wish._
 
 The WiFi card in this laptop is a Broadcom BCM4311 802.11b/g WLAN.
 The correct driver for this is "bwn".
@@ -41,7 +40,7 @@ The correct driver for this is "bwn".
 ### Update the firmware
 
 First, I updated the firmware on the WiFi card.
-This didn't seem to affect the operation of the card under Windows when I later booted to Windows.
+This didn't seem to affect the operation of the card under Windows when I later booted to that OS.
 
 To update the firmware, kernel sources are required.
 If you didn't check the "src" box during installation, you can download the version that matched your installed version and extract the files:
@@ -75,7 +74,7 @@ I created a file named `/etc/wpa_supplicant.conf` and added my SSID and password
         psk="my_password"
     }
 
-I unplugged the ethernet cable and rebooted.
+I unplugged the Ethernet cable and rebooted.
 When you reboot with these settings, you should see the WiFi LED on the keyboard light up.
 The LED is lit when the interface is "up," even if WiFi is disabled by the keyboard shortcut.
 
@@ -102,7 +101,7 @@ It is also faster and uses less memory than Chromium.
 ## Performance
 
 Performance is surprisingly good.
-Booting talkes longer than it does on Windows.
+Booting takes longer than it does on Windows.
 YouTube in HD is a weak point: the machine has difficulty keeping up.
 But is no different than how the machine behaves with Windows installed.
 I think the CPU just isn't fast enough.
@@ -110,3 +109,21 @@ I think the CPU just isn't fast enough.
 The HDD is also limiting factor.
 I replaced it with an SSD and performance is even better.
 The laptop is also quieter because the fan near the disk does not turn on.
+
+## What else works
+
+* The trackpad works fine, though there are no multi-finder gestures.
+* The hotkeys for volume control work.
+* Some of the fn number pad keys (/, *, -, +).
+* The fn brightness controls on the up and down arrow keys.
+
+## What doesn't work
+
+* Suspend/resume.
+* Hibernate.
+* A microphone plugged in to the mic jack.
+* The mute keyboard shortcut.
+* Some of the fn number pad keys (7, 8, 9, 4, 5, 6, 1, 2, 3, 0, .).
+
+It is possible that I just don't know how to configure these things.
+
