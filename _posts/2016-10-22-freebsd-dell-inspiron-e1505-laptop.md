@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Installing FreeBSD 11 on a Dell Inspiron E1505
+title: Installing FreeBSD 11 on a Dell Inspiron E1505 Laptop
 ---
 
-I recently installed FreeBSD 11.0-RELEASE on an old Dell Inspiron E1505.
+I recently installed FreeBSD 11.0-RELEASE on an old Dell Inspiron E1505 laptop.
 I made these notes on the process in order to help you should you want to do the same.
 
 ## Installation
@@ -121,6 +121,7 @@ The laptop is also quieter because the fan near the disk does not turn on.
 * The DVD drive works.
 * The speakers.
 * The headphones jack.
+* USB ports.
 
 ## What doesn't work
 
@@ -136,7 +137,6 @@ It is possible that I just don't know how to configure these things.
 
 * The PC Card slot.
 * The SD card slot.
-* USB.
 * Firewire.
 * The modem.
 * The VGA port.
