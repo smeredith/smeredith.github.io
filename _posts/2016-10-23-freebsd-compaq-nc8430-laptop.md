@@ -83,6 +83,7 @@ YouTube struggles with 1080P, but handles 720P in full screen mode.
 The right edge can be used for scrolling.
 * The blue mouse pointer stick works to move the mouse.
 * The speakers work.
+* USB works.
 
 ## What doesn't work
 
@@ -93,10 +94,14 @@ The right edge can be used for scrolling.
 * The fan seems to stay on maximum all the time, making a lot of noise.
 
 It is possible that I just don't know how to configure these things.
+In particular, I see a lot of messages like this to the console:
+
+    acpi_tx0: _CRT value is absurd, ignored (256.1C)
+
+Perhaps this is related to the fan and could be fixed with some system setting.
 
 ## Things I didn't try
 
-* USB.
 * Firewire.
 * The PC Card slot.
 * The SD card slot.
