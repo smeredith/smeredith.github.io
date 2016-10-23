@@ -3,7 +3,7 @@ layout: post
 title: Installing FreeBSD 11 on a Compaq nc8430
 ---
 
-I recently installed FreeBSD 11.0-RELEASE on an old Compaq nc8430.
+I recently installed FreeBSD 11.0-RELEASE on an old Compaq nc8430 laptop.
 I made these notes on the process in order to help you should you want to do the same.
 
 ## Installation
@@ -15,14 +15,13 @@ I used FreeBSD-11.0-RELEASE-amd64-disc1.iso to create a CD and installed from th
 I needed a wired network connection to complete the installation, so I attached to an ethernet network before performing the installation.
 
 In the "Distribution Select" dialog, I added "src" to the already selected "ports" and "lib32" options.
-The primary reason for this was so that I could later build the WiFi card firmware, which requires these file.
 
 In the "Partitioning" dialog, I selected "Auto (ZFS)" and took the defaults.
 "Auto (UFS)" will also work.
 
 I selected "sshd," "ntpd", "powerd", and "dumpdev" at the "System Configuration" dialog.
 
-I ended up with a 2 GB swap file, which is fine.
+I ended up with a 2 GB swap file by default, which is fine.
 
 ## Desktop Environment
 
@@ -36,9 +35,9 @@ I added the following two lines to `/etc/rc.conf`
     wlans_0="wlan0"
     ifconfig_wlan0="WPA DHCP"
 
-This is because I am using WPA and DHCP.
+This is because my AP is configured for WPA and DHCP.
 
-I created a file named `/etc/wpa_supplicant.conf` and added my SSID and password:
+I created a file named `/etc/wpa_supplicant.conf` and added my SSID and WiFi password:
 
     network={
         ssid="my_SSID"
@@ -79,17 +78,38 @@ YouTube struggles with 1080P, but handles 720P in full screen mode.
 
 ## What else works
 
-* The mute button, though the actual operation lags the press by a few seconds.
-* The track pad.
+* The mute button works, though the actual operation sometimes lags the press by a few seconds.
+* The track pad works.
 The right edge can be used for scrolling.
-* The blue pointer stick.
+* The blue mouse pointer stick works to move the mouse.
+* The speakers work.
 
 ## What doesn't work
 
-* Suspend to RAM (no keyboard or trackpad when resuming.)
-* Hibernate (the screen goes black but the machine never powers down.)
-* The volume buttons.
-* Any of the blue fn keys, like brightness control.
+* Suspend to RAM does not work (no keyboard or trackpad when resuming.)
+* Hibernate does not work (the screen goes black but the machine never powers down.)
+* The volume buttons do not work.
+* None of the blue fn keys, like brightness control, work.
 * The fan seems to stay on maximum all the time, making a lot of noise.
 
 It is possible that I just don't know how to configure these things.
+
+## Things I didn't try
+
+* USB.
+* Firewire.
+* The PC Card slot.
+* The SD card slot.
+* The VGA port.
+* The serial port.
+* The modem.
+* The mic jack.
+* The headphone jack.
+
+## Conclusion
+
+Functionally, the laptop is usable.
+However, the constant noise from the fan is very loud and makes this an unpleasant laptop to use for long.
+If you can stand that, you might be in good shape.
+
+I'd love to hear from you if you are using this setup.
