@@ -10,7 +10,7 @@ I did not find clear instructions on how to make that work, so I will share what
 ## simple-mtpfs
 
 First, each time I connect my phone to a computer, it gives me a notification that it is only enabled for changing.
-In order to enable file transfers, I click the notification and selecte MTP.
+In order to enable file transfers, I click the notification and select MTP.
 
 I tried a fuse driver named `mtpfs` but I was not able to make it work.
 So then I installed `simple-mtpfs` and got that working.
