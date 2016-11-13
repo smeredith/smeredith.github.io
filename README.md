@@ -1,2 +1,2 @@
-My experimental blog.
-View at http://smeredith.github.io.
+My development blog.
+View at http://smeredith.github.i or http://www.bitmine.org.
