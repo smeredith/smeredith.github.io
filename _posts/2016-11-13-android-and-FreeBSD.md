@@ -10,7 +10,7 @@ I did not find clear instructions on how to make that work, so I will share what
 ## simple-mtpfs
 
 First, each time I connect my phone to a computer, it gives me a notification that it is only enabled for changing.
-In order to enable file transfers, I click the notification and select MTP.
+In order to enable file transfers, I click the notification and select "File transfer (MTP)."
 
 I tried a fuse driver named `mtpfs` but I was not able to make it work.
 So then I installed `simple-mtpfs` and got that working.
@@ -30,6 +30,10 @@ Then I added a line to `/boot/loader.conf` to allow the OS to use fuse file syst
 
     fuse_load="YES"
 
+Then I added a line to `/etc/sysctl.conf`
+
+    vfs.usermount=1
+
 At this point I restarted the system.
 
 In order to browse the connected Android phone filesystem as "user", I need to mount it as root.
@@ -38,7 +42,7 @@ But I can't figure out how to do that.
 
 So, as root:
 
-    # simple-mtpfs /mnt/android -o allow-other
+    # simple-mtpfs /mnt/android -o allow_other
 
 Now, as "user" I can use `/mnt/android` as any other file system.
 
