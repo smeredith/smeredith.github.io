@@ -40,7 +40,8 @@ In order to browse the connected Android phone filesystem as "user", I need to m
 This is inconvenient: I want to be able to mount it as "user".
 But I can't figure out how to do that.
 
-So, as root:
+Be sure you phone is connected and you allowed file transfers.
+Then as root:
 
     # simple-mtpfs /mnt/android -o allow_other
 

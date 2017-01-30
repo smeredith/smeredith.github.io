@@ -90,15 +90,12 @@ I installed the GUI app "wifimgr" and use it to connect to other WiFi access poi
 
     # pkg install wifimgr
 
-## Browser
+## Browsers
 
 I installed Chromium and Firefox.
+For Chromium, I needed to set `kern.ipc.shm_allow_removed=1` in `/etc/sysctl.conf`.
 
-Chromium has a bug which make it unusable: about half the time, loading a page hangs a tab.
-The only way to recover is to kill the tab.
-
-Firefox works correctly.
-It is also faster and uses less memory than Chromium.
+Both work well. Firefox is faster for some operations, and Chromium is faster for others.
 
 ## Performance
 
@@ -122,6 +119,7 @@ The laptop is also quieter because the fan near the disk does not turn on.
 * The speakers.
 * The headphones jack.
 * USB ports.
+* The SD card reader.
 
 ## What doesn't work
 
@@ -136,7 +134,6 @@ It is possible that I just don't know how to configure these things.
 ## What I did not try
 
 * The PC Card slot.
-* The SD card slot.
 * Firewire.
 * The modem.
 * The VGA port.
