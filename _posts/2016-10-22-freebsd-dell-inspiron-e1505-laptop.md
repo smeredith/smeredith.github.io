@@ -93,9 +93,9 @@ I installed the GUI app "wifimgr" and use it to connect to other WiFi access poi
 ## Browsers
 
 I installed Chromium and Firefox.
-For Chromium, I needed to set `kern.ipc.shm_allow_removed=1` in `/etc/sysctl.conf`.
+For Chromium, the docs say I needed to set `kern.ipc.shm_allow_removed=1` in `/etc/sysctl.conf`, so I did that.
 
-Both work well. Firefox is faster for some operations, and Chromium is faster for others.
+Both work pretty well, but Firefox is more stable. Chromium hangs frequently.
 
 ## Performance
 
