@@ -18,7 +18,9 @@ In the "Distribution Select" dialog, I added "src" to the already selected "port
 As discussed below, I needed to do this in order to get WiFi working
 
 In the "Partitioning" dialog, I selected "Auto (ZFS)" and took the defaults.
-"Auto (UFS)" also works.
+"Auto (UFS)" also works, but ZFS is awesome.
+You can also choose GELI encryption.
+If you do, you will be required to enter a password before each boot.
 
 I selected "sshd," "ntpd", "powerd", and "dumpdev" at the "System Configuration" dialog.
 
@@ -32,25 +34,25 @@ Cinnamon is too slow to use, but the others are fine.
 ## WiFi
 
 **NOTE:** _The keyboard hotkey to toggle WiFi (fn-F2) works in FreeBSD, but it does not toggle the keyboard WiFi LED the way it does on Windows.
-It is impossible to know what state it's in.
+It is impossible to know what state it's in by looking at it.
 If you can't get WiFi to work, try this hotkey to see if WiFi might be disabled.
 Or, you can disable the hotkey altogether via the BIOS to remove this ambiguity._
 
 The WiFi card in this laptop is a Broadcom BCM4311 802.11b/g WLAN.
 The correct driver for this is "bwn".
 
-### Update the firmware
+### Build the firmware kernel module
 
-First, I updated the firmware on the WiFi card.
-This didn't seem to affect the operation of the card under Windows when I later booted to that OS.
+I don't really know what happens in this step.
+I just followed instructions.
 
-To update the firmware, kernel sources are required.
+For this, kernel sources are required.
 If you didn't check the "src" box during installation, you can download the version that matched your installed version and extract the files:
 
-    # fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/386/11.0-RELEASE/src.txz
+    # fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/i386/11.0-RELEASE/src.txz
     # tar -C / -xzvf src.txz
 
-You don't need to build the kernel, but the files are required for the next step, building and installing the WiFi firmware:
+You don't need to build the kernel, but the files are required for the next step, building and installing the WiFi firmware module:
 
     # cd /usr/ports/net/bwn-firmware-kmod
     # make install clean
@@ -69,26 +71,27 @@ I added the following two lines to `/etc/rc.conf`
 
 The last line is because my AP is configured for WPA and DHCP.
 
-I created a file named `/etc/wpa_supplicant.conf` and added my SSID and WiFi password:
-
-    network={
-        ssid="my_SSID"
-        psk="my_password"
-    }
-
 I unplugged the Ethernet cable and rebooted.
-When you reboot with these settings, you should see the WiFi LED on the keyboard light up.
+Then I typed:
+
+    # ifconfig wlan0 up
+
+You should see the WiFi LED on the keyboard light up.
 The LED is lit when the interface is "up," even if WiFi is disabled by the keyboard shortcut.
+You can check its state by checking dmesg.
+You'll see a line like this every time you hit fn-F2:
 
-I knew this was working when I saw an IPv4 address assigned to WLAN0 when I checked:
+    bwn0: status of FR switch is changed to ON
 
-    $ ifconfig wlan0
+### Connect to an AP
 
-### Connect to a different AP
-
-I installed the GUI app "wifimgr" and use it to connect to other WiFi access points:
+I installed the GUI app "wifimgr" and use it to connect to my WiFi access point:
 
     # pkg install wifimgr
+
+I knew WiFi was working when I saw an IPv4 address assigned to WLAN0 when I checked:
+
+    # ifconfig wlan0
 
 ## Browsers
 
