@@ -9,7 +9,7 @@ Here is what I learned:
 I didn't need to install any software from Brother.
 I added the printer using KDE's "Add Printer" option in System Settings.
 
-Connection string: "ipp://<ip-addr>/ipp/port1".
+Connection string: "ipp://\<ip-addr\>/ipp/port1".
 
 You'll need to substitute the IP address of your own printer, but "port1" is the literal string you need: don't substitute anything for that.
 
