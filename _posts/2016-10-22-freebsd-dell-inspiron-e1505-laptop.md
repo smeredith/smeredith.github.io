@@ -43,7 +43,7 @@ The correct driver for this is "bwn".
 
 ### Build the firmware kernel module
 
-I don't really know what happens in this step, but I think a firmware module is build that gets applied to the hardware whenever the driver is loaded.
+I don't really know what happens in this step, but I think a firmware module is built that gets applied to the hardware whenever the driver is loaded.
 Really, I just followed instructions.
 
 For this, kernel sources are required.
