@@ -43,8 +43,8 @@ The correct driver for this is "bwn".
 
 ### Build the firmware kernel module
 
-I don't really know what happens in this step.
-I just followed instructions.
+I don't really know what happens in this step, but I think a firmware module is build that gets applied to the hardware whenever the driver is loaded.
+Really, I just followed instructions.
 
 For this, kernel sources are required.
 If you didn't check the "src" box during installation, you can download the version that matched your installed version and extract the files:
@@ -93,6 +93,12 @@ I knew WiFi was working when I saw an IPv4 address assigned to WLAN0 when I chec
 
     # ifconfig wlan0
 
+### Switching Between WiFi and Ethernet
+
+I don't know of a good way to switch between network interfaces when I connect or disconnect the network cable, so I just reset the networking service and let it sort itself out:
+
+    # service netif restart
+
 ## Browsers
 
 I installed Chromium and Firefox.
@@ -102,7 +108,7 @@ Both work pretty well, but Firefox is more stable. Chromium hangs frequently.
 
 ## Performance
 
-Performance is surprisingly good for such an old machine.
+Performance is surprisingly good for such an old 32-bit machine.
 Booting takes longer than it does on Windows.
 YouTube in HD is a weak point: the machine has difficulty keeping up.
 But is no different than how the machine behaves under Windows.
@@ -119,10 +125,10 @@ The laptop is also quieter because the fan near the disk does not turn on.
 * Some of the fn number pad keys (/, *, -, +) work.
 * The fn brightness controls on the up and down arrow keys work.
 * The DVD drive works.
-* The speakers.
-* The headphones jack.
-* USB ports.
-* The SD card reader.
+* The speakers work.
+* The headphone jack works.
+* USB ports work.
+* The SD card reader works.
 
 ## What doesn't work
 
