@@ -95,6 +95,7 @@ The right edge can be used for scrolling.
 * The external VGA connector works.
 * Suspend to RAM and resume works.
 I needed to add `/etc/rc.d/moused` to `/etc/rc.resume` in order for the mouse to work upon resume.
+To make the laptop suspend when the lid is closed, I added `hw.acpi.lid_switch_state=S3` to `/etc/sysctl.conf`.
 
 ## What doesn't work
 
@@ -123,7 +124,7 @@ If you can stand that, you might be in good shape.
 
 I'd love to hear from you if you are using this setup.
 
-## Update
+## Update March 03, 2017
 
 I've upgraded the machine from 2GB to 4GB of RAM.
 The machine only sees 3.3GB.
