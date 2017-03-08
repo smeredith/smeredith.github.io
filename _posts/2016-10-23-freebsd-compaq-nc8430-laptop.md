@@ -61,7 +61,13 @@ I installed the GUI app "wifimgr" to connect to other WiFi access points:
 
     # pkg install wifimgr
 
-## Browser
+### Switching Between WiFi and Ethernet
+
+I don't know of a good way to switch between network interfaces when I connect or disconnect the network cable, so I just reset the networking service and let it sort itself out:
+
+    # service netif restart
+
+## Browsers
 
 I installed Chromium and Firefox.
 
@@ -87,17 +93,18 @@ The right edge can be used for scrolling.
 * USB works.
 * The DVD drive works for reading and creating disks.
 * The external VGA connector works.
+* Suspend to RAM and resume works.
+I needed to add `/etc/rc.d/moused` to `/etc/rc.resume` in order for the mouse to work upon resume.
 
 ## What doesn't work
 
-* Suspend to RAM does not work (no keyboard or trackpad when resuming.)
 * Hibernate does not work (the screen goes black but the machine never powers down.)
 * The volume buttons work intermittently.
 * None of the blue fn keys, like brightness control, work.
 * I see a lot of messages like this to the console:
-
+```
     acpi_tx0: _CRT value is absurd, ignored (256.1C)
-
+```
 ## Things I didn't try
 
 * Firewire.
@@ -110,8 +117,14 @@ The right edge can be used for scrolling.
 
 ## Conclusion
 
-Functionally, the laptop is usable, and it's pretty fast.
+Functionally, the laptop is usable, and it's pretty fast, even with KDE.
 However, the constant noise from the fan is very loud and makes this an unpleasant laptop to use for long.
 If you can stand that, you might be in good shape.
 
 I'd love to hear from you if you are using this setup.
+
+## Update
+
+I've upgraded the machine from 2GB to 4GB of RAM.
+The machine only sees 3.3GB.
+I don't think that is a function of the OS because this is what the BIOS reports upon boot.
