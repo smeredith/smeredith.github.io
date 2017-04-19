@@ -38,5 +38,8 @@ I will shorten this up to three minutes next time to see if that makes it feel m
 
 We had a short retro at the end of the class.
 The students seemed to enjoy the exercise, but felt that the classroom is not well configured for it.
+Some complained of lag with the Cloud9 IDE.
+One student actually could not enter text, so he missed his turn as driver and the next person in the rotation did double duty.
 One said that he liked it because you can progress without getting stuck.
+Another said groups of 3 might work better.
 Tomorrow we will try a variation where all students rotate through the teachers workstation while projecting the screen to the front of the room.
