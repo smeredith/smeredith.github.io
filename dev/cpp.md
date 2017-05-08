@@ -47,6 +47,7 @@ It works pretty well for the small projects I tried it on.
 * mt19937\_64
 * uniform\_int\_distribution
 
+Example:
 
     #include <iostream>
     #include <random>
