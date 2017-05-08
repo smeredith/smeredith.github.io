@@ -1,5 +1,6 @@
 ---
-title: android
+layout: page
+title: Android
 ---
 # Misc
 

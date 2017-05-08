@@ -1,3 +1,7 @@
+---
+layout: page
+title: Ansible
+---
 # installation
 
 * on os x, use the `--ignore-install` option to pip install if you get `Operation no permitted`
