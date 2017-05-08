@@ -3,10 +3,11 @@ layout: page
 title: FreeBSD
 ---
 
+# FreeBSD
 
 * see *Absolute FreeBSD* for good overview
 
-# Install
+## Install
 
 Install public key of ansible host to target freebsd machine:
 
@@ -32,47 +33,47 @@ Uncomment:
 * Connect to wifi. See \<www.bitmine.org\>.
 * Enble screen locker via GUI.
 
-# Update
+## Update
 
-## pkg
+### pkg
 
     # pkg upgrade
 
-## system
+### system
 
-### security patches
+#### security patches
 
     # freebsd-update fetch
     # freebsd-update install
 
-### minor versions
+#### minor versions
 
 See <https://www.freebsd.org/doc/handbook/updating-upgrading-freebsdupdate.html>
 
 Installed packages will continue to work.
 
-### major versions
+#### major versions
 
 See <https://www.freebsd.org/doc/handbook/updating-upgrading-freebsdupdate.html>
 
 Installed packages will require forced upgrade.
 
-# defaults
+## defaults
 
 * system keeps configuration in `defaults` sub dirs
 * you override default config in seperate file of same name
 * system updates the config in `defaults` so you don't have to merge
 * don't copy defaults and edit; empty config file means no changes to default
 
-# sudo
+## sudo
 
 Use `visudo` to allow members of `wheel` to sudo su pkg install sudo visudo:
 
       userX ALL=(ALL) ALL
 
-# Setup
+## Setup
 
-## Raspberry Pi
+### Raspberry Pi
 
 * first boot takes a little while due to auto resize of the disk
 * once resize is done, you can ssh as freebsd, the su to root
@@ -83,7 +84,7 @@ Use `visudo` to allow members of `wheel` to sudo su pkg install sudo visudo:
 * change root password using `passwd`
 * change hostname in `/etc/rc.conf`
 
-## General
+### General
 
 Use `visudo` to allow members of wheel to sudo w/o password:
 
@@ -101,7 +102,7 @@ Install public key of ansible host to target FreeBSD machine:
 
 Do the rest via ansible.
 
-### Add NTFS USB Drive
+#### Add NTFS USB Drive
 
 Install NTFS driver:
 
@@ -123,7 +124,7 @@ I could not get these to mount at boot; hang. I tried adding the following to `/
       UUID=B25ECD4B5ECD08D5 /mnt/ssd ntfs-3g  rw,sync,suid,dev,exec,auto,nouser,async,dmask=000,fmask=111,utf8=1,late      0       2
       UUID=9C0AD9830AD95B3A /mnt/bighdd ntfs-3g rw,sync,suid,dev,exec,auto,nouser,async,dmask=000,fmask=111,utf8=1,late      0       2
 
-### Mount a SMB Drive
+#### Mount a SMB Drive
 
 Need to be su
 
@@ -133,7 +134,7 @@ Need to be su
 * `-N` is to prevent prompting for password
 * get \<uid\> and \<gid\> from `id` command
 
-# Misc
+## Misc
 
 * network speed test
 * reciever: `nc -l 3333 > /dev/null`
@@ -142,26 +143,26 @@ Need to be su
 * (11435232 bytes/sec) from mac to Raspberry Pi 2 running Raspian via ethernet
 * restart a service: `service <service-name> restart`
 
-# Directory structure
+## Directory structure
 
 * `/usr/local/etc`: app config files
 * `/usr/local/share/doc`: app docs
 * `/usr/local/etc/rc.d`: app startup scripts
 
-# Files
+## Files
 
 * `/etc/rc.conf`: startup options
 * `/var/log/messages` system log
 * `/var/run/dmesg.boot` boot messages
 * `/boot/loader.conf` loader settings, boot-time tunables, including kernel sysctl values
 
-# Recovery
+## Recovery
 
 * run `passwd` in single user mode to reset password for root
 * edit fstab in single user mode to resolve boot disk issues
 * edit `/etc/rc.conf` to disable startup app that panics and prevents system from booting
 
-# Dell Inspiron E1505
+## Dell Inspiron E1505
 
 Broadcom BCM4311 802\.11b/g WLAN (driver: bwn).
 The wifi keyboard shortcut works (if enabled in BIOS), but does not change the wifi light on the keyboard one time, need to install new wifi firmware: (download the sources tar first)
@@ -200,9 +201,9 @@ Normal operation:
 * use wifimgr to connect to new AP (writes to wpa\_supplicant.conf and restarts network)
 * `service netif restart` when switching between wireless and wifi
 
-# Desktop Environments
+## Desktop Environments
 
-## Display Manager
+### Display Manager
 
 * see <https://cooltrainer.org/a-freebsd-desktop-howto/>
 * graphical login program
@@ -211,13 +212,13 @@ Normal operation:
 * if you use slim, it will startx so you need to exec the session in .xinitrc
 * a DM can be used to switch between desktop environments or window managers
 
-## file: .xinitrc
+### file: .xinitrc
 
 * executed when xstart is called
 * runs until x session exits
 * can run some apps in the backgroun by launching them before `exec foo-wm`
 
-# Jekyll
+## Jekyll
 
     pkg install ruby22-gems
     gem install jekyll
@@ -227,21 +228,21 @@ Normal operation:
     # local preview
     jekyll serve --host 0.0.0.0 --port 4000 --drafts --watchs
 
-# Burn and img to SD card
+## Burn and img to SD card
 
 Assuming sd card in USB adapter:
 
     gzip -dc ~/Downloads/LibreELEC-RPi2.arm-7.0.2.img.gz | sudo dd of=/dev/da0 obs=64k
 
-# zfs
+## zfs
 
-## datasets
+### datasets
 
     zfs get all <pool>
 
 * a stub is a parent of other datasets
 
-## snapshot
+### snapshot
 
 Create snapshot of all datasets:
 
@@ -259,11 +260,11 @@ List snapshotes:
 
     zfs list -t snapshot
 
-# 7-zip
+## 7-zip
 
 Install and use peazip.
 
-# Printers
+## Printers
 
 Set up using KDE Add Printer.
 
@@ -271,7 +272,7 @@ Brother HL-3170CDW \* \<ipp://192\.168\.0\.15/ipp/port1\> \* Generic PCL 6 drive
 
 Brother 1440 \* \<ipp://192\.168\.0\.18:631/printers/Brother\_HL-1440\_series\>
 
-# Scanners
+## Scanners
 
 See <https://forums.freebsd.org/threads/54100/> and <https://www.freebsd.org/doc/handbook/scanners.html>
 
@@ -286,9 +287,9 @@ In `/etc/devfs.rules`:
     add path ugen1.2 mode 0660 group usb
     add path usb/1.2.0 mode 0666 group usb
 
-# Compaq nc8430
+## Compaq nc8430
 
-## Suspend and Resume
+### Suspend and Resume
 
 * `acpiconf -s 3` to suspend
 * S4 doesn?t work, with or without `hw.acpi.s4bios`

@@ -3,14 +3,14 @@ layout: page
 title: Linux
 ---
 
-# Misc
+# Linux
 
 * Path is set in `~/.profile`. Export not required.
 * Dictionary file: `/usr/share/dict/words`. To install: `sudu apt-get install wamerican`.
 * Allowable chars for filenames: \[a-zA-Z0-9-\_.\].
 * To work with Windows on a network, limit hostname to 15 characters or less.
 
-# Hyper-V Disk Scheduler
+## Hyper-V Disk Scheduler
 
 Noop is the best disk scheduler for VHDs. In `/etc/default/grub` change
 
@@ -31,9 +31,9 @@ Restart. Check the scheduler like this:
 
 The selected scheduler will be in square brackets.
 
-# SSH
+## SSH
 
-## Configuration
+### Configuration
 
 * System-wide client configuration is in `/etc/ssh/ssh_config`.
 * System-wide daemon configuration is in `/etc/ssh/sshd_config`.
@@ -63,13 +63,13 @@ To do it manually, append the contents of `~/.ssh/id_rsa.pub` to the end of `~/.
 
     $ cat ~/.ssh/id_rsa.pub | ssh host 'cat >> ~/.ssh/authorized_keys'
 
-## Usage
+### Usage
 
 To execute a single command on host:
 
     $ ssh host command
 
-# Clipboard
+## Clipboard
 
 You can use the x clipboard over ssh if X forwarding is in use (use -Y) and one x app is running.
 
@@ -85,7 +85,7 @@ using Vim with `+xterm_clipboard` on the remote, then `*` will copy to
 the x-clipboard. From SSH, I could only get this to work if at least one
 X app is running.
 
-# Samba
+## Samba
 
 To share, edit /etc/samba/smb.conf.
 
@@ -116,7 +116,7 @@ or on Raspian:
 
     $ sudo service samba restart
 
-# davfs
+## davfs
 
     $ sudo apt-get install davfs2
     $ sudo mkdir /mnt/sme
@@ -148,7 +148,7 @@ Or, to make it mount on boot automatically, change `/etc/fstab`:
 
 The `_netdev` makes boot wait until network is available.
 
-## rsync
+### rsync
 
 Sync to make two directories the same:
 
@@ -165,7 +165,7 @@ Move files from one directory to another:
 
     $ rsync -v --remove-source-files /mnt/sme/onedrive-jessi/Pictures/Camera\ Roll/* /mnt/bighdd/documents/Jessica/photos/camera-roll
 
-# Bash
+## Bash
 
 * Go to beginning of line: ctrl-a
 * Go to end of line: ctrl-e
@@ -182,11 +182,11 @@ To run a command in a loop:
 
     RET=0; while [ $RET -eq 0 ]; do legacytest; RET=$?; done
 
-## bashrc
+### bashrc
 
 Make customizations here. Includ this file from .bash\_profile.
 
-# Tar/Zip
+## Tar/Zip
 
 Make `tar.gz`
 
@@ -200,7 +200,7 @@ Extract `tar.bz2`
 
     $ tar -jxf filename.tar.bz2
 
-# OpenVPN
+## OpenVPN
 
 Host: `stmerubus14.cloudapp.net`\
 SSH password auth has been disabled on this machine. Both `ubrick` and
@@ -221,7 +221,7 @@ protocol. Tried this script on the server:
 Disabling IPV6 in Linux didn't make a difference: OpenVPN still connected
 using UDP6\. Changed the APN settings on the phone worked.
 
-# AWS VPN Server
+## AWS VPN Server
 
 See <https://github.com/sarfata/voodooprivacy> and
 <https://www.webdigi.co.uk/blog/2015/how-to-setup-your-own-private-secure-free-vpn-on-the-amazon-aws-cloud-in-10-minutes/>.
@@ -235,7 +235,7 @@ this. You need to set it up each time you want to use it and delete the
 stack when finished. I couldn?t get the VPN to connect using T-Mobile
 LTE. I was successful with PPTP over Wi-Fi.
 
-# Add a Swap File
+## Add a Swap File
 
 You can have more than one swap file plus a swap partition. Use `free` to check the swap status.
 
@@ -251,7 +251,7 @@ Edit `/etc/fstab` to add:
 
     /10gb.swap  none  swap  sw  0 0
 
-# Add New VHD
+## Add New VHD
 
 Find the new vhd:
 
@@ -302,7 +302,7 @@ Own it:
 
     $ sudo chown -R smeredith:smeredith /mnt/build3
 
-# Photos
+## Photos
 
 To add keywords to the metadata for a file:
 
@@ -337,7 +337,7 @@ To arrange multiple images horizonatally in a single image:
 
     $ convert file1.jpeg file2.jpeg +append result
 
-# OpenDNS
+## OpenDNS
 
 Update /etc/default/ddclient
 
@@ -357,11 +357,11 @@ To test
 
     sudo ddclient -verbose -file /etc/ddclient.conf
 
-# CUPS Printing
+## CUPS Printing
 
 * Admin via HTTP using port 631\.
 
-# Crontab
+## Crontab
 
 To allow it to send mail, add to crontab file:
 
@@ -405,7 +405,7 @@ Install Sudo
     apt-get install sudo
     adduser <user> sudo
 
-# stdio
+## stdio
 
 stderr
 

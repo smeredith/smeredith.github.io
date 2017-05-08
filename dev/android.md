@@ -3,7 +3,7 @@ layout: page
 title: Android
 ---
 
-# Misc
+# Android
 
 * Debugging Native SO: http://blog.dornea.nu/2015/07/01/debugging-android-native-shared-libraries/
 * Libraries: http://www.codeproject.com/Articles/1004611/Open-source-Android-libraries-every-programmer-sho

@@ -3,34 +3,36 @@ layout: page
 title: C++
 ---
 
-# Coding Conventions
+# C++
+
+## Coding Conventions
 
 * <http://llvm.org/docs/CodingStandards.html>
 * <https://google.github.io/styleguide/cppguide.html>
 * <https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md>
 
-# Static Analysis
+## Static Analysis
 
-## cppcheck
+### cppcheck
 
     $ cppcheck --enable=all --suppress=missingIncludeSystem -I src/lib *.cpp
 
-## Clang scan-build
+### Clang scan-build
 
     $ mkdir buld-analyze
     $ cd build-analyze
     $ cmake -DCMAKE_C_COMPILER=/usr/share/clang/scan-build-3.6/ccc-analyzer ..
     $ scan-build make
 
-## Clang-tidy
+### Clang-tidy
 
     $ clang-tidy -header-filter='.*' -checks=-*,clang-analyzer-*,google-build-*,google-explicit-constructor,google-readability-*,google-runtime-*,-google-runtime-int,llvm-*,-llvm-header-guard,misc-*,readability-* *.cpp
 
-## Clang-moderize
+### Clang-moderize
 
     $ clang-moderize *.cpp
 
-## Include What You Use
+### Include What You Use
 
 See <https://github.com/include-what-you-use/include-what-you-use>.
 Clone the project. Build it out-of-tree. Copy the `include-what-you-use`
@@ -40,7 +42,7 @@ binary to `/usr/bin`. Requires `compile_commands.json`.
 
 It works pretty well for the small projects I tried it on.
 
-# Random
+## Random
 
 * random\_device
 * mt19937
@@ -62,7 +64,7 @@ Example:
         }
     }
 
-# LLVM/Clang
+## LLVM/Clang
 
 To install, add llvm to apt:
     <http://llvm.org/apt/>
@@ -81,7 +83,7 @@ add it to the project root.
     $ cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
     $ ln -s $PWD/compile_commands.json ../
 
-## Usual Cmake Options
+### Usual Cmake Options
 
     add_compile_options(-std=c++14)
     add_compile_options(-fno-rtti)
@@ -96,7 +98,7 @@ add it to the project root.
     add_compile_options(-pedantic)
     add_compile_options(-Werror)
 
-## Code Coverage
+### Code Coverage
 
 See <http://gcovr.com/guide.html> and
 <http://logan.tw/posts/2015/04/28/check-code-coverage-with-clang-and-lcov/>,
@@ -116,13 +118,13 @@ and link to:
 
 The coverage data files are put next to the object files.
 
-# Performance
+## Performance
 
-## Benchmarking
+### Benchmarking
 
 See <https://github.com/google/benchmark>
 
-## Profiling with perf
+### Profiling with perf
 
 For profiling, use the Linux tool "perf".
 
@@ -146,14 +148,14 @@ For profiling, use the Linux tool "perf".
 Can use a file for flags and pass this to compiler via: `$(< flags)`.
 Link with `-lbenchmark`.
 
-### Overview
+#### Overview
 
     % perf stat ./a.out
 
 * task-clock: CPU time
 * Other stats.
 
-### Call Graph
+#### Call Graph
 
     % perf record ./a.out
     % perf report
@@ -182,7 +184,7 @@ lose that context. (Nothing to do with fractals). "0\.5" is a filter for
 the lowest times. "caller" inverts the graph: expand to see which
 functions a function calls, not the callers.
 
-### Defeat the Optimizer
+#### Defeat the Optimizer
 
 (Doesn't work on VS)
 
@@ -209,12 +211,12 @@ To use:
 
 But these functions don?t generate any code so won?t affect benchmarks.
 
-## Profiling use gprof
+### Profiling use gprof
 
 * build using `-pg`
 * did not get this to work with clang
 
-## Heap Profiler
+### Heap Profiler
 
 <http://milianw.de/blog/heaptrack-a-heap-memory-profiler-for-linux>
 
@@ -225,7 +227,7 @@ But these functions don?t generate any code so won?t affect benchmarks.
     $ cmake -DCMAKE_BUILD_TYPE=Release ..
     $ make install
 
-# Operators
+## Operators
 
 Make unary operators members.
 
@@ -305,13 +307,13 @@ Implement `operator++(int)` in terms of `operator++()`.
 * could use std::rel\_ops to define the trivial ones, but be careful as it might add operators to things you didn't intend
 * boost::totally\_ordered can be used to do the same thing in a more sane fashion
 
-# No Raw Loops
+## No Raw Loops
 
 * This concept comes from Scott Meyers in 2001 and Sean Parent in his talk C++ Seasoning <https://channel9.msdn.com/Events/GoingNative/2013/Cpp-Seasoning>
 * See also *A Tour of C++*, Bjarne Stroustrup, p166 "Know your standard-library algorithms and prefer them to hand-crafted loops."
 * range-for is probably better than for\_each()
 
-# No Inheritance for Implementation Reuse
+## No Inheritance for Implementation Reuse
 
 * <http://www.peterprovost.org/blog/2008/06/30/Inherit-to-Be-Reused2c-Not-to-Reuse/>
 * <http://www.javaworld.com/article/2073649/core-java/why-extends-is-evil.html>
@@ -319,12 +321,12 @@ Implement `operator++(int)` in terms of `operator++()`.
 * see <https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53#.6y5q4zrei>
 * See Item 36-38 in C++ Coding Standards, 101 Rules
 
-# STL
+## STL
 
 Interview on the design of the STL and the flaws of OOP:
 <http://www.stlport.org/resources/StepanovUSA.html>
 
-# Type Deduction
+## Type Deduction
 
 * <https://www.youtube.com/watch?v=wQxj20X-tIU>
 
@@ -361,13 +363,13 @@ Observing Deduced Types
       auto y = rx;
       TD<decltype(y)> tType;
 
-# Move Semantics
+## Move Semantics
 
 * <https://skillsmatter.com/skillscasts/2188-move-semanticsperfect-forwarding-and-rvalue-references>
 * <http://thbecker.net/articles/rvalue_references/section_01.html>
 * <http://jlebar.com/2016/5/28/A_Practical_Introduction_to_C%2B%2B11_Rvalue_References.html>
 
-# Special Member Functions
+## Special Member Functions
 
 * <http://stackoverflow.com/questions/24342941/what-are-the-rules-for-automatic-generation-of-move-operations#24512883>
 * <https://msdn.microsoft.com/en-us/library/dn457344.aspx>

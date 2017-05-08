@@ -1,4 +1,9 @@
-# Misc
+---
+layout: page
+title: Git
+---
+
+# Git
 
 To see the history for line 13 in the file
     `file.xml`:
@@ -9,15 +14,15 @@ To see the files in a commit:
 
     $ git diff-tree --no-commit-id --name-only -r <commit-id>
 
-# Installing
+## Installing
 
-## Linux
+### Linux
 
     $ sudo add-apt-repository ppa:git-core/ppa
     $ sudo apt-get update
     $ sudo apt-get install git
 
-# Difftool/Mergetool
+## Difftool/Mergetool
 
 On
     Windows:
@@ -27,23 +32,23 @@ On
     > git config --global diff.tool gvimdiff
     > git config --global merge.tool gvimdiff
 
-# Commit Messages
+## Commit Messages
 
 * <http://chris.beams.io/posts/git-commit/>
 
-# Merge vs. Rebase
+## Merge vs. Rebase
 
 * <http://mislav.uniqpath.com/2013/02/merge-vs-rebase/>
 
-# Workflow models
+## Workflow models
 
 * Cactus: <https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/>
 * Git-flow: <http://nvie.com/posts/a-successful-git-branching-model/>
 * Github-flow: <http://scottchacon.com/2011/08/31/github-flow.html>
 
-# Credential Helper
+## Credential Helper
 
-## Linux
+### Linux
 
     $ git config --global credential.helper "cache --timeout=3600"
 
@@ -53,11 +58,11 @@ or
 
 Note that this will store your creds in plaintext in `~/.git-credentials`.
 
-## Windows
+### Windows
 
     $ git config --global credential.helper wincred
 
-# AutoCrLf
+## AutoCrLf
 
     core.autocrlf = false
 
@@ -96,7 +101,7 @@ Use `.gitattributes` to specify the line endings for a specific file:
 
     vimfiles/notes.txt text eol=lf
 
-# Tags
+## Tags
 
 To add a tag:
 
@@ -110,16 +115,16 @@ To push tags:
 
     $ git push origin --tags
 
-# Init bare repo on UNC path
+## Init bare repo on UNC path
 
     git init --bare \\server\path\repo.git
     git clone //server/path/repo.git
 
-# git-log
+## git-log
 
     'git log' [<options>] [<revision range>] [[\--] <path>...]
 
-# Commonly Ignored Files
+## Commonly Ignored Files
 
     #OS junk files
     [Tt]humbs.db
@@ -214,7 +219,7 @@ To push tags:
     *.iws
     .idea/
 
-# Git Grep
+## Git Grep
 
 * git grep text (ignores .ignore files)
 * git log --grep=text (filter commits with text in the message)

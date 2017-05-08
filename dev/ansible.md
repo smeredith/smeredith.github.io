@@ -3,18 +3,20 @@ layout: page
 title: Ansible
 ---
 
-# installation
+# Ansible
+
+## installation
 
 * on os x, use the `--ignore-install` option to pip install if you get `Operation no permitted`
 
-# prereqs on target
+## prereqs on target
 
-## unix
+### unix
 
 * need to install `sudo` on target machine
     * user needs to be allowed to su (`visudo` on freebsd and allow wheel)
 
-## windows
+### windows
 
 * run this powershell command on target machine
 
@@ -27,7 +29,7 @@ title: Ansible
 
     ConfigureRemotingForAnsible.ps1
 
-# playbooks
+## playbooks
 
 * `become: true` in playbook for su instead of `-s` when running playbook
 * `-K` to prompt for su password
@@ -35,6 +37,6 @@ title: Ansible
 
     ansible-playbook -i hosts/host -K book.yml
 
-# misc
+## misc
 
 * see facts: `ansible all -m setup`
