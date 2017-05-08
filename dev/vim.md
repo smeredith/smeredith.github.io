@@ -7,10 +7,10 @@ For a set of plugins that makes a lot of sense, see <https://www.youtube.com/wat
 
 ## ToDo
 
-[ ] check out the exchange.vim plugin
-[ ] learn about expression register
-[ ] stop using dw etc and start using diw and daw
-[ ] stop using esc and start using ctrl-[
+- [ ] check out the exchange.vim plugin
+- [ ] learn about expression register
+- [ ] stop using dw etc and start using diw and daw
+- [ ] stop using esc and start using ctrl-[
 
 ## Build
 
@@ -103,19 +103,19 @@ To list:
 
 To insert: <Ctrl-K>nn
 
-* ™ | TM
-* © | Co
-* ® | Rg
-* ✓ | OK
-* ✗ | XX
-* ° | DG
-* á | a'
-* ¿ | ?I
-* ² | 2S
-* ₂ | 2s
-* · | .M
-* ∞ | 00
-* ≠ | !=
+    ™ : TM
+    © : Co
+    ® : Rg
+    ✓ : OK
+    ✗ : XX
+    ° : DG
+    á : a'
+    ¿ : ?I
+    ² : 2S
+    ₂ : 2s
+    · : .M
+    ∞ : 00
+    ≠ : !=
 
 See also: http://ricostacruz.com/cheatsheets/vim-digraphs.html
 
