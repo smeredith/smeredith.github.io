@@ -3,8 +3,6 @@ layout: page
 title: FreeBSD
 ---
 
-# FreeBSD
-
 * see *Absolute FreeBSD* for good overview
 
 ## Install

@@ -3,8 +3,6 @@ layout: page
 title: C++
 ---
 
-# C++
-
 ## Coding Conventions
 
 * <http://llvm.org/docs/CodingStandards.html>

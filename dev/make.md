@@ -3,8 +3,6 @@ layout: page
 title: Make
 ---
 
-# Make
-
 ## Debugging
 
 To print the target name and the full list of dependencies, add this to a recipe:

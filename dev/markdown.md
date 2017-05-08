@@ -3,8 +3,6 @@ layout: page
 title: Markdown
 ---
 
-# Markdown
-
 * style guide: <http://www.cirosantilli.com/markdown-style-guide/>
 * lint tool: <https://github.com/wooorm/remark-lint>
 * to embed a code block inside a list, use a fence and add a space before the opening "\`\`\`"

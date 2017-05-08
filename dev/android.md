@@ -3,8 +3,6 @@ layout: page
 title: Android
 ---
 
-# Android
-
 * Debugging Native SO: http://blog.dornea.nu/2015/07/01/debugging-android-native-shared-libraries/
 * Libraries: http://www.codeproject.com/Articles/1004611/Open-source-Android-libraries-every-programmer-sho
 * Android bytecode: https://mariokmk.github.io/programming/2015/03/06/learning-android-bytecode.html

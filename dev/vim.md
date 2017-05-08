@@ -3,8 +3,6 @@ layout: page
 title: Vim
 ---
 
-# VIM
-
 For a set of plugins that makes a lot of sense, see <https://www.youtube.com/watch?v=wlR5gYd6um0>.
 
 ## ToDo

@@ -3,8 +3,6 @@ layout: page
 title: Sorting
 ---
 
-# Sorting
-
 ## Quicksort
 
 Average O(n log n).

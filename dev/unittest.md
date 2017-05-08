@@ -3,8 +3,6 @@ layout: page
 title: Unit Tests
 ---
 
-# Unit Tests
-
 ## Naming Strategy
 
 http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html

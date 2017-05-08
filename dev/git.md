@@ -3,8 +3,6 @@ layout: page
 title: Git
 ---
 
-# Git
-
 To see the history for line 13 in the file
     `file.xml`:
 

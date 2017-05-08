@@ -3,8 +3,6 @@ layout: page
 title: Misc
 ---
 
-# Misc Topics
-
 See https://www3.cs.stonybrook.edu/~algorith/# for more information on many of these topics.
 
 ## Topological Sort

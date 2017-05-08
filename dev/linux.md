@@ -3,8 +3,6 @@ layout: page
 title: Linux
 ---
 
-# Linux
-
 * Path is set in `~/.profile`. Export not required.
 * Dictionary file: `/usr/share/dict/words`. To install: `sudu apt-get install wamerican`.
 * Allowable chars for filenames: \[a-zA-Z0-9-\_.\].
