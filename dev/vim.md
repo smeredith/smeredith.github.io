@@ -101,7 +101,7 @@ To list:
     :dig
     :digraphs
 
-To insert: <Ctrl-K>nn
+To insert: \<Ctrl-K\>nn
 
     ™ : TM
     © : Co
