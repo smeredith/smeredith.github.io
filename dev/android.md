@@ -2,6 +2,7 @@
 layout: page
 title: Android
 ---
+
 # Misc
 
 * Debugging Native SO: http://blog.dornea.nu/2015/07/01/debugging-android-native-shared-libraries/
