@@ -5,7 +5,7 @@ title: Radio Interface
 
 I have designed and built a radio interface based on the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
 My interfaces adds
-- a serial port for PTT control via RTS and/or CAT/CI-V control of the radio,
+- a serial port for PTT control via RTS and/or CAT/CI-V control of the radio with TX and RX on the DB-9,
 - a VOX circuit,
 - a GPS,
 - an integrated USB hub so only one cable is required between the computer and the interface,
@@ -32,8 +32,25 @@ The dimensions of the board are slightly smaller than those of the DRA-30, allow
 
 ## DRA-30 Modifications
 
-I removed the blue "COMM OK" LED and replaced it with a jumper.
-My circuit uses this signal to decided if it's safe to trigger PTT.
-The blue LED is replicated on the add-on board.
+It's easier to make these modifications while you are building the board instead of desoldering things.
 
-I added 
+I did not install the R-PTT resistors.
+
+I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 pins for the serial port TX and RX instead.
+
+I removed the USB type B connector and replaced it with a 4-pin square jumper.
+This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of to the computer.
+The pin spacing is not quite right for a standard header, but I was able to manipulate the pins enough to make it fit.
+
+I removed the blue "COMM OK" LED and replaced it with a jumper.
+Like the DRA-30, my circuit use this signal to decided if it's safe to trigger PTT.
+The blue LED is replicated on my add-on board.
+
+I added a jumper in holes marked "2" and "4" to get access to pins 2 and 4 on the DB-9.
+The holes happen to be the right distance appart to accept a standard 2-pin jumper.
+I could have used JU1 and JU2 for this but chose not to.
+
+I added a 1-pin jumper to the hole marked "7" to get access to pin 7 on the DB-9.
+I put 5V on this pin to power a serial port level converter inside the DB-9 case if needed.
+
+
