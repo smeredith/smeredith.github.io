@@ -9,7 +9,7 @@ My add-on board adds:
 - a VOX circuit with adjustable sensitivity and tail hang time,
 - a GPS,
 - an integrated USB hub so only one cable is required between the computer and the interface,
-- an unused USB port on the integrated hub,
+- an extra USB port on the integrated hub,
 - 5V on one pin of the DB-9.
 
 The add-on board adds serial port TX and RX as TTL-level signals to the original DB-9 connector on the DRA-30.
@@ -38,7 +38,7 @@ So the motivation for this project was adding a serial port so that the software
 Most software supports this scheme.
 
 I also wanted VOX in order to use some software that doesn't support either of the methods described above.
-As of yet I haven't needed it, but the circuitry is implemented and it works really well.
+As of yet I haven't needed it, but the feature is implemented and it works really well.
 It certainly easier to use than the RTS method.
 
 Simply buying a DRA-65 or DRA-70, which include VOX, would have been a perfectly fine solution for the PTT problem.
@@ -51,7 +51,7 @@ Plus it was fun and educational to make.
 I have mixed feelings about the DB-9.
 On the one hand, it's an ancient and clunky connector that extends a good distance out the back of the interface.
 On the other hand, it is easy to wire up whatever cable configuration is needed for any radio, including space for a capacitor and resistor that some HTs require, or a circuit to convert the UART TTL signals to conforming RS232 signals.
-A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the pins.
+A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the pins of the radio connector.
 
 ![db-9 circuit](db-9-circuit.jpg)
 
@@ -61,7 +61,7 @@ It's easier to make these modifications while you are building the board instead
 
 I did not install the R-PTT resistors.
 
-I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 pins for the serial port TX and RX instead.
+I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 lines for the serial port TX and RX instead.
 
 I removed the USB type B connector and replaced it with a 4-pin square header.
 This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of directly to the computer.
@@ -91,13 +91,11 @@ The microcontroller listens to the following inputs:
 - VOX tail time trimpot setting.
 
 If the RTS DIP switch is OFF, then the serial port is ignored.
-Otherwise, if RTS goes low, PTT is asserted.
+Otherwise, if RTS goes low, PTT is triggered.
 
 If the VOX DIP switch is OFF, the VOX circuitry input is ignored.
-Otherwise, if the audio detect signal is above the threshold specified by the VOX sensitivity pot, PTT is asserted.
+Otherwise, if the audio detect signal is above the threshold specified by the VOX sensitivity pot, PTT is triggered.
 PTT is not released until a time specified by the tail time trimpot after the audio detect level drops off.
-
-In my next board revision, I will add the COMM OK signal from the DRA-30 555 timer as an input to the microcontroller as a requirement to assert PTT.
 
 ## VOX
 
@@ -120,8 +118,8 @@ The microcontroller triggers a MOSFET to ground the PTT line on the DB-9.
 The SMT MOSFET can sink 300mA from the radio's PTT line to ground, which is plenty for my setup.
 I can also solder in a through-hole BS170 should I need more current, up to 500mA.
 
-[This article](http://www.masterscommunications.com/products/radio-adapter/faq/hardware-ptt.html) states that the original DRA interface design also used a MOSFET but they switch to a transistor due to RFI affecting the MOSFET's reliability.
-I will stick with my MOSFET and see what happens.
+[This article](http://www.masterscommunications.com/products/radio-adapter/faq/hardware-ptt.html) states that the original DRA interface design also used a MOSFET but they switched to a transistor due to RFI affecting the MOSFET's reliability.
+I will stick with my MOSFET for now and see what happens.
 
 A red LED lights when PTT is asserted.
 
@@ -130,17 +128,21 @@ If it holds it for longer than 5 minutes continuously, it will release it and wo
 I pulled this number out of the air, but if it proves to be too short I can change the firmware.
 In a future revision, I would like to add an LED to indicate this condition.
 
+In my next board revision, I will add the COMM OK signal from the DRA-30 555 timer as an input to the microcontroller as a additional requirement to assert PTT.
+
 ## Serial Port
 
-I chose the FT232R for the serial port chip.
+I chose the FTDI FT232R USB-to-serial port chip.
 I like this chip because I can configure it via a utility program if I ever need to invert the TX or RX signal.
 It also solves a problem with Windows asserting RTS when at inopportune times.
 
 Windows will assert RTS several times when the serial port is powered up, and when some other USB serial port is added or removed from the system.
-If your radio is connected to the interface when this happens, PTT will assert and your radio will transmit a few short pulses.
-This is a pain and you have to manage it manually by turning on the radio last or connecting it after Windows has finished its thing.
-But the FT chip can be configured to prevent this via the device manager: under the advanced properties settings, check "Disable Modem Ctrl At Startup" and uncheck "Serial Enumerator".
+If your radio is connected to the interface when this happens, PTT will trigger and your radio will transmit a few short pulses.
+This is a pain and you have to manage it manually by turning on the radio last or connecting it after Windows has finished doing its thing.
+But the FTDI chip can be configured to prevent this via the device manager: under the advanced properties settings, check "Disable Modem Ctrl At Startup" and uncheck "Serial Enumerator".
 This is a huge convenience.
+
+There TX and RX LEDs on the board that are handy for troubleshooting.
 
 ## USB Hub
 
@@ -160,4 +162,23 @@ By default, it spits out NMEA sentences at a rate of once per second at 9600 bau
 This is what I want and I didn't have to configure it in any way.
 This is useful for APRS, Winlink position reports, and for accurately syncing the computer's time if a network is not available.
 
+## Case
 
+You can use the original DRA case if you don't need the GPS and stacked USB connector.
+Since that case is translucent, you can see the LEDs from the outside.
+
+The larger case I found has ventilation slits in the top that allow me to see the state of the LEDs.
+But I have to be looking at it from the right angle to see them.
+I would like to mount the LEDs on the outside so they are easier to see.
+I have yet to decide if this change is worth it.
+
+## Final Thoughts
+
+I have been using this interface and several prototype versions for several months with a Yaesu FT-530 HT and a Kenwood TM-V71A dual-band mobile.
+I have used SoundModem, Direwolf, Vara FM, Winlink, APRS, and Fldigi.
+It is serving me well, but I already have ideas for the next version:
+- use COMM OK as a prerequisite to trigger PTT,
+- make the dimensions of the board slightly smaller,
+- route DTR to the microcontroller for future use,
+- mount the indicator LEDs on the outside of the case,
+- add an LED to the microcontroller to indicate PTT timeout.
