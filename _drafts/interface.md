@@ -4,7 +4,7 @@ title: Radio Interface
 ---
 
 I have designed and built a radio interface based on the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
-My interfaces adds
+My interfaces adds:
 - a serial port for PTT control via RTS and/or CAT/CI-V control of the radio with TX and RX on the DB-9,
 - a VOX circuit with adjustable sensitivity and tail hang time,
 - a GPS,
@@ -38,7 +38,7 @@ I did not install the R-PTT resistors.
 I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 pins for the serial port TX and RX instead.
 
 I removed the USB type B connector and replaced it with a 4-pin square header.
-This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of to the computer.
+This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of directly to the computer.
 The pin spacing is not quite right for a standard header, but I was able to manipulate the pins enough to make it fit.
 
 I added a 2-pin header in holes marked "2" and "4" to get access to pins 2 and 4 on the DB-9.
@@ -52,30 +52,28 @@ I snipped about 1mm off the header pins to allow the board to sit lower on the D
 I should have made the dimensions of the board slightly smaller so that it would fit inside the ridges on the lid of the case.
 This would have made snipping the header pins unnecessary, and I will make this change on the next revision of the board.
 
-## PTT
-
-### Motivation
+## Project Motivation
 
 The DRA-30 uses a GPIO on the Cmedia CM119A sound card chip for PTT.
 This works fine for Vara FM and SoundModem.
-But I wanted to use fldigi and Direwolf on Windows, but neither supported this method of PTT.
+But I wanted to use Fldigi and Direwolf on Windows, but neither supported this method of PTT.
 So the motivation for this project was adding a serial port so that the software could assert RTS to trigger PTT.
 Most software supports this scheme.
 
 I also wanted VOX as a last resort in case I wanted to use some software that doesn't support either of the methods described above.
 As of yet I haven't needed it, but the circuitry is implemented and it works.
 
-### Microcontroller
+## Microcontroller
 
 There is also an Attiny84 microcontroller on the board.
 This simplifies the PTT implementation.
 The microcontroller listens to the following inputs:
-- RTS signal from the serial port chip
-- VOX circuit audio detect level
-- RTS DIP switch position
-- VOX DIP switch position
-- VOX sensitivity trimpot setting
-- VOX tail time trimpot setting
+- RTS signal from the serial port chip,
+- VOX circuit audio detect level,
+- RTS DIP switch position,
+- VOX DIP switch position,
+- VOX sensitivity trimpot setting,
+- VOX tail time trimpot setting.
 
 If the RTS DIP switch is OFF, then the serial port is ignored.
 Otherwise, if RTS goes low, PTT is asserted.
@@ -84,14 +82,15 @@ If the VOX DIP switch is OFF, the VOX circuitry input is ignored.
 Otherwise, if the audio detect signal is above the threshold specified by the VOX sensitivity pot, PTT is asserted.
 PTT is not released until a time specified by the tail time trimpot after the audio detect level drops off.
 
-### PTT
+In my next board revision, I will add the COMM OK signal from the DRA-30 555 timer as an input to the microcontroller as a requirement to assert PTT.
+
+## PTT
 
 The microcontroller triggers a MOSFET to ground the PTT line on the DB-9.
-The SMT MOSFET can sink 300mA, which is plenty for my setup.
+The SMT MOSFET can sink 300mA from the radio's PTT line to ground, which is plenty for my setup.
 I can also solder in a through-hole BS170 should I need more current, up to 500mA.
-A red LED lights when PTT is asserted.
 
-In my next board revision, I will add the COMM OK signal from the DRA-30 555 timer as an input to the microcontroller as a requirement to assert PTT.
+A red LED lights when PTT is asserted.
 
 ## UART
 
@@ -103,3 +102,23 @@ Windows will assert RTS several times when the serial port is detected, or some 
 If your radio is connected to the interface when this happens, PTT will assert and your radio will transmit a few short pulses.
 This is a pain and you have to manage it manually by turning on the radio last or connecting it after Windows has finished its thing.
 But the FT chip can be configured to prevent this via the device manager: under the advanced properties settings, check "Disable Modem Ctrl At Startup" and uncheck "Serial Enumerator".
+This is a huge convenience.
+
+## USB Hub
+
+The UART is a USB device.
+Without a hub, I would need two USB connections to the computer.
+So I built the USB hub into the add-on board--it's a chip and a handful of capacitors and resistors.
+Now the hub is the only thing connected to the computer, and the serial port, DRA-30, and GPS all use ports on the hub.
+There is one USB port left over on the hub for future expansion.
+
+## GPS
+
+Two of the USB hub ports are connected to a stacked double USB connector on the add-on board.
+The GPS is an unmodified dongle from u-blox that plugs into that connector.
+It appears to the computer as a serial port device.
+By default, it spits out NMEA sentences once per second at 9600 baud.
+This is what I want and I didn't have to configure a thing on it.
+This is useful for APRS, Winlink position reports, and for syncing the computer's time if a network is not available.
+
+
