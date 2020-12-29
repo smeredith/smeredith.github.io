@@ -125,6 +125,11 @@ I will stick with my MOSFET and see what happens.
 
 A red LED lights when PTT is asserted.
 
+The microcontroller monitors the time it holds PTT.
+If it holds it for longer than 5 minutes continuously, it will release it and won't assert it again until it is reset via a power cycle.
+I pulled this number out of the air, but if it proves to be too short I can change the firmware.
+In a future revision, I would like to add an LED to indicate this condition.
+
 ## Serial Port
 
 I chose the FT232R for the serial port chip.
