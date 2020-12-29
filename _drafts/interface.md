@@ -3,18 +3,18 @@ layout: post
 title: Radio Interface
 ---
 
-I have designed and built a radio interface based on the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
+I have designed and built a radio interface add-on board for use with the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
 My add-on board adds:
 - a serial port for PTT control via RTS and/or CAT/CI-V control of the radio with TX and RX on the DB-9,
 - a VOX circuit with adjustable sensitivity and tail hang time,
 - a GPS,
 - an integrated USB hub so only one cable is required between the computer and the interface,
 - an unused USB port on the integrated hub,
-- a USB-C connector in place of the USB type B connector on the DRA-30,
-- access to the DRA-30 trimpots and LEDs via holes in the add-on board PCB..
+- 5V on one pin of the DB-9.
 
-The interface uses the original DB-9 connector on the DRA-30 and adds the serial port TX and RX as TTL-level signals.
+The add-on board adds serial port TX and RX as TTL-level signals to the original DB-9 connector on the DRA-30.
 It also adds 5V to one of the lines to support converting the TTL signals to real RS232 level signals downstream of the interface.
+This configuration is in no way standard and custom cables are required for every radio.
 
 ![interface in case](interface-in-case.jpg)
 ![connected boards](connected-boards.jpg)
@@ -23,6 +23,8 @@ It also adds 5V to one of the lines to support converting the TTL signals to rea
 The add-on board is a circuit board that sits on top of the DRA-30, making electrical connections to it via header receptacles on the bottom that connect to header pins on the DRA-30.
 Some of those headers come with the DRA-30, and some I had to solder on.
 The add-on board sits very low on the DRA-30 allowing it to fit inside the original DRA-30 case (when the tall stacked USB connector for the GPS is not installed.)
+A USB-C connector replaces of the USB type B connector on the DRA-30.
+Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts in the add-on board PCB.
 
 ## Project Motivation
 
@@ -35,8 +37,9 @@ I'm not willing to do that.
 So the motivation for this project was adding a serial port so that the software could assert RTS to trigger PTT.
 Most software supports this scheme.
 
-I also wanted VOX as a last resort in case I wanted to use some software that doesn't support either of the methods described above.
-As of yet I haven't needed it, but the circuitry is implemented and it works.
+I also wanted VOX in order to use some software that doesn't support either of the methods described above.
+As of yet I haven't needed it, but the circuitry is implemented and it works really well.
+It certainly easier to use than the RTS method.
 
 Simply buying a DRA-65 or DRA-70, which include VOX, would have been a perfectly fine solution for the PTT problem.
 Or add a downstream VOX circuit after the DB-9, although the audio levels of the DRA-30 are too low to drive [the VOX-10](http://www.masterscommunications.com/products/radio-adapter/vox10/vox10.html).
