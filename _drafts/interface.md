@@ -13,7 +13,7 @@ My add-on board adds:
 - 5V on one pin of the DB-9.
 
 The add-on board adds serial port TX and RX as TTL-level signals to the original DB-9 connector on the DRA-30.
-It also adds 5V to one of the lines to support converting the TTL signals to real RS232 level signals downstream of the interface.
+It also adds 5V to one of the lines to support converting the TTL signals to real RS-232 level signals downstream of the interface.
 This configuration is in no way standard and custom cables are required for every radio.
 
 ![interface in case](interface-in-case.jpg)
@@ -48,9 +48,9 @@ Plus it was fun and educational to make.
 
 ## DB-9
 
-I have mixed feelings about the DB-9.
+I have mixed feelings about the DB-9 (DE-9 for the pedantic.)
 On the one hand, it's an ancient and clunky connector that extends a good distance out the back of the interface.
-On the other hand, it is easy to wire up whatever cable configuration is needed for any radio, including space for a capacitor and resistor that some HTs require, or a circuit to convert the UART TTL signals to conforming RS232 signals.
+On the other hand, it is easy to wire up whatever cable configuration is needed for any radio, including space for a capacitor and resistor that some HTs require, or a circuit to convert the UART TTL signals to conforming RS-232 signals.
 A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the pins of the radio connector.
 
 ![db-9 circuit](db-9-circuit.jpg)
@@ -70,9 +70,11 @@ The pin spacing is not quite right for a standard header, but I was able to mani
 I added a 2-pin header in holes marked "2" and "4" to get access to pins 2 and 4 on the DB-9.
 The holes happen to be the right distance apart to accept a standard 2-pin header.
 I could have used the headers labeled "JU1" and "JU2" for this but chose not to because of the convenient spacing of the "2" and "4" holes.
+This header could be omitted if the serial port is only needed for PTT and TX and RX are not needed on the DB-9.
 
-I added a 1-pin jumper to the hole marked "7" to get access to pin 7 on the DB-9.
-I put 5V on this pin to power a serial port level converter inside the DB-9 case if needed.
+I added a 1-pin header to the hole marked "7" to get access to pin 7 on the DB-9.
+I put 5V on this pin to power a serial port level converter inside the DB-9 housing if needed.
+This header could be omitted if 5V is not needed.
 
 I snipped about 1mm off the header pins to allow the board to sit lower on the DRA-30 so that it would fit inside the original case.
 I should have made the dimensions of the board slightly smaller so that it would fit inside the ridges on the lid of the case.
@@ -99,7 +101,8 @@ PTT is not released until a time specified by the tail time trimpot after the au
 
 ## VOX
 
-The VOX circuit is connected to the left audio channel.
+The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
+The left audio channel is used as the input to the VOX circuit.
 While both left and right audio channels are routed the the DB-9, I build my radio cables to send the right audio channel to my radios.
 In order for VOX to work, I configure my software to send audio to both channels.
 This allows me to adjust the left audio trimpots on DRA-30 to its highest level to increase VOX reliability while adjusting the right audio level to the appropriate level for your radio.
@@ -123,10 +126,9 @@ I will stick with my MOSFET for now and see what happens.
 
 A red LED lights when PTT is asserted.
 
-The microcontroller monitors the time it holds PTT.
-If it holds it for longer than 5 minutes continuously, it will release it and won't assert it again until it is reset via a power cycle.
-I pulled this number out of the air, but if it proves to be too short I can change the firmware.
-In a future revision, I would like to add an LED to indicate this condition.
+The PTT will be held for a maximum of 5 minutes each time it is triggered.
+I pulled this number out of the air, but if it proves to be too short I can change the microcontroller firmware.
+In a future revision, I would like to add an LED to indicate this timeout condition.
 
 In my next board revision, I will add the COMM OK signal from the DRA-30 555 timer as an input to the microcontroller as a additional requirement to assert PTT.
 
@@ -182,3 +184,25 @@ It is serving me well, but I already have ideas for the next version:
 - route DTR to the microcontroller for future use,
 - mount the indicator LEDs on the outside of the case,
 - add an LED to the microcontroller to indicate PTT timeout.
+
+If I allow the microcontroller access to the serial port TX and RX lines, I could implement a configuration interface via the serial port.
+Then I could eliminate the DIP switches and/or VOX trimpots.
+It's a tradeoff between opening the case and opening a terminal program.
+I don't know if this is a good idea or not.
+
+If I were to start this project over from scratch, I would start with the DRA-45 or DRA-65, depending on whether or not I think the VOX level controls on my board are worth anything.
+If not, then I would use the DRA-65 which already has VOX.
+
+Since I'm already building a PCB and circuit, another option is to just start with a bare Cmedia chip, duplicating the DRA's audio functionality.
+Some of the circuity on the DRA boards is boilerplate to support the Cmedia chip: the crystal and bunch of capacitors.
+I wouldn't need the 555 and related components or the transistors because LED and GPIO output would be connected to inputs on the microcontroller, which would implement the heartbeat protection in firmware.
+The interesting bits are the audio paths.
+I'd borrow those as-is.
+
+Would a more powerful microcontroller and I2S audo from a Cmedia chip simplify VOX?
+This would eliminate all the discrete components of the VOX circuit, but at the expense of a more complicated microcontroller.
+Maybe at that point would be better to go all in with something like [this setup with a Teensy board.](http://www.kk5jy.net/AnyRig-v1/).
+
+Maybe a microcontroller is a bad idea in an RFI environment.
+I guess I will find out.
+
