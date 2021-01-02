@@ -18,7 +18,7 @@ This configuration is in no way standard and custom cables are required for ever
 
 ![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
 
-For the radio pictured here, I could build one cable with a DB-9 on one end and two DIN connectors on the other end to fit in the radio's DATA and PC ports.
+For the radio pictured here, I could build one cable with a DB-9 on the interface end and two DIN connectors on the radio end to fit in the radio's DATA and PC ports.
 I haven't built that yet--the cable in the picture only connects to the DATA port on the radio, so there is no CAT control in this setup.
 This cable carries audio in and out, PTT, and ground.
 
@@ -128,7 +128,7 @@ The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/che
 ![VOX]({{ site.baseurl }}/images/vox.jpg)
 
 The left audio channel is used as the input to the VOX circuit (via JU3.)
-While both left and right audio channels are routed to the DB-9, I built my radio cables to send the right audio channel to my radios.
+While both left and right audio channels are routed to the DB-9, I built my radio cables to send the right audio channel to the radios.
 In order for VOX to work, I configure the software to send audio to both channels: the left triggers VOX and the right goes to the radio.
 This allows me to adjust the left audio trimpots on DRA-30 to its highest level to increase VOX reliability while adjusting the right audio level to the appropriate level for the radio.
 In practice, I have both levels maxed out, and Windows audio levels at 100%.
@@ -168,7 +168,7 @@ It also solves a problem with Windows asserting RTS when at inopportune times.
 
 Windows will assert RTS several times when the serial port is powered up, and when some other USB serial port is added or removed from the system.
 PTT will trigger and any connected and powered-on radio will transmit a few short pulses.
-This is a pain and you have to manage it manually by turning on the radio last or connecting it after Windows has finished doing its thing.
+This is painful and with similar setups you have to manage it manually by turning on the radio last or connecting it after Windows has finished doing its thing.
 But the FTDI chip can be configured to prevent this via the device manager: under the advanced properties settings, check "Disable Modem Ctrl At Startup" and uncheck "Serial Enumerator".
 This is a huge convenience.
 
@@ -239,9 +239,9 @@ Since I'm already building a PCB and circuit, another option is to just start wi
 Some of the parts on the DRA boards are boilerplate to support the Cmedia chip: the crystal and bunch of capacitors.
 I wouldn't need the 555 and related components or the transistors because the Cmedia chip's LED and GPIO outputs would be connected to inputs on the microcontroller, which would implement the heartbeat protection in firmware.
 
-A more powerful microcontroller and I2S audio from a Cmedia chip simplify VOX, essentially moving it to software.
+A more powerful microcontroller and I2S audio from a Cmedia chip would simplify VOX, essentially making it a software problem.
 This would eliminate all the discrete components of the VOX circuit, but at the expense of a more complicated microcontroller.
-Maybe at that point would be better to go all in with something like [this setup with a Teensy board.](http://www.kk5jy.net/AnyRig-v1/).
+Maybe at that point would be better to go all in with something like [this setup with a Teensy board.](http://www.kk5jy.net/AnyRig-v1/)
 
 Maybe a microcontroller is a bad idea in an RFI environment.
 I guess I will find out.
