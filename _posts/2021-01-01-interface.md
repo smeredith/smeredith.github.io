@@ -28,7 +28,6 @@ Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts
 
 ![interface in case]({{ site.baseurl }}/images/boards-together.jpg)
 
-
 ## Project Motivation
 
 The DRA-30 uses a [GPIO on the Cmedia CM119A sound card chip for PTT](https://www.masterscommunications.com/products/radio-adapter/faq/hardware-ptt.html).
@@ -59,6 +58,8 @@ A cable for each radio eliminates the need for something like the set of jumpers
 ![db-9 circuit](db-9-circuit.jpg)
 
 ## DRA-30 Modifications
+
+![interface in case]({{ site.baseurl }}/images/mods.jpg)
 
 It's easier to make these modifications while you are building the board instead of desoldering things.
 
