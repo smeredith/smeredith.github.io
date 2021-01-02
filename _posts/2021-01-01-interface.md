@@ -1,7 +1,9 @@
 ---
 layout: post
-title: Radio Interface
+title: Radio Interface for Digital Modes
 ---
+
+![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
 
 I have designed and built a radio interface add-on board for use with the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
 My add-on board adds:
@@ -16,10 +18,10 @@ The add-on board adds serial port TX and RX as TTL-level signals to the original
 It also adds 5V to one of the lines to support converting the TTL signals to real RS-232 level signals downstream of the interface.
 This configuration is in no way standard and custom cables are required for every radio.
 
-![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
+![back of radio]({{ site.baseurl }}/images/ports.jpg)
 
 For the radio pictured here, I could build one cable with a DB-9 on the interface end and two DIN connectors on the radio end to fit in the radio's DATA and PC ports.
-I haven't built that yet--the cable in the picture only connects to the DATA port on the radio, so there is no CAT control in this setup.
+I haven't built that yet--the cable in the picture only connects to the DATA port on the radio, so there is nothing in the PC port and hence no CAT control in this setup.
 This cable carries audio in and out, PTT, and ground.
 
 ![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
