@@ -85,10 +85,11 @@ This would have made snipping the header pins unnecessary, and I will make this 
 
 ## Microcontroller
 
-![microcontroller]({{ site.baseurl }}/images/microcontroller.jpg)
-
 There is also an Attiny84 microcontroller on the board.
 This simplifies the PTT implementation.
+
+![microcontroller]({{ site.baseurl }}/images/microcontroller.jpg)
+
 The microcontroller listens to the following inputs:
 - RTS signal from the serial port chip,
 - VOX circuit audio detect level,
@@ -106,9 +107,10 @@ PTT is not released until a time specified by the tail time trimpot after the au
 
 ## VOX
 
+The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
+
 ![VOX]({{ site.baseurl }}/images/vox.jpg)
 
-The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
 The left audio channel is used as the input to the VOX circuit.
 While both left and right audio channels are routed the the DB-9, I build my radio cables to send the right audio channel to my radios.
 In order for VOX to work, I configure my software to send audio to both channels.
