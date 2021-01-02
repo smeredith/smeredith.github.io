@@ -161,6 +161,8 @@ There TX and RX LEDs on the board that are handy for troubleshooting.
 
 ## USB Hub
 
+![USB hub]({{ site.baseurl }}/images/hub.jpg)
+
 The serial port is a USB device.
 Without a hub, I would need two USB connections to the computer or an external hub.
 So I built the USB hub into the add-on board--it's a chip and a handful of capacitors and resistors.
