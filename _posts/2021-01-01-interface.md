@@ -26,7 +26,8 @@ The add-on board sits very low on the DRA-30 allowing it to fit inside the origi
 A USB-C connector replaces of the USB type B connector on the DRA-30.
 Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts in the add-on board PCB.
 
-![interface in case]({{ site.baseurl }}/images/boards-together.jpg)
+![interface in case]({{ site.baseurl }}/images/original-case.jpg)
+![interface in case]({{ site.baseurl }}/images/bottom.jpg)
 
 ## Project Motivation
 
@@ -59,7 +60,7 @@ A cable for each radio eliminates the need for something like the set of jumpers
 
 ## DRA-30 Modifications
 
-![interface in case]({{ site.baseurl }}/images/mods.jpg)
+![mods]({{ site.baseurl }}/images/mods.jpg)
 
 It's easier to make these modifications while you are building the board instead of desoldering things.
 
