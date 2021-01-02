@@ -16,9 +16,9 @@ The add-on board adds serial port TX and RX as TTL-level signals to the original
 It also adds 5V to one of the lines to support converting the TTL signals to real RS-232 level signals downstream of the interface.
 This configuration is in no way standard and custom cables are required for every radio.
 
-![interface in case](interface-in-case.jpg)
-![connected boards](connected-boards.jpg)
-![side-by-side boards](side-by-side-boards.jpg)
+![interface in case](images/interface-in-case.jpg)
+![connected boards](images/connected-boards.jpg)
+![side-by-side boards](images/side-by-side-boards.jpg)
 
 The add-on board is a circuit board that sits on top of the DRA-30, making electrical connections to it via header receptacles on the bottom that connect to header pins on the DRA-30.
 Some of those headers come with the DRA-30, and some I had to solder on.
