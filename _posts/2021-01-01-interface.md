@@ -26,6 +26,9 @@ The add-on board sits very low on the DRA-30 allowing it to fit inside the origi
 A USB-C connector replaces of the USB type B connector on the DRA-30.
 Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts in the add-on board PCB.
 
+![interface in case]({{ site.baseurl }}/images/boards-together.jpg)
+
+
 ## Project Motivation
 
 The DRA-30 uses a [GPIO on the Cmedia CM119A sound card chip for PTT](https://www.masterscommunications.com/products/radio-adapter/faq/hardware-ptt.html).
