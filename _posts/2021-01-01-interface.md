@@ -67,7 +67,7 @@ Plus it was fun and educational to make.
 I have mixed feelings about the DB-9 (DE-9 for the pedantic.)
 On the one hand, it's an ancient and clunky connector that extends a good distance out the back of the interface.
 On the other hand, it is easy to wire up whatever cable configuration is needed for any radio, and there is space for the capacitor and resistor that some HTs require, or a circuit to convert the UART TTL signals to conforming RS-232 signals.
-A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the pins of the radio connector.
+A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the lines of the radio connector.
 
 ## DRA-30 Modifications
 
