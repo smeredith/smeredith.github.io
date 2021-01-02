@@ -145,6 +145,8 @@ In my next board revision, I will add the COMM OK signal from the DRA-30 555 tim
 
 ## Serial Port
 
+![FTDI serial port]({{ site.baseurl }}/images/ftdi.jpg)
+
 I chose the FTDI FT232R USB-to-serial port chip.
 I like this chip because I can configure it via a utility program if I ever need to invert the TX or RX signal.
 It also solves a problem with Windows asserting RTS when at inopportune times.
