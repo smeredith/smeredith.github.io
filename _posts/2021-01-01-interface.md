@@ -244,7 +244,7 @@ Otherwise, I would use the DRA-65.
 
 Since I'm already building a PCB and circuit, another option is to just start with a bare Cmedia chip, duplicating the DRA's audio path circuitry.
 Some of the parts on the DRA boards are boilerplate to support the Cmedia chip: the crystal and bunch of capacitors.
-I wouldn't need the 555 and related components or the transistors because the Cmedia chip's LED and GPIO outputs would be connected to inputs on the microcontroller, which would implement the heartbeat protection in firmware.
+I wouldn't need the 555 and related components or the transistors because the Cmedia chip's LED and GPIO outputs would be connected to inputs on the microcontroller, which would implement the heartbeat watchdog protection in firmware.
 
 A more powerful microcontroller and I2S audio from a Cmedia chip would simplify VOX, essentially making it a software problem.
 This would eliminate all the discrete components of the VOX circuit, but at the expense of a more complicated microcontroller.
