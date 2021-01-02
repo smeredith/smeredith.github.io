@@ -58,13 +58,13 @@ A cable for each radio eliminates the need for something like the set of jumpers
 
 ## DRA-30 Modifications
 
-![mods]({{ site.baseurl }}/images/mods.jpg)
-
 It's easier to make these modifications while you are building the board instead of desoldering things.
 
 I did not install the R-PTT resistors.
 
 I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 lines for the serial port TX and RX instead.
+
+![mods]({{ site.baseurl }}/images/mods.jpg)
 
 I removed the USB type B connector and replaced it with a 4-pin square header.
 This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of directly to the computer.
@@ -219,7 +219,7 @@ I wouldn't need the 555 and related components or the transistors because LED an
 The interesting bits are the audio paths.
 I'd borrow those as-is.
 
-Would a more powerful microcontroller and I2S audo from a Cmedia chip simplify VOX?
+Would a more powerful microcontroller and I2S audio from a Cmedia chip simplify VOX?
 This would eliminate all the discrete components of the VOX circuit, but at the expense of a more complicated microcontroller.
 Maybe at that point would be better to go all in with something like [this setup with a Teensy board.](http://www.kk5jy.net/AnyRig-v1/).
 
