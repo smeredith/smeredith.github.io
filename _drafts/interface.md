@@ -186,12 +186,19 @@ It is serving me well, but I already have ideas for the next version:
 - add an LED to the microcontroller to indicate PTT timeout.
 
 If I allow the microcontroller access to the serial port TX and RX lines, I could implement a configuration interface via the serial port.
+Eg, [AT commands](https://en.wikipedia.org/wiki/Hayes_command_set).
 Then I could eliminate the DIP switches and/or VOX trimpots.
-It's a tradeoff between opening the case and opening a terminal program.
+Plus it would enable a 4th way to trigger PTT: a serial port command.
+Like CAT control, but to the interface instead of the radio.
 I don't know if this is a good idea or not.
 
-If I were to start this project over from scratch, I would start with the DRA-45 or DRA-65, depending on whether or not I think the VOX level controls on my board are worth anything.
-If not, then I would use the DRA-65 which already has VOX.
+Additionally, that would allow the interface to translate from RTS or VOX to a CAT command if such a thing were ever needed.
+The scenario would be a radio that only uses CAT for PTT and software that doesn't support CAT control.
+It's and interesting capability at least.
+
+If I were to start this project over from scratch, I would start with the DRA-45 or DRA-65, depending on whether or not I think the VOX controls on my board are worth anything.
+If not, I would use the DRA-65 which already has VOX.
+If so, I would use the DRA-45 plus my own VOX circuit with the level trimpots.
 
 Since I'm already building a PCB and circuit, another option is to just start with a bare Cmedia chip, duplicating the DRA's audio functionality.
 Some of the circuity on the DRA boards is boilerplate to support the Cmedia chip: the crystal and bunch of capacitors.
