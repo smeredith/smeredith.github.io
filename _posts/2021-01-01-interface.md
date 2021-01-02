@@ -18,6 +18,7 @@ This configuration is in no way standard and custom cables are required for ever
 
 ![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
 ![interface in case]({{ site.baseurl }}/images/interface-case-open.jpg)
+![interface in case]({{ site.baseurl }}/images/side-by-side.jpg)
 
 The add-on board is a circuit board that sits on top of the DRA-30, making electrical connections to it via header receptacles on the bottom that connect to header pins on the DRA-30.
 Some of those headers come with the DRA-30, and some I had to solder on.
