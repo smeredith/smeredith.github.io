@@ -129,6 +129,9 @@ The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/che
 
 ![VOX]({{ site.baseurl }}/images/vox.jpg)
 
+The top trimpot is to adjust the tail hang time.
+The bottom one is to adjust sensitivity.
+
 The left audio channel is used as the input to the VOX circuit (via "JU3".)
 While both left and right audio channels are routed to the DB-9, I built my radio cables to send the right audio channel to the radios.
 In order for VOX to work, I configure the software to send audio to both channels: the left triggers VOX and the right goes to the radio.
@@ -147,7 +150,7 @@ In the Fldigi "Soundcard/right channel" settings, I check the following boxes:
 
 The microcontroller triggers a MOSFET to ground the PTT line on the DB-9.
 The SMT MOSFET can sink 300mA from the radio's PTT line to ground, which is plenty for my setup.
-I can also solder in a through-hole BS170 should I need more current, up to 500mA.
+I can also solder in a through-hole BS170 should some future radio need to sink more current, up to 500mA.
 
 [This article](http://www.masterscommunications.com/products/radio-adapter/faq/hardware-ptt.html) states that the original DRA interface design also used a MOSFET but they switched to a transistor due to RFI affecting the MOSFET's reliability.
 I will stick with my MOSFET for now and see what happens.
@@ -188,6 +191,8 @@ There is one USB port left over on the hub for future expansion.
 This is available via the stacked USB connector: there should be enough clearance to plug in a USB cable or a very flat PCB.
 In fact, the GPS PCB is thin enough to fit in the bottom port if removed from its white case, leaving lots of clearance for something larger to fit in the top slot.
 Though I'd like to keep the GPS on top so that its antenna has an unobstructed view of the sky.
+
+There is an LED that indicates the state of each connected device, and one for the hub itself.
 
 ## GPS
 
