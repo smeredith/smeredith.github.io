@@ -56,8 +56,6 @@ On the one hand, it's an ancient and clunky connector that extends a good distan
 On the other hand, it is easy to wire up whatever cable configuration is needed for any radio, including space for a capacitor and resistor that some HTs require, or a circuit to convert the UART TTL signals to conforming RS-232 signals.
 A cable for each radio eliminates the need for something like the set of jumpers that the SignaLink uses to configure the pins of the radio connector.
 
-![db-9 circuit](db-9-circuit.jpg)
-
 ## DRA-30 Modifications
 
 ![mods]({{ site.baseurl }}/images/mods.jpg)
