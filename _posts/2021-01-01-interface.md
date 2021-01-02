@@ -183,8 +183,8 @@ There are TX and RX LEDs on the board that are handy for troubleshooting.
 
 ![USB hub]({{ site.baseurl }}/images/hub.jpg)
 
-The serial port is a USB device.
-Without a hub, I would need two USB connections to the computer or an external hub.
+The DRA-30, the serial port, and the GPS are all USB devices.
+Without a hub, I would need three USB connections to the computer or an external hub.
 So I built the USB hub into the add-on board--it's a chip, a crystal, and a handful of capacitors and resistors.
 Now the hub is the only thing connected to the computer, and the serial port, DRA-30, and GPS all use ports on the hub.
 There is one USB port left over on the hub for future expansion.
