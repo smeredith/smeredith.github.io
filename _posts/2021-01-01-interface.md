@@ -129,7 +129,7 @@ The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/che
 
 ![VOX]({{ site.baseurl }}/images/vox.jpg)
 
-The left audio channel is used as the input to the VOX circuit (via JU3.)
+The left audio channel is used as the input to the VOX circuit (via "JU3".)
 While both left and right audio channels are routed to the DB-9, I built my radio cables to send the right audio channel to the radios.
 In order for VOX to work, I configure the software to send audio to both channels: the left triggers VOX and the right goes to the radio.
 This allows me to adjust the left audio trimpots on DRA-30 to its highest level to increase VOX reliability while adjusting the right audio level to the appropriate level for the radio.
@@ -192,7 +192,7 @@ Though I'd like to keep the GPS on top so that its antenna has an unobstructed v
 ## GPS
 
 Two of the USB hub ports are connected to a stacked double USB connector on the add-on board.
-The GPS is an unmodified dongle from u-blox that plugs into the top port of that connector.
+The GPS is an unmodified dongle from U-blox that plugs into the top port of that connector.
 It appears to the computer as another serial port device.
 By default, it spits out NMEA sentences at a rate of once per second at 9600 baud.
 This is what I want and I didn't have to configure it in any way.
