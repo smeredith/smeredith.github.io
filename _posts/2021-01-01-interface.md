@@ -126,6 +126,8 @@ The Fldigi "Soundcard/right channel" settings, check the following boxes:
 
 ## PTT
 
+![PTT]({{ site.baseurl }}/images/ptt.jpg)
+
 The microcontroller triggers a MOSFET to ground the PTT line on the DB-9.
 The SMT MOSFET can sink 300mA from the radio's PTT line to ground, which is plenty for my setup.
 I can also solder in a through-hole BS170 should I need more current, up to 500mA.
