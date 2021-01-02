@@ -17,8 +17,8 @@ It also adds 5V to one of the lines to support converting the TTL signals to rea
 This configuration is in no way standard and custom cables are required for every radio.
 
 ![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
-![interface in case]({{ site.baseurl }}/images/interface-case-open.jpg)
-![interface in case]({{ site.baseurl }}/images/side-by-side.jpg)
+![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
+![side by side]({{ site.baseurl }}/images/side-by-side.jpg)
 
 The add-on board is a circuit board that sits on top of the DRA-30, making electrical connections to it via header receptacles on the bottom that connect to header pins on the DRA-30.
 Some of those headers come with the DRA-30, and some I had to solder on.
@@ -26,8 +26,8 @@ The add-on board sits very low on the DRA-30 allowing it to fit inside the origi
 A USB-C connector replaces of the USB type B connector on the DRA-30.
 Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts in the add-on board PCB.
 
-![interface in case]({{ site.baseurl }}/images/original-case.jpg)
-![interface in case]({{ site.baseurl }}/images/bottom.jpg)
+![original case]({{ site.baseurl }}/images/original-case.jpg)
+![bottom of board]({{ site.baseurl }}/images/bottom.jpg)
 
 ## Project Motivation
 
@@ -86,6 +86,8 @@ I should have made the dimensions of the board slightly smaller so that it would
 This would have made snipping the header pins unnecessary, and I will make this change on the next revision of the board.
 
 ## Microcontroller
+
+![microcontroller]({{ site.baseurl }}/images/microcontroller.jpg)
 
 There is also an Attiny84 microcontroller on the board.
 This simplifies the PTT implementation.
