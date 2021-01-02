@@ -157,7 +157,7 @@ This is a pain and you have to manage it manually by turning on the radio last o
 But the FTDI chip can be configured to prevent this via the device manager: under the advanced properties settings, check "Disable Modem Ctrl At Startup" and uncheck "Serial Enumerator".
 This is a huge convenience.
 
-There TX and RX LEDs on the board that are handy for troubleshooting.
+There are TX and RX LEDs on the board that are handy for troubleshooting.
 
 ## USB Hub
 
