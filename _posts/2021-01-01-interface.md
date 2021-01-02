@@ -108,6 +108,8 @@ PTT is not released until a time specified by the tail time trimpot after the au
 
 ## VOX
 
+![VOX]({{ site.baseurl }}/images/vox.jpg)
+
 The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
 The left audio channel is used as the input to the VOX circuit.
 While both left and right audio channels are routed the the DB-9, I build my radio cables to send the right audio channel to my radios.
