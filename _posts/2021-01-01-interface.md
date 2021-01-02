@@ -188,11 +188,11 @@ Without a hub, I would need three USB connections to the computer or an external
 So I built the USB hub into the add-on board--it's a chip, a crystal, and a handful of capacitors and resistors.
 Now the hub is the only thing connected to the computer, and the serial port, DRA-30, and GPS all use ports on the hub.
 There is one USB port left over on the hub for future expansion.
-This is available via the stacked USB connector: there should be enough clearance to plug in a USB cable or a very flat PCB.
+This is available via the stacked USB connector: there should be enough clearance at the bottom port to plug in a USB cable or a very flat PCB.
 In fact, the GPS PCB is thin enough to fit in the bottom port if removed from its white case, leaving lots of clearance for something larger to fit in the top slot.
 Though I'd like to keep the GPS on top so that its antenna has an unobstructed view of the sky.
 
-There is an LED that indicates the state of each connected device, and one for the hub itself.
+There are LEDs that indicates the state of each connected device, and one for the hub itself.
 
 ## GPS
 
@@ -219,8 +219,8 @@ I have yet to decide if this change would be worth it.
 
 I have been using this interface and prototype versions for several months with a Yaesu FT-530 HT and a Kenwood TM-V71A dual-band mobile.
 I have used SoundModem, Direwolf, Vara FM, Winlink, APRS, and Fldigi.
-It is serving me well, but I already have ideas for the next version:
-- use COMM OK as a prerequisite to trigger PTT,
+It is serving me well, but I have ideas for the next version:
+- use the COMM OK signal as a prerequisite to trigger PTT,
 - make the dimensions of the board slightly smaller,
 - route DTR to the microcontroller as another option for PTT,
 - mount the indicator LEDs on the outside of the case,
