@@ -221,6 +221,7 @@ I have yet to decide if this change would be worth it.
 The DRA-30 alone draws 30mA.
 With the add-on board but without the GPS, the power draw is 84mA.
 With the GPS attached, the total draw is 111mA.
+Add 10mA when the PTT LED comes on.
 
 ## Final Thoughts
 
