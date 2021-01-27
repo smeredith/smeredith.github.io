@@ -215,6 +215,13 @@ But I have to be looking at it from a high angle to see them.
 I would like to mount some of the LEDs on the outside so they are easier to see.
 I have yet to decide if this change would be worth it.
 
+## Power Consumption
+
+5V power comes from the USB port.
+The DRA-30 alone draws 30mA.
+With the add-on board but without the GPS, the power draw is 84mA.
+With the GPS attached, the total draw is 111mA.
+
 ## Final Thoughts
 
 I have been using this interface and prototype versions for several months with a Yaesu FT-530 HT and a Kenwood TM-V71A dual-band mobile.
