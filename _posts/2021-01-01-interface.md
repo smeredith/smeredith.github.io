@@ -20,9 +20,16 @@ This configuration is in no way standard and custom cables are required for ever
 
 ![back of radio]({{ site.baseurl }}/images/ports.jpg)
 
-For the radio pictured here, I could build one cable with a DB-9 on the interface end and two DIN connectors on the radio end to fit in the radio's DATA and PC ports.
-I haven't built that yet--the cable in the picture only connects to the DATA port on the radio, so there is nothing in the PC port and hence no CAT control in this setup.
-This cable carries audio in and out, PTT, and ground.
+I built two cables for my radio.
+The teal cable carries audio in and out, PTT, and ground.
+
+![serial port voltage converter inside a db-9 shell]({{ site.baseurl }}/images/db-9.jpg)
+
+The black cable has a serial port voltage level converter inside the DB-9 shell and adds serial RX and TX lines.
+
+![double-headed cable]({{ site.baseurl }}/images/double-headed-cable.jpg)
+
+This cable has two mini DIN connectors on the radio end: one for the "PC" port, which is just for the serial lines, and one for the "DATA" port, which is for the audio and PTT lines.
 
 ![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
 
