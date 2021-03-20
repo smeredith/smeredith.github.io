@@ -135,6 +135,7 @@ The microcontroller also enforces a PTT timeout to protect against RTS or VOX be
 ## VOX
 
 The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
+I have since figured out how to reduce the circuit to just 2 resistors: see [this post]({{ site.baseurl }}/dra-30-vox)
 
 ![VOX]({{ site.baseurl }}/images/vox.jpg)
 
