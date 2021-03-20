@@ -30,6 +30,8 @@ The black cable has a serial port voltage level converter inside the DB-9 shell 
 ![double-headed cable]({{ site.baseurl }}/images/double-headed-cable.jpg)
 
 This cable has two mini DIN connectors on the radio end: one for the "PC" port, which is just for the serial lines, and one for the "DATA" port, which is for the audio and PTT lines.
+The only software that I use that makes use of my radio's serial port is fl-digi, and it's not that helpful on FM.
+But it was a good proof-of-concept and might be useful on some future HF radio.
 
 ![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
 
@@ -252,7 +254,7 @@ Additionally, that would allow the interface to translate from RTS or VOX to a C
 The scenario would be a radio that only uses CAT for PTT and software that doesn't support CAT control but does support RTS.
 That seems unlikely, but it's an interesting capability nevertheless.
 
-If I were to start this project over from scratch, I would start with the DRA-45 or DRA-65 in order to get the audio amplifiers.
+If I were to start this project over from scratch, I might start with the DRA-45 or DRA-65 in order to get the audio amplifiers.
 Which one depends on whether or not I think the DRA-65 VOX is good enough.
 If I want to be able to turn if off or configure tail hang time and level controls, I would use the DRA-45 plus my own VOX circuit.
 Otherwise, I would use the DRA-65.
