@@ -30,8 +30,8 @@ The black cable has a serial port voltage level converter inside the DB-9 shell 
 ![double-headed cable]({{ site.baseurl }}/images/double-headed-cable.jpg)
 
 This cable has two mini DIN connectors on the radio end: one for the "PC" port, which is just for the serial lines, and one for the "DATA" port, which is for the audio and PTT lines.
-The only software that I use that makes use of my radio's serial port is fl-digi, and it's not that helpful on FM.
-But it was a good proof-of-concept and might be useful on some future HF radio.
+Fldigi can make use of the serial port, but it's not that useful on FM.
+But the serial port also is handy for programming the radio.
 
 ![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
 
