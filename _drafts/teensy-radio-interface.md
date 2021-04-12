@@ -40,7 +40,7 @@ This is automatically reset once the PTT trigger is released.
 
 ## GPS
 
-The GPS continuously sends NMEA sentences out the second serial port.
+The GPS module (center) continuously sends NMEA sentences out the second serial port.
 This can be used to set the computer's time or get position information for APRS.
 
 To disable the GPS, I can send a command via either serial port: "ATGPSOFF".
@@ -52,11 +52,21 @@ The headphone jack can be used to monitor both sides of a digital conversation, 
 Audio from the radio is routed the the right channel.
 Audio from the computer is routed to the left channel.
 
+## Radio Connectors
+
+The mini-DIN connectors match those on the radio so that I can use standard cables.
+The labels "PC" and "DATA" don't make much sense, but they match the labels on the radio.
+"DATA" (6-pin) carries audio and PTT.
+"PC" (8-pin) carries the serial port data.
+Note that I use a MAX3232 to get the right voltage levels for the radio.
+
 ## Case
 
 I am using a clear case so that I can see the LED indicators without having to mount them externally.
 The PTT LED is really bright.
 The serial port RX and TX LEDs are much dimmer as to be less distracting.
+The Teensy 3.2 has a small orange LED to indicate power.
+The GPS module has a small green LED to indicate power, and a dim orange LED that flashes once per second when it has a positon fix.
 
 ## Power Consumption
 
