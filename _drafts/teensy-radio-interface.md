@@ -3,30 +3,34 @@
 I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from PJRC.
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
 I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
-But because I only need it to support the one radio I own, I was able to keep it simple.
 
 ## Overview
 
 My interface connects to a computer with a micro-USB connector.
-To the computer it looks like a sound card and two serial ports.
+To the computer it looks like a USB sound card and two serial ports.
 The first serial port is connected to the radio and can be used for CAT control or programming.
 The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or received.
 This serial port can also be used for PTT via one of its control lines (RTS or DTR.)
 The second serial port is connected to the GPS.
 
-The left audio channel from the computer is connected to the radio.
-The right audio channel is used for VOX, if enabled.
-Audio from radio is routed to both channels on the computer.
+The outgoing left audio channel from the computer is connected to the radio.
+The outgoing right audio channel from the computer is used for VOX, if enabled.
+Incoming audio from radio is routed to both channels on the computer.
 
 I found insipration from the [AnyRig](http://www.kk5jy.net/AnyRig-v1/) interface, which is more flexible but more complicated.
+Because I only need it to support the one radio I own, I was able to keep it simple.
 For example, for my implementation, I don't need audio isolation, an opto-isolated PTT switch, or CW keying.
 
 ## PTT
 
 There are three ways to trigger PTT:
-- RTS on the first serial port
+- RTS on the first serial port (see note below)
 - DTR on the first serial port
 - VOX.
+
+Note: there is a [known bug on Windows with RTS.](https://forum.pjrc.com/threads/65829-Serial-rts()-on-Teensy-3-2?p=266761&viewfull=1#post266761).
+I use DTR.
+RTS should work on Linux.
 
 The red "PTT" LED lights when PTT is triggered.
 
