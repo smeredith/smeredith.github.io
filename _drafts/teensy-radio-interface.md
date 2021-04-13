@@ -35,7 +35,7 @@ RTS should work on Linux.
 The red "PTT" LED lights when PTT is triggered.
 
 I can configure the PTT method via either one of the serial ports.
-For example, to enable DTR, I send the command "ATDTRON".
+For example, to enable PTT via DTR, I send the command "ATDTRON".
 To disable it, I send "ATDTROFF".
 
 There is a 5 minute PTT timeout.
@@ -44,25 +44,26 @@ This is automatically reset once the PTT trigger is released.
 
 ## GPS
 
-The GPS module (center) continuously sends NMEA sentences out the second serial port.
+The GPS module (center of the PCB) continuously sends NMEA sentences out the second serial port.
 This can be used to set the computer's time or get position information for APRS.
 
 To disable the GPS, I can send a command via either serial port: "ATGPSOFF".
-It will remain off until I send "ATGPSON".
+It will remain off until I send "ATGPSON
+This saves a little power.
 
 ## Headphone Jack
 
 The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control.
-Audio from the radio is routed the the right channel.
-Audio from the computer is routed to the left channel.
+Audio from the radio is routed the the right headphone channel.
+Audio from the computer is routed to the left headphone channel.
 
 ## Radio Connectors
 
 The mini-DIN connectors match those on the radio so that I can use standard cables.
-The labels "PC" and "DATA" don't make much sense, but they match the labels on the radio.
+The labels "PC" and "DATA" on the PCB don't make much sense, but they match the labels on the radio.
 "DATA" (6-pin) carries audio and PTT.
 "PC" (8-pin) carries the serial port data.
-Note that I use a MAX3232 to get the right voltage levels for the radio.
+Note that I use a MAX3232 to get the correct RS-232 voltage levels for the radio.
 
 ## Case
 
@@ -75,4 +76,4 @@ The GPS module has a small green LED to indicate power, and a dim orange LED tha
 ## Power Consumption
 
 With the GPS off, the device draws 39mA.
-With the GPS on, it draws between 70mA and 78mA.
+With the GPS on, it draws between 70mA and 79mA.
