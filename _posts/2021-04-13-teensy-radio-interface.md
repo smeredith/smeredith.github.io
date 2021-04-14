@@ -1,7 +1,11 @@
-# Teensy Radio Interface
+---
+layout: post
+title: Teensy Radio Interface
+---
 
 I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from PJRC.
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
+A PTT LED is also nice.
 I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
 
 ![teensy-radio-interface.jpg]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
@@ -21,7 +25,7 @@ The outgoing left audio channel from the computer is connected to the radio.
 The outgoing right audio channel from the computer is used for VOX, if enabled.
 Incoming audio from radio is routed to both channels on the computer.
 
-I found insipration from the [AnyRig](http://www.kk5jy.net/AnyRig-v1/) interface, which is more flexible but more complicated.
+I found inspiration from the [AnyRig](http://www.kk5jy.net/AnyRig-v1/) interface, which is more flexible but more complicated.
 Because I only need it to support the one radio I own, I was able to keep it simple.
 For example, for my implementation, I don't need audio isolation, an opto-isolated PTT switch, or CW keying.
 
@@ -58,7 +62,7 @@ This saves a little power.
 ## Headphone Jack
 
 The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control.
-Audio from the radio is routed the the right headphone channel.
+Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
 ## Radio Connectors
