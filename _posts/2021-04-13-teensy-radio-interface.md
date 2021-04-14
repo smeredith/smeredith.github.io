@@ -4,6 +4,8 @@ I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/te
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
 I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
 
+![teensy-radio-interface.jpg]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
+
 ## Overview
 
 My interface connects to a computer with a micro-USB connector.
@@ -12,6 +14,8 @@ The first serial port is connected to the radio and can be used for CAT control 
 The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or received.
 This serial port can also be used for PTT via one of its control lines (RTS or DTR.)
 The second serial port is connected to the GPS.
+
+![teensy.jpg]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
 
 The outgoing left audio channel from the computer is connected to the radio.
 The outgoing right audio channel from the computer is used for VOX, if enabled.
