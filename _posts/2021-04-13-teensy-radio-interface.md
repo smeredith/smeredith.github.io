@@ -90,7 +90,7 @@ With the GPS on, it draws between 70mA and 79mA.
 
 ## Noise Floor
 
-![noise floor]({{ site.baseurl }}/images/teensy-radio-interface/noise-floor.jpg)
+![noise floor]({{ site.baseurl }}/images/teensy-radio-interface/noise-floor.png)
 
 This measurement was taken with the radio connected and turned off.
 It is an average of 100 sweeps.
@@ -100,7 +100,7 @@ I have no idea what that is.
 
 ## Frequency Response
 
-![frequency response]({{ site.baseurl }}/images/teensy-radio-interface/static.jpg)
+![frequency response]({{ site.baseurl }}/images/teensy-radio-interface/static.png)
 
 This measurement was taken with the radio turned on, tuned to static.
 The frequency response is flat.
