@@ -81,14 +81,14 @@ The serial port RX and TX LEDs are much dimmer as to be less distracting.
 The Teensy 3.2 has a small orange LED to indicate power.
 The GPS module has a small green LED to indicate power, and a dim orange LED that flashes once per second when it has a positon fix.
 
-### Measurements
+## Measurements
 
-## Power Consumption
+### Power Consumption
 
 With the GPS off, the device draws 39mA.
 With the GPS on, it draws between 70mA and 79mA.
 
-## Noise Floor
+### Noise Floor
 
 ![noise floor]({{ site.baseurl }}/images/teensy-radio-interface/noise-floor.png)
 
@@ -98,7 +98,7 @@ I'm not an expert here, but from what I've read, this is a very good result for 
 I do see a small spike at 3.7kHz.
 I have no idea what that is.
 
-## Frequency Response
+### Frequency Response
 
 ![frequency response]({{ site.baseurl }}/images/teensy-radio-interface/static.png)
 
