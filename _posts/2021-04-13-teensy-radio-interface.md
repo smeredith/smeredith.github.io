@@ -54,6 +54,7 @@ This is automatically reset once the PTT trigger is released.
 
 The GPS module (center of the PCB) continuously sends NMEA sentences out the second serial port.
 This can be used to set the computer's time or get position information for APRS.
+The tiny antenna works pretty well inside my house.
 
 To disable the GPS, I can send a command via either serial port: "ATGPSOFF".
 It will remain off until I send "ATGPSON".
