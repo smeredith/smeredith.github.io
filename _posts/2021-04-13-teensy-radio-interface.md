@@ -82,6 +82,8 @@ The serial port RX and TX LEDs are much dimmer as to be less distracting.
 The Teensy 3.2 has a small orange LED to indicate power.
 The GPS module has a small green LED to indicate power, and a dim orange LED that flashes once per second when it has a positon fix.
 
+So far I haven't had any problems due to the lack of shielding provided by a plastic case.
+
 ## Measurements
 
 ### Power Consumption
