@@ -8,7 +8,7 @@ A minimal implementation only requires those two modules plus an additional resi
 A PTT LED is also nice.
 I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
 
-![teensy-radio-interface.jpg]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
+![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
 
 ## Overview
 
@@ -19,7 +19,7 @@ The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or receiv
 This serial port can also be used for PTT via one of its control lines (RTS or DTR.)
 The second serial port is connected to the GPS.
 
-![teensy.jpg]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
+![interface PCB]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
 
 The outgoing left audio channel from the computer is connected to the radio.
 The outgoing right audio channel from the computer is used for VOX, if enabled.
@@ -62,11 +62,15 @@ This saves a little power.
 
 ## Headphone Jack
 
+![headphone jack]({{ site.baseurl }}/images/teensy-radio-interface/micro-usb-and-headphone.jpg)
+
 The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control.
 Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
 ## Radio Connectors
+
+![mini-DIN connectors]({{ site.baseurl }}/images/teensy-radio-interface/mini-din-connectors.jpg)
 
 The mini-DIN connectors match those on the radio so that I can use standard cables.
 The labels "PC" and "DATA" on the PCB don't make much sense, but they match the labels on the radio.
