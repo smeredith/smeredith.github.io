@@ -3,7 +3,7 @@ layout: post
 title: Teensy Radio Interface
 ---
 
-I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from PJRC.
+I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from [PJRC.](https://www.pjrc.com/)
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
 A PTT LED is also nice.
 I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
@@ -12,7 +12,7 @@ I wanted something a little more complex, so my build also has a GPS and a seria
 
 ## Overview
 
-My interface connects to a computer with a micro-USB connector.
+The interface connects to a computer with the Teensy's micro-USB connector.
 To the computer it looks like a USB sound card and two serial ports.
 The first serial port is connected to the radio and can be used for CAT control or programming.
 The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or received.
@@ -66,6 +66,8 @@ The audio in level can be controlled via the computer's input level control.
 The GPS module (center of the PCB) is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
 That module is a PCB with some through-hole solder pads, a voltage regulator, a backup battery, two LEDS, and a [CDTop CD-PA1010D module.](https://cdn-learn.adafruit.com/assets/assets/000/084/295/original/CD_PA1010D_Datasheet_v.03.pdf?1573833002)
 The CDTop module contains a [MediaTek MT3333.](https://labs.mediatek.com/en/chipset/MT3333)
+It is connected to the Teensy via one of its hardware UARTs and seen by the computer as the second serial port.
+Both TX and RX are connected so that the user can send commands to the GPS via serial as well as receive data.
 The [command reference is here.](https://cdn-shop.adafruit.com/datasheets/PMTK_A11.pdf)
 
 The GPS continuously sends NMEA sentences out the second serial port at the rate of 1Hz.
@@ -96,6 +98,7 @@ The mini-DIN connectors match those on the radio so that I can use standard cabl
 The labels "PC" and "DATA" on the PCB don't make much sense, but they match the labels on the radio.
 "DATA" (6-pin) carries audio and PTT.
 "PC" (8-pin) carries the serial port data.
+This is connected to one of the Teensy's hardware UARTs and appears to the computer as the first serial port.
 Note that I use a MAX3232 to get the correct RS-232 voltage levels for the radio.
 
 ## Case
