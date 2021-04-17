@@ -52,13 +52,22 @@ This is automatically reset once the PTT trigger is released.
 
 ## GPS
 
-The GPS module (center of the PCB) continuously sends NMEA sentences out the second serial port.
+The GPS module is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
+That module is a PCB with some through-hole solder pads, a voltage regulator, a backup battery, two LEDS, and a [CDTop CD-PA1010D module.](https://cdn-learn.adafruit.com/assets/assets/000/084/295/original/CD_PA1010D_Datasheet_v.03.pdf?1573833002)
+The CDTop module contains a [MediaTek MT3333.](https://labs.mediatek.com/en/chipset/MT3333)
+The [command reference is here.](https://cdn-shop.adafruit.com/datasheets/PMTK_A11.pdf)
+
+The GPS module (center of the PCB) continuously sends NMEA sentences out the second serial port at the rate of 1Hz.
 This can be used to set the computer's time or get position information for APRS.
 The tiny antenna works pretty well inside my house.
+I didn't change any of the GPS module's configuration parameters.
 
 To disable the GPS, I can send a command via either serial port: "ATGPSOFF".
 It will remain off until I send "ATGPSON".
 This saves a little power.
+I'm using the module's "Backup Mode" where the reciever is turned off until the "wakeup" pin is set high by the microcontroller.
+The green LED remains on because that's powered by Adafruit's voltage regulator.
+But the "pulse per second" LED stops pulsing.
 
 ## Headphone Jack
 
