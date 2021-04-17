@@ -50,6 +50,17 @@ There is a 5 minute PTT timeout.
 If PTT is held longer than that, it is released and the "STATUS" LED flashes.
 This is automatically reset once the PTT trigger is released.
 
+## Audio Levels
+
+The audio out (to the radio) level can be adjusted via the firmware.
+Once I found the right level for my radio, I should never need to adjust this again.
+So there is no UI to change it.
+If I find myself needing to adjust the level, I will expose a command via the serial port interface to do it.
+To the computer, the output device is a "line out" device, and as such, the volume control does not adjust it.
+The computer volume control only controls the headphone jack volume level.
+
+The audio in level can be controlled via the computer's input level control.
+
 ## GPS
 
 The GPS module (center of the PCB) is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
