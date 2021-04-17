@@ -6,7 +6,7 @@ title: Teensy Radio Interface
 I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from [PJRC.](https://www.pjrc.com/)
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
 A PTT LED is also nice.
-I wanted something a little more complex, so my build also has a GPS and a serial port to program and control my radio.
+I wanted some additional features: my build also has a GPS and a serial port to program and control my radio.
 
 ![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
 
@@ -53,7 +53,7 @@ This is automatically reset once the PTT trigger is released.
 ## Audio Levels
 
 The audio out (to the radio) level can be adjusted via the firmware.
-Once I found the right level for my radio, I should never need to adjust this again.
+Once I found the right level for my radio, I should never need to adjust it again.
 So there is no UI to change it.
 If I find myself needing to adjust the level, I will expose a command via the serial port interface to do it.
 To the computer, the output device is a "line out" device, and as such, the volume control does not adjust it.
@@ -66,7 +66,7 @@ The audio in level can be controlled via the computer's input level control.
 The GPS module (center of the PCB) is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
 That module is a PCB with some through-hole solder pads, a voltage regulator, a backup battery, two LEDS, and a [CDTop CD-PA1010D module.](https://cdn-learn.adafruit.com/assets/assets/000/084/295/original/CD_PA1010D_Datasheet_v.03.pdf?1573833002)
 The CDTop module contains a [MediaTek MT3333.](https://labs.mediatek.com/en/chipset/MT3333)
-It is connected to the Teensy via one of its hardware UARTs and seen by the computer as the second serial port.
+It is connected to the Teensy via one of its hardware UARTs and is seen by the computer as the second serial port.
 Both TX and RX are connected so that the user can send commands to the GPS via serial as well as receive data.
 The [command reference is here.](https://cdn-shop.adafruit.com/datasheets/PMTK_A11.pdf)
 
