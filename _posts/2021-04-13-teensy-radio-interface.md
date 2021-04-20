@@ -144,5 +144,5 @@ I think this is very good.
 
 This measurement was taken with Waveforms Wavegen generating noise with the interface selected as the output device.
 The spectrum analyzer was electrically connected to the radio connector on the interface and set to record the peaks.
-As you can see, the interface doing a good job of generating the full range of frequencies.
+The interface doing a good job of generating the full range of frequencies.
 
