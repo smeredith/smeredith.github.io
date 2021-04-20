@@ -122,7 +122,8 @@ With the GPS on, it draws between 70mA and 79mA.
 
 ![noise floor]({{ site.baseurl }}/images/teensy-radio-interface/noise-floor.png)
 
-This measurement was taken with the radio connected and turned off.
+This measurement was taken with Waveforms Spectrum running with the interface selected as the input device.
+The radio was connected and turned off.
 It is an average of 100 sweeps.
 I'm not an expert here, but from what I've read, this is a very good result for a noise floor.
 I do see a small spike at 3.7kHz.
@@ -132,6 +133,16 @@ I have no idea what that is.
 
 ![frequency response]({{ site.baseurl }}/images/teensy-radio-interface/static.png)
 
-This measurement was taken with the radio turned on, tuned to static.
+This measurement was taken with Waveforms Spectrum running with the interface selected as the input device.
+The radio was connected and turned on, tuned to static.
 The frequency response is flat.
 I think this is very good.
+
+### Frequency Generation
+
+![frequency generation]({{ site.baseurl }}/images/teensy-radio-interface/generated-noise.png)
+
+This measurement was taken with Waveforms Wavegen generating noise with the interface selected as the output device.
+The spectrum analyzer was electrically connected to the radio connector on the interface and set to record the peaks.
+As you can see, the interface doing a good job of generating the full range of frequencies.
+
