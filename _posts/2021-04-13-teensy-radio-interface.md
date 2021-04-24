@@ -142,7 +142,7 @@ I think this is very good.
 
 ![frequency generation]({{ site.baseurl }}/images/teensy-radio-interface/generated-noise.png)
 
-This measurement was taken with Waveforms Wavegen generating noise with the interface selected as the output device.
+This measurement was taken with Waveforms Wavegen generating noise with the radio interface selected as the output device.
 The spectrum analyzer was electrically connected to the radio connector on the interface and set to record the peaks.
 The interface doing a good job of generating the full range of frequencies.
 
