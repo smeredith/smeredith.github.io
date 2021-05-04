@@ -150,6 +150,11 @@ The interface doing a good job of generating the full range of frequencies.
 
 ## Fldigi
 
+The serial port on the interface works to tune the radio: I can change the frequency in fldigi and the radio will change frequency.
+If I manually tune the radio, fldigi will update to reflect the new frequency.
+I set this up using rigcat.
+This is neat, but in practice I haven't found it very useful.
+
 Here are some screenshots from fldigi's spectrum scope while receiving data over FM via a repeater. The spikes on the left are PL tones.
 
 ![8psk500f]({{ site.baseurl }}/images/teensy-radio-interface/8psk500f.jpg)
