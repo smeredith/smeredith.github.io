@@ -148,3 +148,13 @@ This measurement was taken with Waveforms Wavegen generating noise with the radi
 The spectrum analyzer was electrically connected to the radio connector on the interface and set to record the peaks.
 The interface doing a good job of generating the full range of frequencies.
 
+## Fldigi
+
+Here are some screenshots from fldigi's spectrum scope while receiving.
+
+![8psk500f]({{ site.baseurl }}/images/teensy-radio-interface/8psk500f.jpg)
+*8PSK500F*
+
+![8psk1000f]({{ site.baseurl }}/images/teensy-radio-interface/8psk1000f.jpg)
+*8PSK1000F*
+
