@@ -90,7 +90,7 @@ The headphone jack can be used to monitor both sides of a digital conversation, 
 Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
-The headphone jack (and only the headphone jack) has a filter to remove any PL tone hum since the audio it carries is not filtered by the radio.
+The headphone jack (and only the headphone jack) has a filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
 
 ## Radio Connectors
 
@@ -150,7 +150,7 @@ The interface doing a good job of generating the full range of frequencies.
 
 ## Fldigi
 
-Here are some screenshots from fldigi's spectrum scope while receiving.
+Here are some screenshots from fldigi's spectrum scope while receiving data over FM via a repeater. The spikes on the left are PL tones.
 
 ![8psk500f]({{ site.baseurl }}/images/teensy-radio-interface/8psk500f.jpg)
 *8PSK500F*
