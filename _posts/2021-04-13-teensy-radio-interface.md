@@ -90,6 +90,8 @@ The headphone jack can be used to monitor both sides of a digital conversation, 
 Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
+The headphone jack (and only the headphone jack) has a filter to remove any PL tone hum since the audio it carries is not filtered by the radio.
+
 ## Radio Connectors
 
 ![mini-DIN connectors]({{ site.baseurl }}/images/teensy-radio-interface/mini-din-connectors.jpg)
