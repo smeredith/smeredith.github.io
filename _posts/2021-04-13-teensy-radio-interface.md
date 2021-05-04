@@ -13,7 +13,7 @@ I wanted some additional features: my build also has a GPS and a serial port to 
 ## Overview
 
 The interface connects to a computer with the Teensy's micro-USB connector.
-To the computer it looks like a USB sound card and two serial ports.
+To the computer it presents as a USB sound card and two serial ports.
 The first serial port is connected to the radio and can be used for CAT control or programming.
 The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or received.
 This serial port can also be used for PTT via one of its control lines (RTS or DTR.)
@@ -90,7 +90,9 @@ The headphone jack can be used to monitor both sides of a digital conversation, 
 Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
-The headphone jack (and only the headphone jack) has a filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
+The headphone jack (and only the headphone jack) has a software high-pass filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
+The audio from the radio is not affected by the radio's squelch control, so the audio from the headphone jack is unsquelched.
+I plan to implement squelch for the headphone jack in software.
 
 ## Radio Connectors
 
