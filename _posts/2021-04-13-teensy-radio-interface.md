@@ -86,7 +86,7 @@ But the "pulse per second" LED stops pulsing.
 
 ![headphone jack]({{ site.baseurl }}/images/teensy-radio-interface/micro-usb-and-headphone.jpg)
 
-The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control.
+The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control panel.
 Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
