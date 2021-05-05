@@ -122,7 +122,7 @@ So far I haven't had any problems due to the lack of shielding provided by a pla
 
 I can run the Teensy at various clock speeds, from 24MHz to 120MHz.
 I think 24MHz is fast enough, but I am still experimenting.
-With the GPS turned off, the interface draws 39mA at 24MHz, and 69mA at 72MHz.
+With the GPS turned off, the interface draws 39mA at 24MHz, and 54mA at 72MHz.
 When it's turned on, the GPS adds between 30mA and 40mA.
 
 ### Noise Floor
@@ -136,7 +136,7 @@ I'm not an expert here, but from what I've read, this is a very good result for 
 I do see a small spike at 3.7kHz.
 I have no idea what that is.
 
-### Frequency Response
+### Audio In Frequency Response
 
 ![frequency response]({{ site.baseurl }}/images/teensy-radio-interface/static.png)
 
@@ -145,7 +145,7 @@ The radio was connected and turned on, tuned to static.
 The frequency response is flat.
 I think this is very good.
 
-### Frequency Generation
+### Audio Out
 
 ![frequency generation]({{ site.baseurl }}/images/teensy-radio-interface/generated-noise.png)
 
