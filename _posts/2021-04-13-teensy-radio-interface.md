@@ -162,9 +162,15 @@ This is neat, but in practice I haven't found it very useful.
 
 Here are some screenshots from fldigi's spectrum scope while receiving data over FM via a repeater. The spikes on the left are PL tones.
 
-![8psk500f]({{ site.baseurl }}/images/teensy-radio-interface/8psk500f.jpg)
+![8psk500f]({{ site.baseurl }}/images/teensy-radio-inter.face/8psk500f.jpg)
 *8PSK500F*
 
 ![8psk1000f]({{ site.baseurl }}/images/teensy-radio-interface/8psk1000f.jpg)
 *8PSK1000F*
 
+## VARA FM - Problem Child
+
+This interface doesn't work well with VARA FM--there is unexplained noise in the audio as soon as the program starts up.
+The docs say it requires a sound card with 48kHz support, and the Teensy is fixed at 44.1kHz.
+I suspect this is the problem.
+I don't know how to fix it.
