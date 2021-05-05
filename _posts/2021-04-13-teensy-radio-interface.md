@@ -91,8 +91,9 @@ Audio from the radio is routed to the right headphone channel.
 Audio from the computer is routed to the left headphone channel.
 
 The headphone jack (and only the headphone jack) has a software high-pass filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
-The audio from the radio is not affected by the radio's squelch control, so the audio from the headphone jack is unsquelched.
-I plan to implement squelch for the headphone jack in software.
+
+The audio from the radio is also unsquelched.
+I implemented squelch for the headphone jack in software.
 
 ## Radio Connectors
 
@@ -119,8 +120,10 @@ So far I haven't had any problems due to the lack of shielding provided by a pla
 
 ### Power Consumption
 
-With the GPS off, the device draws 39mA.
-With the GPS on, it draws between 70mA and 79mA.
+I can run the Teensy at various clock speeds, from 24MHz to 120MHz.
+I think 24MHz is fast enough, but I am still experimenting.
+With the GPS turned off, the interface draws 39mA at 24MHz, and 69mA at 72MHz.
+When it's turned on, the GPS adds between 30mA and 40mA.
 
 ### Noise Floor
 
