@@ -50,6 +50,12 @@ There is a 5 minute PTT timeout.
 If PTT is held longer than that, it is released and the "STATUS" LED flashes.
 This is automatically reset once the PTT trigger is released.
 
+## Audio Block Diagram
+
+This diagram is from the [Audio System Design Tool for Teensy Audio Library.](https://www.pjrc.com/teensy/gui/?info=AudioControlSGTL5000)
+
+![audio block diagram]({{ site.baseurl }}/images/teensy-radio-interface/audio-block-diagram.png)
+
 ## Audio Levels
 
 The audio out (to the radio) level can be adjusted via the firmware.
