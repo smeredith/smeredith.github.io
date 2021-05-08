@@ -52,9 +52,10 @@ This is automatically reset once the PTT trigger is released.
 
 ## Audio Block Diagram
 
-This diagram is from the [Audio System Design Tool for Teensy Audio Library.](https://www.pjrc.com/teensy/gui/?info=AudioControlSGTL5000)
-
 ![audio block diagram]({{ site.baseurl }}/images/teensy-radio-interface/audio-block-diagram.png)
+
+This diagram is from the [Audio System Design Tool for Teensy Audio Library.](https://www.pjrc.com/teensy/gui/?info=AudioControlSGTL5000)
+See that site for details on how the library works.
 
 ## Audio Levels
 
