@@ -67,6 +67,19 @@ The computer volume control only controls the headphone jack volume level.
 
 The audio in level can be controlled via the computer's input level control.
 
+## Headphone Jack
+
+![headphone jack]({{ site.baseurl }}/images/teensy-radio-interface/micro-usb-and-headphone.jpg)
+
+The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control panel.
+Audio from the radio is routed to the right headphone channel.
+Audio from the computer is routed to the left headphone channel.
+
+The headphone jack (and only the headphone jack) has a software high-pass filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
+
+The audio from the radio is also unsquelched.
+I implemented squelch for the headphone jack in software.
+
 ## GPS
 
 The GPS module (center of the PCB) is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
@@ -87,19 +100,6 @@ This saves a little power.
 I'm using the module's "Backup Mode" where the reciever is turned off until the "wakeup" pin is set high by the microcontroller.
 The green LED remains on because that's powered by Adafruit's voltage regulator.
 But the "pulse per second" LED stops pulsing.
-
-## Headphone Jack
-
-![headphone jack]({{ site.baseurl }}/images/teensy-radio-interface/micro-usb-and-headphone.jpg)
-
-The headphone jack can be used to monitor both sides of a digital conversation, and the level can be controlled from the computer's audio control panel.
-Audio from the radio is routed to the right headphone channel.
-Audio from the computer is routed to the left headphone channel.
-
-The headphone jack (and only the headphone jack) has a software high-pass filter on the audio from the radio to remove any PL tone hum since the audio it carries is not filtered by the radio.
-
-The audio from the radio is also unsquelched.
-I implemented squelch for the headphone jack in software.
 
 ## Radio Connectors
 
