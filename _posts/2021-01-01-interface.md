@@ -3,7 +3,7 @@ layout: post
 title: Radio Interface for Digital Modes
 ---
 
-![interface in case]({{ site.baseurl }}/images/interface-in-case.jpg)
+![interface in case]({{ site.baseurl }}/images/interface/interface-in-case.jpg)
 
 I have designed and built a radio interface add-on board for use with the [Masters Communications DRA-30](https://www.masterscommunications.com/products/radio-adapter/dra/dra30.html).
 My add-on board adds:
@@ -18,7 +18,7 @@ The add-on board adds serial port TX and RX as TTL-level signals to the original
 It also adds 5V to one of the lines to support converting the TTL signals to real RS-232 level signals downstream of the interface.
 This configuration is in no way standard and custom cables are required for every radio.
 
-![back of radio]({{ site.baseurl }}/images/ports.jpg)
+![back of radio]({{ site.baseurl }}/images/interface/ports.jpg)
 
 I built two cables for my radio.
 The teal cable carries audio in and out, PTT, and ground.
@@ -27,30 +27,30 @@ The teal cable carries audio in and out, PTT, and ground.
 
 The black cable has a serial port voltage level converter inside the DB-9 shell and adds serial RX and TX lines.
 
-![double-headed cable]({{ site.baseurl }}/images/double-headed-cable.jpg)
+![double-headed cable]({{ site.baseurl }}/images/interface/double-headed-cable.jpg)
 
 This cable has two mini DIN connectors on the radio end: one for the "PC" port, which is just for the serial lines, and one for the "DATA" port, which is for the audio and PTT lines.
 Fldigi can make use of the serial port, but it's not that useful on FM.
 But the serial port also is handy for programming the radio.
 
-![interface case open]({{ site.baseurl }}/images/interface-case-open.jpg)
+![interface case open]({{ site.baseurl }}/images/interface/interface-case-open.jpg)
 
 The add-on board is a circuit board that sits on top of the DRA-30, making electrical connections to it via header receptacles on the bottom that connect to header pins on the DRA-30.
 Some of those headers come with the DRA-30, and some I had to solder on in places where they weren't designed.
 
-![side by side]({{ site.baseurl }}/images/side-by-side.jpg)
+![side by side]({{ site.baseurl }}/images/interface/side-by-side.jpg)
 
 The add-on board sits very low on the DRA-30 allowing it to fit inside the original DRA-30 case (when the tall stacked USB connector for the GPS is not installed.)
 A USB-C connector replaces of the USB type B connector on the DRA-30.
 Access to the DRA-30 level adjustment trimpots and LEDs is available via cutouts in the add-on board PCB.
 
-![original case]({{ site.baseurl }}/images/original-case.jpg)
+![original case]({{ site.baseurl }}/images/interface/original-case.jpg)
 
 You can see the header pin receptacles on the bottom of the board.
 Notice also tha the USB-C connector is on the bottom.
 This allows for a better fit in the original case.
 
-![bottom of board]({{ site.baseurl }}/images/bottom.jpg)
+![bottom of board]({{ site.baseurl }}/images/interface/bottom.jpg)
 
 ## Project Motivation
 
@@ -86,7 +86,7 @@ I did not install the R-PTT resistors.
 
 I did not install JU1 and JU2 headers because I don't need COS or CTCSS and want these DB-9 lines for the serial port TX and RX instead.
 
-![mods]({{ site.baseurl }}/images/mods.jpg)
+![mods]({{ site.baseurl }}/images/interface/mods.jpg)
 
 I removed the USB type B connector and replaced it with a 4-pin square header.
 This is so the DRA-30 can connect to the USB hub chip on the add-on board instead of directly to the computer.
@@ -110,7 +110,7 @@ This would have made snipping the header pins unnecessary, and I will make this 
 There is an Attiny84 microcontroller on the board.
 This simplifies the PTT implementation.
 
-![microcontroller]({{ site.baseurl }}/images/microcontroller.jpg)
+![microcontroller]({{ site.baseurl }}/images/interface/microcontroller.jpg)
 
 The 6 pads next to the chip are for programming it.
 At first I soldered on a 6-pin header, but later discovered [pogo pins](https://www.sparkfun.com/products/11591) that I can use with just the pads.
@@ -137,7 +137,7 @@ The microcontroller also enforces a PTT timeout to protect against RTS or VOX be
 The VOX design is inspired by [this post](http://kb9rlw.blogspot.com/2016/08/cheap-and-easy-to-build-digital-modes.html).
 I have since figured out how to reduce the VOX circuit to just 2 resistors by changing the microcontrollers reference voltage to 1.1V, eliminating the need to amplify the audio signal. See [this post]({{ site.baseurl }}/dra-30-vox).
 
-![VOX]({{ site.baseurl }}/images/vox.jpg)
+![VOX]({{ site.baseurl }}/images/interface/vox.jpg)
 
 The top trimpot is to adjust the tail hang time.
 The bottom one is to adjust sensitivity.
@@ -156,7 +156,7 @@ In the Fldigi "Soundcard/right channel" settings, I check the following boxes:
 
 ## PTT
 
-![PTT]({{ site.baseurl }}/images/ptt.jpg)
+![PTT]({{ site.baseurl }}/images/interface/ptt.jpg)
 
 The microcontroller triggers a MOSFET to ground the PTT line on the DB-9.
 The SMT MOSFET can sink 300mA from the radio's PTT line to ground, which is plenty for my setup.
@@ -175,7 +175,7 @@ In my next board revision, I will add the COMM OK signal from the DRA-30 555 tim
 
 ## Serial Port
 
-![FTDI serial port]({{ site.baseurl }}/images/ftdi.jpg)
+![FTDI serial port]({{ site.baseurl }}/images/interface/ftdi.jpg)
 
 I chose the FTDI FT232R USB-to-serial port chip.
 I like this chip because I can configure it via a utility program if I ever need to invert the TX and RX signals.
@@ -191,7 +191,7 @@ There are TX and RX LEDs on the board that are handy for troubleshooting.
 
 ## USB Hub
 
-![USB hub]({{ site.baseurl }}/images/hub.jpg)
+![USB hub]({{ site.baseurl }}/images/interface/hub.jpg)
 
 The DRA-30, the serial port, and the GPS are all USB devices.
 Without a hub, I would need three USB connections to the computer or an external hub.
