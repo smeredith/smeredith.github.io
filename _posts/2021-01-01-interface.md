@@ -267,6 +267,7 @@ I wouldn't need the 555 and related components or the transistors because the Cm
 A more powerful microcontroller and I2S audio from a Cmedia chip would simplify VOX, essentially making it a software problem.
 This would eliminate all the discrete components of the VOX circuit, but at the expense of a more complicated microcontroller.
 Maybe at that point would be better to go all in with something like [this setup with a Teensy board.](http://www.kk5jy.net/AnyRig-v1/)
+(Update: [I made something like that.]({{ site.baseurl }}/teensy-radio-interface/))
 
 Maybe a microcontroller is a bad idea in an RFI environment.
 I guess I will find out.
