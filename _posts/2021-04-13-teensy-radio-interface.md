@@ -3,21 +3,22 @@ layout: post
 title: Teensy Radio Interface
 ---
 
-I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from [PJRC.](https://www.pjrc.com/)
+![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
+
+I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from [PJRC](https://www.pjrc.com/) and a custom PCB.
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
 A PTT LED is also nice.
 I wanted some additional features: my build also has a GPS and a serial port to program and control my radio.
-
-![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
 
 ## Overview
 
 The interface connects to a computer with the Teensy's micro-USB connector.
 To the computer it presents as a USB sound card and two serial ports.
-The first serial port is connected to the radio and can be used for CAT control or programming.
+The first serial port is connected to the radio and can be used for CAT control or programming the radio.
 The blue and green "TX" and "RX" LEDs light up whenever a byte is sent or received.
 This serial port can also be used for PTT via one of its control lines (RTS or DTR.)
 The second serial port is connected to the GPS.
+It can be used to receive NMEA sentences for something like APRS.
 
 ![interface PCB]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
 
@@ -116,7 +117,7 @@ Note that I use a MAX3232 to get the correct RS-232 voltage levels for the radio
 ## Case
 
 I am using a clear case so that I can see the LED indicators without having to mount them externally.
-The PTT LED is really bright.
+The PTT LED is really bright, on purpose.
 The serial port RX and TX LEDs are much dimmer as to be less distracting.
 The Teensy 3.2 has a small orange LED to indicate power.
 The GPS module has a small green LED to indicate power, and a dim orange LED that flashes once per second when it has a positon fix.
@@ -127,9 +128,8 @@ So far I haven't had any problems due to the lack of shielding provided by a pla
 
 ### Power Consumption
 
-I can run the Teensy at various clock speeds, from 24MHz to 120MHz.
-I think 24MHz is fast enough, but I am still experimenting.
-With the GPS turned off, the interface draws 39mA at 24MHz, and 54mA at 72MHz.
+I run the Teensy at its slowest setting: 24MHz.
+With the GPS turned off, the interface draws 39mA at this rate.
 When it's turned on, the GPS adds between 30mA and 40mA.
 
 ### Noise Floor
@@ -141,7 +141,7 @@ The radio was connected and turned off.
 It is an average of 100 sweeps.
 I'm not an expert here, but from what I've read, this is a very good result for a noise floor.
 I do see a small spike at 3.7kHz.
-I have no idea what that is.
+I have no idea what that is, but it isn't a problem.
 
 ### Audio In Frequency Response
 
