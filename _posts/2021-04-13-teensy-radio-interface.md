@@ -3,7 +3,7 @@ layout: post
 title: Teensy Radio Interface
 ---
 
-![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
+![interface PCB]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
 
 I assembled a radio interface using a [Teensy 3.2](https://www.pjrc.com/store/teensy32.html) and [audio board](https://www.pjrc.com/store/teensy3_audio.html) from [PJRC](https://www.pjrc.com/) and a custom PCB.
 A minimal implementation only requires those two modules plus an additional resistor and transitor for PTT and a connector for your radio.
@@ -20,7 +20,7 @@ This serial port can also be used for PTT via one of its control lines (RTS or D
 The second serial port is connected to the GPS.
 It can be used to receive NMEA sentences for something like APRS.
 
-![interface PCB]({{ site.baseurl }}/images/teensy-radio-interface/teensy.jpg)
+![interface with radio]({{ site.baseurl }}/images/teensy-radio-interface/teensy-with-radio.jpg)
 
 The outgoing left audio channel from the computer is connected to the radio.
 The outgoing right audio channel from the computer is used for VOX, if enabled.
