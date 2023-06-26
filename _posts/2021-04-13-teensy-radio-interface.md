@@ -85,6 +85,7 @@ I implemented squelch for the headphone jack in software.
 ## GPS
 
 The GPS module (center of the PCB) is a [PA1010D from Adafruit.](https://www.adafruit.com/product/4415)
+It is optional and sits in a socket.
 That module is a PCB with some through-hole solder pads, a voltage regulator, a backup battery, two LEDS, and a [CDTop CD-PA1010D module.](https://cdn-learn.adafruit.com/assets/assets/000/084/295/original/CD_PA1010D_Datasheet_v.03.pdf?1573833002)
 The CDTop module contains a [MediaTek MT3333.](https://labs.mediatek.com/en/chipset/MT3333)
 It is connected to the Teensy via one of its hardware UARTs and is seen by the computer as the second serial port.
