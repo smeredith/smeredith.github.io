@@ -179,7 +179,7 @@ In my next board revision, I will add the COMM OK signal from the DRA-30 555 tim
 
 I chose the FTDI FT232R USB-to-serial port chip.
 I like this chip because I can configure it via a utility program if I ever need to invert the TX and RX signals.
-It also solves a problem with Windows asserting RTS when at inopportune times.
+It also solves a problem with Windows asserting RTS at inopportune times.
 
 Windows will assert RTS several times when the serial port is powered up, and when some other USB serial port is added or removed from the system.
 PTT will trigger and any connected and powered-on radio will transmit a few short pulses.
