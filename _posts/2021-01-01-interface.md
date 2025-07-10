@@ -22,10 +22,13 @@ This configuration is in no way standard and custom cables are required for ever
 
 I built two cables for my radio.
 The teal cable carries audio in and out, PTT, and ground.
+It has no extra electronics, just a DB-9 on one end and a mini DIN on the other.
+It is fine when I don't want to talk to the radio via serial.
+It is the cable I use most of the time.
 
 ![serial port voltage converter inside a db-9 shell]({{ site.baseurl }}/images/db-9.jpg)
 
-The black cable has a serial port voltage level converter inside the DB-9 shell and adds serial RX and TX lines.
+The black cable has a serial port voltage level converter inside the DB-9 shell and adds serial RX and TX lines in order to communicate with the radio.
 
 ![double-headed cable]({{ site.baseurl }}/images/interface/double-headed-cable.jpg)
 
