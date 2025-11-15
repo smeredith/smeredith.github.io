@@ -9,10 +9,11 @@ Even the speakers work, which was not true when I tested the previous version of
 
 It has 4GB RAM and the installer configured an 8.3GB swap file.
 This has been fine.
-Don't expect miracles, but browsing with Chrome works as well as it did on the machine when it had ChromeOS.
+Don't expect miracles, but browsing with Chrome works at least as well as it did on the machine when it had ChromeOS.
 And I enjoy flipping the keyboard around and reading PDFs in portrait mode like a magazine.
 
 I enabled full-disk encryption, so this is a great travel laptop now.
+I can even charge it with a low-wattage 5V USB-A phone charger or portable battery pack if I forget to pack a more powerful charger.
 
 These are the high-level steps I followed:
 1. Remove firmware write-protect screw under black pad in the center bottom of mainboard.
