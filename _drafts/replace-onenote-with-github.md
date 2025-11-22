@@ -15,6 +15,14 @@ OneNote stores things in a complex propriety format that makes migrating your fi
 I am not trying to persuade you to switch from OneNote to plain files like I did.
 But if you do want to, these ideas might make the switch easier for you.
 
+## Notebooks, Sections, and Pages
+
+I think of a git repo as the equivalent of a OneNote notebook.
+OneNote sections can be replicated with directories, nested aribrarily deep.
+A markdown file is the equivalent of a OneNote page.
+I don't know what to say about OneNote sub-pages: they are an odd concept.
+You can get more or less the same effect with an additional directory level.
+
 ## Text Formatting
 
 I get the formatting I need from [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
@@ -27,20 +35,12 @@ When you edit a file in the GitHub web interface, it does not spell check your t
 Even the browser's built-in spell checker does not work in that interface.
 To get spell checking, I use VS Code to edit the files locally.
 
-## Notebooks, Sections, and Pages
-
-I think of a git repo as the equivalent of a OneNote notebook.
-OneNote sections can be replicated with directories, nested aribrarily deep.
-A markdown file is the equivalent of a OneNote page.
-I don't know what to say about OneNote sub-pages: they are an odd concept.
-You can get more or less the same effect with an additional directory level.
-
 ## Print to OneNote
 
 I just print to a PDF and place the PDF in the folder where it belongs.
 To view it, select the file in the GitHub UI.
-To annotate it, download it, annotate in a native app, and upload it again.
-This is a better experience than using OneNote tools to draw on top of a PDF printout in a page.
+To annotate it, I use a native app.
+This is a better experience than using OneNote tools to draw on top of a PDF printout in a page or inserting text boxes around the page.
 
 ## Images
 
@@ -62,3 +62,19 @@ However, if you need to change the size of the image, you need to use HTML synta
 You can use standard markdown links to link between pages in your repo, even referencing headers within a page if you like.
 You can also link to files like images and PDFs.
 And you can add external links as well.
+
+## Drawing
+
+For creating diagrams and drawing, I use [excalidraw.com](https://excalidraw.com/).
+When saving the file I created, I use "Export Image".
+I select "svg" as the image format, check "Embed scene" option, and download the file and add it to my repo.
+The GitHub UI displays the image when I select the file.
+
+To edit the image, I upload the .svg file to excalidraw.com again.
+Since I embedded the scence, the diagram is loaded back into the editor and I can carry on editting it.
+Export it again and add it back to the repo.
+
+## Version Control
+
+OneNote has a built-in page history, but it no where near as robust as git.
+For example, moving a page in OneNote to a different section destroys the page history.
