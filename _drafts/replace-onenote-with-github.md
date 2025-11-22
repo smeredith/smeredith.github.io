@@ -8,7 +8,7 @@ As a replacement for OneDrive, I use a set of markdown files, image files, and p
 I keep these files in GitHub.
 I browse and edit them either in VS Code locally or via the GitHub web interface.
 
-This chage has a lot of benefits for me and I am happy to be done with OneNote.
+This change has a lot of benefits for me and I am happy to be done with OneNote.
 One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
 
@@ -18,7 +18,7 @@ But if you do want to, these ideas might make the switch easier for you.
 ## Notebooks, Sections, and Pages
 
 I think of a git repo as the equivalent of a OneNote notebook.
-OneNote sections can be replicated with directories, nested aribrarily deep.
+OneNote sections can be replicated with directories, nested arbitrarily deep.
 A markdown file is the equivalent of a OneNote page.
 I don't know what to say about OneNote sub-pages: they are an odd concept.
 You can get more or less the same effect with an additional directory level.
@@ -27,7 +27,7 @@ You can get more or less the same effect with an additional directory level.
 
 I get the formatting I need from [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-If you want <mark>yellow highlighting</mark>, you need to surroud the text with `<mark>` and `</mark>`.
+If you want <mark>yellow highlighting</mark>, you need to surround the text with `<mark>` and `</mark>`.
 
 ## Spell Checking
 
@@ -71,7 +71,7 @@ I select "svg" as the image format, check "Embed scene" option, and download the
 The GitHub UI displays the image when I select the file.
 
 To edit the image, I upload the .svg file to excalidraw.com again.
-Since I embedded the scence, the diagram is loaded back into the editor and I can carry on editting it.
+Since I embedded the scene, the diagram is loaded back into the editor and I can carry on editing it.
 Export it again and add it back to the repo.
 
 ## Version Control
