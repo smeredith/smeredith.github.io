@@ -100,6 +100,14 @@ Export it again and add it back to the repo.
 OneNote has a built-in page history, but it no where near as robust as git.
 For example, moving a page in OneNote to a different section destroys the page history.
 
+## Mobile App
+
+## Tags
+
+## Hand-written notes
+
+## Dictation
+
 ## Other VS Code Markdown Extensions
 
 Have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
