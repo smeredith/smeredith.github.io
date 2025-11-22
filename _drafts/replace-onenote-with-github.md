@@ -35,8 +35,14 @@ tags:
  - mytag2
 ---
 ```
+In addition to tags, you can put other metadata in this section if it helps you organize things.
+As an example, this is how [GitHub Docs uses frontmatter](https://docs.github.com/en/contributing/writing-for-github-docs/using-yaml-frontmatter).
 
-I use a combination of directories and tags.
+The primary goal of using the format is to provide a standard and consistant way to apply metadata to your notes.
+Other apps, e.g. Obsidian, use this format as well.
+
+I use a combination of directories and metadata to organize my notes.
+I use `tags:` and `source:` to record a URL if I am taking notes on a web page.
 
 ## Search
 
