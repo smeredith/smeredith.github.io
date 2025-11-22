@@ -140,7 +140,16 @@ If you do, a good choice for them might be the native app Xournal++.
 You can export your written notes as PDF and they will fit right in with the rest of your files.
 Xournal++ can open the PDF again if you want to add more notes to the file later.
 
-### rnote
+### Rnote
+
+I considered Rnote for drawing and handwriting, but I ruled it out because you can't round-trip a PDF.
+You must store the in .rnote format.
+If you want a browsable PDF of these notes, you need to export it, then keep track of that file plus the .rnote file so you can edit it.
+
+Xournal++ and Excalidraw do not have this problem.
+Xournal++ can open and edit the PDF file it created.
+Excalidraw can open and edit the .svg file it created.
+And both are rendered natively by GitHub and VS Code.
 
 ## Dictation
 
