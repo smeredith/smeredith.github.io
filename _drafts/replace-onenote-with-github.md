@@ -5,7 +5,7 @@ I can still access my notebooks via the web interface, but I hate it.
 It's buggy, does not have all the same features, and pages take forever to load.
 
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
-I keep these files in GitHub.
+I keep these files in GitHub, in a private repo.
 I browse and edit them either in VS Code locally or via the GitHub web interface.
 
 This change has a lot of benefits for me and I am happy to be done with OneNote.
@@ -143,7 +143,7 @@ Xournal++ can open the PDF again if you want to add more notes to the file later
 ### Rnote
 
 I considered Rnote for drawing and handwriting, but I ruled it out because you can't round-trip a PDF.
-You must store the in .rnote format.
+You must store your notes in .rnote format.
 If you want a browsable PDF of these notes, you need to export it, then keep track of that file plus the .rnote file so you can edit it.
 
 Xournal++ and Excalidraw do not have this problem.
@@ -151,13 +151,22 @@ Xournal++ can open and edit the PDF file it created.
 Excalidraw can open and edit the .svg file it created.
 And both are rendered natively by GitHub and VS Code.
 
+Maybe this is not a problem for you, but I don't want a proliferation of special file formats in my notes.
+I want a very small set of stardard file formats that everything can render.
+
 ## Dictation
 
-## EncroS Sections
+I don't need to do this often, but if I want to dictate my notes, I would use the GitHub app on one of my iOS devices, open the file for edit, and use the iOS native speech-to-text feature to get this done.
+
+## Encrypted Sections
+
+OneNote allows you to encrypt an entire section.
+As a replacement, I recommend you keep notes and documents that really need to be encrypted in a password manager.
 
 ## Other VS Code Markdown Extensions
 
-Have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+For Markdown, have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+For spellcheck, I use "Code Spell Checker" by Street Side Software.
 
 ## Further Reading
 
