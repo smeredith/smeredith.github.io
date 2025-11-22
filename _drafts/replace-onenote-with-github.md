@@ -17,11 +17,26 @@ But if you do want to, these ideas might make the switch easier for you.
 
 ## Notebooks, Sections, and Pages
 
+How you organize your notes is probably at least as important the application you choose to create them.
+OneNote is nice if you like a hierarchical organization.
+
 I think of a git repo as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
 A markdown file is the equivalent of a OneNote page.
 I don't know what to say about OneNote sub-pages: they are an odd concept.
 You can get more or less the same effect with an additional directory level.
+
+## Search
+
+Searching for text in the markdown files is easy, fast, and works well.
+Plus, I get to use regular expressions.
+And I can search the entire repo whereas the OneNote web interfaces limits me to searching the current page or the current section.
+
+However, OneNote will search for text within images on its pages using OCR.
+This includes images that are printouts of PDF.
+That's a win for OneNote, but this is not a very common scenario for me.
+To search for a PDF in my repo that contains some given text, I need to use an external tool.
+My file manager (Nemo) will do it fine.
 
 ## Text Formatting
 
@@ -29,11 +44,17 @@ I get the formatting I need from [markdown syntax](https://docs.github.com/en/ge
 
 If you want <mark>yellow highlighting</mark>, you need to surround the text with `<mark>` and `</mark>`.
 
+## Tables
+
+Tables are painful to work with in markdown.
+There are some VS Code extensions that help, like "Markdown Table Prettifier."
+That implies that when working with tables I will edit locally instead of using the GitHub web UI.
+
 ## Spell Checking
 
 When you edit a file in the GitHub web interface, it does not spell check your text.
 Even the browser's built-in spell checker does not work in that interface.
-To get spell checking, I use VS Code to edit the files locally.
+To get spell checking, I use VS Code locally to edit the files.
 
 ## Print to OneNote
 
@@ -78,3 +99,7 @@ Export it again and add it back to the repo.
 
 OneNote has a built-in page history, but it no where near as robust as git.
 For example, moving a page in OneNote to a different section destroys the page history.
+
+## Other VS Code Markdown Extensions
+
+Have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
