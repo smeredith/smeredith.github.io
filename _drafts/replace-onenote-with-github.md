@@ -106,8 +106,18 @@ For example, moving a page in OneNote to a different section destroys the page h
 
 ## Hand-written notes
 
+- xcalidraw
+- xournal++
+- rnote
+
 ## Dictation
+
+## EncroS Sections
 
 ## Other VS Code Markdown Extensions
 
 Have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+
+## Further Reading
+
+[](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
