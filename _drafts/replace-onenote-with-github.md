@@ -21,13 +21,19 @@ I get the formatting I need from [markdown syntax](https://docs.github.com/en/ge
 
 If you want <mark>yellow highlighting</mark>, you need to surroud the text with `<mark>` and `</mark>`.
 
+## Spell Checking
+
+When you edit a file in the GitHub web interface, it does not spell check your text.
+Even the browser's built-in spell checker does not work in that interface.
+To get spell checking, I use VS Code to edit the files locally.
+
 ## Notebooks, Sections, and Pages
 
-I think of a git repo as the equivalent of a notebook.
-Sections can be replicated with directories, nested aribrarily deep.
-A markdown file is the equivalent of a page.
+I think of a git repo as the equivalent of a OneNote notebook.
+OneNote sections can be replicated with directories, nested aribrarily deep.
+A markdown file is the equivalent of a OneNote page.
 I don't know what to say about OneNote sub-pages: they are an odd concept.
-You can get more or less the same effect with a directory level.
+You can get more or less the same effect with an additional directory level.
 
 ## Print to OneNote
 
@@ -50,3 +56,9 @@ However, if you need to change the size of the image, you need to use HTML synta
 ```
 <img src="filename.jpg" width="500" />
 ```
+
+## Links
+
+You can use standard markdown links to link between pages in your repo, even referencing headers within a page if you like.
+You can also link to files like images and PDFs.
+And you can add external links as well.
