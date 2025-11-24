@@ -104,16 +104,14 @@ And you can add external links as well.
 
 ## Drawing
 
-For creating diagrams and drawings, I use [excalidraw.com](https://excalidraw.com/).
+For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
 This gives you an infinate canvas and the ability to use a stylus if you like.
 
-When saving the file I created, I use "Export Image".
-I select "svg" as the image format, check "Embed scene" option, and download the file and add it to my repo.
-The GitHub UI and VS Code both display the drawing when I select the file.
+To create a drawing, create a new file with a name ending in ".excalidraw.svg".
+The drawing commands, which Excalidraw calls "the scene", are stored in the svg file itself.
+This means VS Code and GitHub see the file as an image and render it as such, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
 
-To edit the drawing, I upload the .svg file to excalidraw.com again.
-Since I embedded the scene, the diagram is loaded back into the editor and I can carry on editing it.
-Export it again and save it back to the repo.
+You can also edit these file in a browser with [excalidraw.com](https://excalidraw.com/).
 
 ## Version Control
 
@@ -183,6 +181,7 @@ Alternatively, you can encrypt a subset of PDFs with a password.
 - For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
 - For spellcheck, I use "Code Spell Checker" by Street Side Software.
 - To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
+- For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
 
 ## Further Reading
 
