@@ -153,7 +153,7 @@ This command adds a 2" right margin:
 ```
 pdfcrop --margins '0 0 144 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
 ```
-I install it with `sudo apt install texlive-extra-utils`.
+I installed it with `sudo apt install texlive-extra-utils`.
 The package is huge.
 
 If I need even more space in your PDF for notes, I can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
@@ -174,7 +174,7 @@ I don't need to do this often, but if I want to dictate my notes, I would use th
 OneNote allows you to encrypt an entire section.
 As a replacement, I recommend you keep notes and documents that really need to be encrypted in a password manager.
 
-Alternatively, you can encrypt a subset of PDFs with a password.
+Alternatively, you can encrypt your private PDFs with a password.
 
 ## VS Code Markdown Extensions
 
