@@ -24,9 +24,8 @@ A markdown file is the equivalent of a OneNote page.
 I don't know what to say about OneNote sub-pages: they are an odd concept.
 You can get more or less the same effect with an additional directory level.
 
-OneNote forces this Notebook/Section organization.
 If you don't want a hierarchical directory structure, you are free to organize your files however you like.
-If you want to use tags instead, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/).
+If you want to use tags instead, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) in your markdown files.
 It's a block of yml at the start of the file that looks like this:
 ```
 ---
@@ -38,11 +37,12 @@ tags:
 In addition to tags, you can put other metadata in this section if it helps you organize things.
 As an example, this is how [GitHub Docs uses frontmatter](https://docs.github.com/en/contributing/writing-for-github-docs/using-yaml-frontmatter).
 
-The primary goal of using the format is to provide a standard and consistant way to apply metadata to your notes.
+The primary goal of using the yml format is to provide a standard and consistant way to apply metadata to all your notes.
 Other apps, e.g. Obsidian, use this format as well.
 
 I use a combination of directories and metadata to organize my notes.
-In addition to `tags:`, I use `source:` to record a URL if I am taking notes on a web page and a few other random tags.
+In addition to `tags:`, I use `source:` to record a URL if I am taking notes on a web page.
+I use a few other random tags.
 
 ## Search
 
@@ -60,7 +60,7 @@ My file manager (Nemo) will do it fine.
 
 I get the formatting I need from [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to surround the text with `<mark>` and `</mark>`.
+If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to surround the text with `<mark>` and `</mark>`, which are not part of markdown.
 
 ## Tables
 
@@ -73,23 +73,6 @@ That implies that when working with tables I will edit locally instead of using 
 When you edit a file in the GitHub web interface, it does not spell check your text.
 Even the browser's built-in spell checker does not work in that interface.
 To get spell checking, I use VS Code locally with a spell check extension to edit the files.
-
-## Print to OneNote
-
-I just print to a PDF and place the PDF in the folder where it belongs.
-To view it in the GitHub web UI, select the file.
-To view it in VS Code, use the vscode-pdf extension from tomoki1207.
-
-## Annotate a PDF
-
-To annotate a PDF, I use a native app.
-I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
-To highlight text and insert text annotations, I use Okular.
-If you like to annotate with a sytlus, Xournal++ might be a good choice.
-
-If you need more space on a PDF to take notes, you can increase the size of its margins using [the tool found here](https://www.i2pdf.com/add-margin-to-pdf).
-You can add up to 3 inches per side.
-I wouldn't use this tool for any private files.
 
 ## Images
 
@@ -141,6 +124,32 @@ I can search, browse, and edit notes.
 This has satisfied my mobile needs.
 
 You could also just use the GitHub web UI in the browser.
+
+## Print to OneNote
+
+I just print to a PDF and place the PDF in the folder where it belongs.
+To view it in the GitHub web UI, select the file.
+To view it in VS Code, use the vscode-pdf extension from tomoki1207.
+
+## Annotate a PDF
+
+To annotate a PDF, I use a native app.
+I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
+To highlight text and insert text annotations, I use Okular.
+If you like to annotate with a sytlus, Xournal++ might be a good choice.
+
+If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
+You can add up to 3 inches per side.
+I wouldn't use this tool for any private files.
+
+Or you can use `pdfcrop`, a command line tool for Linux:
+```
+pdfcrop --margins '10 10 10 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
+```
+Install it with `sudo apt install texlive-extra-utils`.
+It's huge.
+
+If you need even more space, you can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in your PDF.
 
 ## Hand-written notes
 
