@@ -42,7 +42,7 @@ The primary goal of using the format is to provide a standard and consistant way
 Other apps, e.g. Obsidian, use this format as well.
 
 I use a combination of directories and metadata to organize my notes.
-I use `tags:` and `source:` to record a URL if I am taking notes on a web page.
+In addition to `tags:`, I use `source:` to record a URL if I am taking notes on a web page and a few other random tags.
 
 ## Search
 
@@ -60,7 +60,7 @@ My file manager (Nemo) will do it fine.
 
 I get the formatting I need from [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-If you want <mark>yellow highlighting</mark>, you need to surround the text with `<mark>` and `</mark>`.
+If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to surround the text with `<mark>` and `</mark>`.
 
 ## Tables
 
@@ -77,7 +77,8 @@ To get spell checking, I use VS Code locally with a spell check extension to edi
 ## Print to OneNote
 
 I just print to a PDF and place the PDF in the folder where it belongs.
-To view it, select the file in the GitHub UI.
+To view it in the GitHub web UI, select the file.
+To view it in VS Code, use the vscode-pdf extension from tomoki1207.
 
 ## Annotate a PDF
 
@@ -85,6 +86,10 @@ To annotate a PDF, I use a native app.
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
 To highlight text and insert text annotations, I use Okular.
 If you like to annotate with a sytlus, Xournal++ might be a good choice.
+
+If you need more space on a PDF to take notes, you can increase the size of its margins using [the tool found here](https://www.i2pdf.com/add-margin-to-pdf).
+You can add up to 3 inches per side.
+I wouldn't use this tool for any private files.
 
 ## Images
 
