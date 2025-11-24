@@ -102,7 +102,7 @@ You can use standard markdown links to link between pages in your repo, even ref
 You can also link to files like images and PDFs.
 And you can add external links as well.
 
-## Drawing
+## Whiteboard / Drawing / Diagrams
 
 For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
 This gives you an infinate canvas and the ability to use a stylus if you like.
