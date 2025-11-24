@@ -180,10 +180,10 @@ Alternatively, you can encrypt a subset of PDFs with a password.
 
 ## VS Code Markdown Extensions
 
-For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
-For spellcheck, I use "Code Spell Checker" by Street Side Software.
-To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
+- For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+- For spellcheck, I use "Code Spell Checker" by Street Side Software.
+- To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
 
 ## Further Reading
 
-- [](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
+- [Best ONENOTE ALTERNATIVES for Linux, Windows and MacOS](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
