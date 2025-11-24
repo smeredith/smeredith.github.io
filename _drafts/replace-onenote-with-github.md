@@ -169,6 +169,8 @@ I don't need to do this often, but if I want to dictate my notes, I would use th
 OneNote allows you to encrypt an entire section.
 As a replacement, I recommend you keep notes and documents that really need to be encrypted in a password manager.
 
+Alternatively, you can encrypt a subset of PDFs with a password.
+
 ## Other VS Code Markdown Extensions
 
 For Markdown, have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
