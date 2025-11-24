@@ -1,3 +1,5 @@
+# Replacing OneNote with Markdown and PDFs
+
 I used to use OneNote on Windows.
 It worked pretty well--I could add content easily without much thought or work.
 I stopped using Windows a couple years ago, and therefor stopped using OneNote on Windows.
@@ -6,19 +8,24 @@ It's buggy, does not have all the same features, and pages take forever to load.
 
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
 I keep these files in GitHub, in a private repo.
-I browse and edit them either in VS Code locally or via the GitHub web interface.
+I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
-This change has a lot of benefits for me and I am happy to be done with OneNote.
+I used Obsidian for a while in the past, and for some reason I prefer VS Code and GitHub.
+If I want, I can use one of my note repos as an Obsidian vault, and it will just work.
+
+This setup has a lot of benefits for me and I am happy to be done with OneNote.
 One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
 
-I am not trying to persuade you to switch from OneNote to plain files.
+I am not trying to persuade you to switch from OneNote to plain text and PDF files.
 But if you do want to, these ideas might make the switch easier for you.
 Or if you are trying to decide if you should or could, maybe this will help.
 
+This document assumes you have some technical proficiency with VS Code and git.
+
 ## Notebooks, Sections, and Pages
 
-I think of a git repo as the equivalent of a OneNote notebook.
+I think of a single git repo as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
 A markdown file is the equivalent of a OneNote page.
 I don't know what to say about OneNote sub-pages: they are an odd concept.
@@ -37,8 +44,8 @@ tags:
 In addition to tags, you can put other metadata in this section if it helps you organize things.
 As an example, this is how [GitHub Docs uses frontmatter](https://docs.github.com/en/contributing/writing-for-github-docs/using-yaml-frontmatter).
 
-The primary goal of using the yml format is to provide a standard and consistant way to apply metadata to all your notes.
-Other apps, e.g. Obsidian, use this format as well.
+The primary goal of using the yml format is to provide a standard and consistant way to apply metadata to all my notes.
+Nothing I currently use relies on them, but other apps, like Obsidian, use this format as well.
 
 I use a combination of directories and metadata to organize my notes.
 In addition to `tags:`, I use `source:` to record a URL if I am taking notes on a web page.
