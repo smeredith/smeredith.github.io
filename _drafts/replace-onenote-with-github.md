@@ -110,7 +110,7 @@ Export it again and add it back to the repo.
 
 ## Version Control
 
-OneNote has a built-in page history, but it no where near as robust as git for version control.
+OneNote has a built-in page history, but it is no where near as robust as git for version control.
 For example, moving a page in OneNote to a different section destroys the page history.
 
 It's automatic in OneNote, but you must think about it a little more when using git.
@@ -129,50 +129,36 @@ You could also just use the GitHub web UI in the browser.
 
 I just print to a PDF and place the PDF in the folder where it belongs.
 To view it in the GitHub web UI, select the file.
-To view it in VS Code, use the vscode-pdf extension from tomoki1207.
+To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
 
 ## Annotate a PDF
 
-To annotate a PDF, I use a native app.
+To annotate a PDF, I use a native app to highlight text and insert text annotations.
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
-To highlight text and insert text annotations, I use Okular.
-If you like to annotate with a sytlus, Xournal++ might be a good choice.
+Okular is one app that works.
+[BentoPDF](https://bentopdf.com/) is pretty good for text and stylus input, and it also allows you to insert images.
+If you like to annotate with a sytlus, Google Chrome might be another good choice.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
 I wouldn't use this tool for any private files.
 
-Or you can use `pdfcrop`, a command line tool for Linux:
+Or you can use `pdfcrop`, a command line tool for Linux.
+This command adds a 2" right margin:
 ```
-pdfcrop --margins '10 10 10 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
+pdfcrop --margins '0 0 144 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
 ```
 Install it with `sudo apt install texlive-extra-utils`.
 It's huge.
 
-If you need even more space, you can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in your PDF.
+If you need even more space in your PDF for notes, you can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in your PDF.
 
 ## Hand-written notes
 
-### Xournal++
-
 I don't make handwritten notes using a stylus.
-If you do, a good choice for them might be the native app Xournal++.
+If you do, a good choice for that might be the native app Xournal++.
 You can export your written notes as PDF and they will fit right in with the rest of your files.
-Xournal++ can open the PDF again if you want to add more notes to the file later.
-
-### Rnote
-
-I considered Rnote for drawing and handwriting, but I ruled it out because you can't round-trip a PDF.
-You must store your notes in .rnote format.
-If you want a browsable PDF of these notes, you need to export it, then keep track of that file plus the .rnote file so you can edit it.
-
-Xournal++ and Excalidraw do not have this problem.
-Xournal++ can open and edit the PDF file it created.
-Excalidraw can open and edit the .svg file it created.
-And both are rendered natively by GitHub and VS Code.
-
-Maybe this is not a problem for you, but I don't want a proliferation of special file formats in my notes.
-I want a very small set of stardard file formats that everything can render.
+Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones.
 
 ## Dictation
 
@@ -185,10 +171,11 @@ As a replacement, I recommend you keep notes and documents that really need to b
 
 Alternatively, you can encrypt a subset of PDFs with a password.
 
-## Other VS Code Markdown Extensions
+## VS Code Markdown Extensions
 
-For Markdown, have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+For markdown, have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
 For spellcheck, I use "Code Spell Checker" by Street Side Software.
+To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
 
 ## Further Reading
 
