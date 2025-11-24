@@ -4,18 +4,18 @@ I used to use OneNote on Windows.
 It worked pretty well--I could add content easily without much thought or work.
 I stopped using Windows a couple years ago, and therefor stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
-It's buggy, does not have all the same features, and pages take forever to load.
+It's buggy, it's missing features, and pages often take forever to load.
 
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
 I keep these files in GitHub, in a private repo.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
-I used Obsidian for a while in the past, and for some reason I prefer VS Code and GitHub.
-If I want, I can use one of my note repos as an Obsidian vault, and it will just work.
-
 This setup has a lot of benefits for me and I am happy to be done with OneNote.
 One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
+
+I used Obsidian for a while in the past, and for some reason I prefer VS Code and GitHub.
+If I want, I can use any of my note repos as an Obsidian vault, and it will just work.
 
 I am not trying to persuade you to switch from OneNote to plain text and PDF files.
 But if you do want to, these ideas might make the switch easier for you.
@@ -109,11 +109,11 @@ This gives you an infinate canvas and the ability to use a stylus if you like.
 
 When saving the file I created, I use "Export Image".
 I select "svg" as the image format, check "Embed scene" option, and download the file and add it to my repo.
-The GitHub UI displays the image when I select the file.
+The GitHub UI and VS Code both display the drawing when I select the file.
 
-To edit the image, I upload the .svg file to excalidraw.com again.
+To edit the drawing, I upload the .svg file to excalidraw.com again.
 Since I embedded the scene, the diagram is loaded back into the editor and I can carry on editing it.
-Export it again and add it back to the repo.
+Export it again and save it back to the repo.
 
 ## Version Control
 
@@ -128,9 +128,9 @@ For example, if you edit files both locally and using the GitHub UI, you might n
 I use the GitHub app for iOS.
 You need an Internet connection for this.
 I can search, browse, and edit notes.
-This has satisfied my mobile needs.
+This has satisfied my mobile needs, which is usually to look something up or jot something down.
 
-You could also just use the GitHub web UI in the browser.
+You could also just use the GitHub web UI in the phone's browser.
 
 ## Print to OneNote
 
@@ -155,16 +155,16 @@ This command adds a 2" right margin:
 ```
 pdfcrop --margins '0 0 144 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
 ```
-Install it with `sudo apt install texlive-extra-utils`.
-It's huge.
+I install it with `sudo apt install texlive-extra-utils`.
+The package is huge.
 
-If you need even more space in your PDF for notes, you can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in your PDF.
+If I need even more space in your PDF for notes, I can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
 
 ## Hand-written notes
 
 I don't make handwritten notes using a stylus.
 If you do, a good choice for that might be the native app Xournal++.
-You can export your written notes as PDF and they will fit right in with the rest of your files.
+You can export your written notes as PDF so they will be rendered.
 Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones.
 
 ## Dictation
@@ -180,10 +180,10 @@ Alternatively, you can encrypt a subset of PDFs with a password.
 
 ## VS Code Markdown Extensions
 
-For markdown, have a look at "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
 For spellcheck, I use "Code Spell Checker" by Street Side Software.
 To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
 
 ## Further Reading
 
-[](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
+- [](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
