@@ -145,9 +145,7 @@ To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from
 
 To annotate a PDF, I use a native app to highlight text and insert text annotations.
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
-Okular is one app that works.
-[BentoPDF](https://bentopdf.com/) is pretty good for text and stylus input, and it also allows you to insert images.
-If you like to annotate with a sytlus, Google Chrome might be another good choice.
+Okular is one app that works. Google Chrome and Firefox also work.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
@@ -158,9 +156,11 @@ If I need even more space in your PDF for notes, I can use [BentoPDF](https://be
 ## Hand-written notes
 
 I don't make handwritten notes using a stylus.
-If you do, a good choice for that might be the native app Xournal++.
+If you do, VS Code with the Excalidraw extension is a good choice.
+
+You could also use the native app Xournal++.
 You can export your written notes as PDF so they will be rendered.
-Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones.
+Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones unless you keep the .xopp file around too.
 
 ## Dictation
 
