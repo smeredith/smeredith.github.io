@@ -147,20 +147,22 @@ If you need more space on a PDF to take notes, you can increase the size of its 
 You can add up to 3 inches per side.
 The site is full of ads, and I wouldn't use this tool for anything else and not for any private files.
 
-If I need even more space in your PDF for notes, I can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
+If I need even more space in a PDF for notes, I use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
+This is a great tool for doing various kinds of PDF manipulation, like merging and splitting PDFs and extracting pages from them.
 
 ## Hand-written notes
 
 I don't make handwritten notes using a stylus.
 If you do, VS Code with the Excalidraw extension is a good choice.
+I'd start with a 70% zoom for writing.
 
 You could also use the native app Xournal++.
-You can export your written notes as PDF so they will be rendered.
+You can export your written notes as PDF so they will be rendered in VS Code when you browse them.
 Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones unless you keep the .xopp file around too.
 
 ## Dictation
 
-I don't need to do this often, but if I want to dictate my notes, I would use the GitHub app on one of my iOS devices, open the file for edit, and use the [iOS native dictation feature](https://support.apple.com/guide/iphone/dictate-text-iph2c0651d2/ios) to get this done.
+I don't need to do this often, but if I want to dictate my notes, I would use the GitHub app on my phone, open the file for edit, and use the [iOS native dictation feature](https://support.apple.com/guide/iphone/dictate-text-iph2c0651d2/ios) to get this done.
 
 ## Encrypted Sections
 
@@ -171,7 +173,8 @@ Alternatively, you can encrypt your private PDFs with a password.
 
 ## VS Code Markdown Extensions
 
-- For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier," and "Foam."
+- For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier."
+- For personal knowledge base features, I use "Foam."
 - For spellcheck, I use "Code Spell Checker" by Street Side Software.
 - To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
 - For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
