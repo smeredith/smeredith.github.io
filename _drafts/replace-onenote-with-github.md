@@ -151,15 +151,7 @@ If you like to annotate with a sytlus, Google Chrome might be another good choic
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
-I wouldn't use this tool for any private files.
-
-Or you can use `pdfcrop`, a command line tool for Linux.
-This command adds a 2" right margin:
-```
-pdfcrop --margins '0 0 144 10' inpub  t.pdf output.pdf # left bottom right top in 72nds of an inch
-```
-I installed it with `sudo apt install texlive-extra-utils`.
-The package is huge.
+The site is full of ads, and I wouldn't use this tool for anything else and not for any private files.
 
 If I need even more space in your PDF for notes, I can use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
 
