@@ -9,31 +9,33 @@ It's buggy, it's missing features, and pages often take forever to load.
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
 I keep these files in GitHub, in a private repo.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
+VS Code is my default because you can do the most with it.
+If I don't have that with me, I will use the GitHub web interface.
+If all I have is my iPhone, I will use the GitHub mobile app.
 
 This setup has a lot of benefits for me and I am happy to be done with OneNote.
 One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
 
-I used Obsidian for a while in the past, and for some reason I prefer VS Code and GitHub.
-If I want, I can use any of my note repos as an Obsidian vault, and it will just work.
+I used Obsidian for a while in the past, and I prefer VS Code because it is such a good text editor.
+If I wanted to, I could use any of my note repos as an Obsidian vault, and it would just work.
 
 I am not trying to persuade you to switch from OneNote to plain text and PDF files.
 But if you do want to, these ideas might make the switch easier for you.
 Or if you are trying to decide if you should or could, maybe this will help.
 
-This document assumes you have some technical proficiency with VS Code and git.
+This document assumes you have some technical proficiency with VS Code and git or could learn them.
 
 ## Notebooks, Sections, and Pages
 
 I think of a single git repo as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
-A markdown file is the equivalent of a OneNote page.
-I don't know what to say about OneNote sub-pages: they are an odd concept.
-You can get more or less the same effect with an additional directory level.
+Markdown files and PDFs are the equivalent of OneNote pages.
 
-If you don't want a hierarchical directory structure, you are free to organize your files however you like.
-If you want to use tags instead, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) in your markdown files.
-It's a block of yml at the start of the file that looks like this:
+## Tags
+
+If you want to use tags, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your markdown files.
+Front matter is a block of yml at the start of the file that looks like this:
 ```
 ---
 tags:
@@ -41,15 +43,9 @@ tags:
  - mytag2
 ---
 ```
-In addition to tags, you can put other metadata in this section if it helps you organize things.
-As an example, this is how [GitHub Docs uses frontmatter](https://docs.github.com/en/contributing/writing-for-github-docs/using-yaml-frontmatter).
 
-The primary goal of using the yml format is to provide a standard and consistant way to apply metadata to all my notes.
-Nothing I currently use relies on them, but other apps, like Obsidian, use this format as well.
-
-I use a combination of directories and metadata to organize my notes.
-In addition to `tags:`, I use `source:` to record a URL if I am taking notes on a web page.
-I use a few other random tags.
+The Foam VS Code extension has a tags explorer feature that recognized both frontmatter tags and inline tags.
+It presents them as a tree and lets you quickly jump to any tags it finds.
 
 ## Search
 
