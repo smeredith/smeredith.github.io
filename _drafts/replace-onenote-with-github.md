@@ -164,7 +164,7 @@ Xournal++ can open the PDF again if you want to add more notes to the file later
 
 ## Dictation
 
-I don't need to do this often, but if I want to dictate my notes, I would use the GitHub app on one of my iOS devices, open the file for edit, and use the iOS native speech-to-text feature to get this done.
+I don't need to do this often, but if I want to dictate my notes, I would use the GitHub app on one of my iOS devices, open the file for edit, and use the [iOS native dictation feature](https://support.apple.com/guide/iphone/dictate-text-iph2c0651d2/ios) to get this done.
 
 ## Encrypted Sections
 
