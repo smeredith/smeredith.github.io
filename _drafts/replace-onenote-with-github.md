@@ -73,7 +73,12 @@ If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to 
 
 Tables are painful to work with in markdown.
 There are some VS Code extensions that help, like "Markdown Table Prettifier."
-That implies that when working with tables I will edit locally instead of using the GitHub web UI.
+
+Another option is to use a tool that is already excelent at working with tables.
+Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view, not the raw markdown table) from the clipboard and turn it into a spreadsheet table.
+After working with it in the spreadsheet app, you need it as a markdown table again to paste it back into your document.
+[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy from the shreadsheet and paste into tableconvert, then copy the markdown and paste it into your file.
+It's a couple of steps, but to me that's easier than trying to work with a markdown table in plain text.
 
 ## Spell Checking
 
@@ -151,7 +156,7 @@ I wouldn't use this tool for any private files.
 Or you can use `pdfcrop`, a command line tool for Linux.
 This command adds a 2" right margin:
 ```
-pdfcrop --margins '0 0 144 10' input.pdf output.pdf # left bottom right top in 72nds of an inch
+pdfcrop --margins '0 0 144 10' inpub  t.pdf output.pdf # left bottom right top in 72nds of an inch
 ```
 I installed it with `sudo apt install texlive-extra-utils`.
 The package is huge.
