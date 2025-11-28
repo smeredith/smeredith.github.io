@@ -141,7 +141,7 @@ To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from
 
 To annotate a PDF, I use a native app to highlight text and insert text annotations.
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
-Okular is one app that works. Google Chrome and Firefox also work.
+Okular is one app that works.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
