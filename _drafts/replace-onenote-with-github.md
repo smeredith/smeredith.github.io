@@ -9,15 +9,12 @@ It's buggy, it's missing features, and pages often take forever to load.
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
 I keep these files in GitHub, in a private repo.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
-VS Code is my default because you can do the most with it.
-If I don't have that with me, I will use the GitHub web interface.
-If all I have is my iPhone, I will use the GitHub mobile app.
 
 This setup has a lot of benefits for me and I am happy to be done with OneNote.
 One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
 
-I used Obsidian for a while in the past, and I prefer VS Code because it is such a good text editor.
+I used Obsidian for a while, and I prefer VS Code because it is such a good text editor.
 If I wanted to, I could use any of my note repos as an Obsidian vault, and it would just work.
 
 I am not trying to persuade you to switch from OneNote to plain text and PDF files.
