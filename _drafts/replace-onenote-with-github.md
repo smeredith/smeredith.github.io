@@ -157,7 +157,7 @@ This isn´t ideal because you end up with a paginated PDF.
 If you want one long single page PDF, you can go to https://www.sejda.com/html-to-pdf and paste the URL in there.
 You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn´t include ads.
 
-If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.]([https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
+If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
 
 If you have an iPhone or iPad handy, you can take a screenshot while viewing the page, then select "Full Page" at the top.
 After that, you can save the page as a PDF or image.
