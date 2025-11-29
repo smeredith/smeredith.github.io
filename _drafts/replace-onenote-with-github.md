@@ -145,6 +145,26 @@ I just print to a PDF and place the PDF in the folder where it belongs.
 To view a PDF in the GitHub web UI, select the file.
 To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
 
+## Screen Clipper
+
+There are a few options if you want to capture the contents of a web page into your notes.
+
+The easiest thing is to print to a PDF directly from your browser.
+This isn´t ideal because you end up with a paginated PDF.
+
+If you want one long single page PDF, you can go to https://www.sejda.com/html-to-pdf and paste the URL in there.
+You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn´t include ads.
+
+If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.]([https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
+
+If you have an iPhone or iPad handy, you can take a screenshot while viewing the page, then select "Full Page" at the top.
+After that, you can save the page as a PDF or image.
+
+If you want to save the contents of the page as markdown, you can use the Reader View, MarkDownload or MarkSnip Chrome extensions.
+I like Reader View.
+To save the contents as markdown, you hold shift while pressing the save button.
+To capture only part of a page, you can select it before opening the extension.
+
 ## Annotate a PDF
 
 To annotate a PDF, I use a native app to highlight text and insert text annotations.
@@ -178,12 +198,6 @@ OneNote allows you to encrypt an entire section.
 As a replacement, I recommend you keep notes and documents that really need to be encrypted in a password manager.
 
 Alternatively, you can encrypt your private PDFs with a password.
-
-## Screen Clipper
-
-- print to pdf
-- iOS trick
-- one long page
 
 ## VS Code Markdown Extensions
 
