@@ -208,7 +208,3 @@ Alternatively, you can encrypt your private PDFs with a password.
 - For spellcheck, I use "Code Spell Checker" by Street Side Software.
 - To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
 - For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
-
-## Further Reading
-
-- [Best ONENOTE ALTERNATIVES for Linux, Windows and MacOS](https://youtu.be/Ly10LxvzNGg?si=_zE0xco9_Xb_91SI)
