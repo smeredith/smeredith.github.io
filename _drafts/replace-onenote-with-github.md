@@ -179,6 +179,12 @@ As a replacement, I recommend you keep notes and documents that really need to b
 
 Alternatively, you can encrypt your private PDFs with a password.
 
+## Screen Clipper
+
+- print to pdf
+- iOS trick
+- one long page
+
 ## VS Code Markdown Extensions
 
 - For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier."
