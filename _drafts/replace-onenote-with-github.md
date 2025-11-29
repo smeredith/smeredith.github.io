@@ -94,7 +94,7 @@ To get spell checking, I use VS Code locally with a spell check extension to edi
 
 ## Images
 
-To insert an image on a page, I upload the image to the same folder as the markdown file, and give it the same base filename as the markdown file, with a number at the end if there are multiple images.
+To insert an image on a page, I save the image to the same folder as the markdown file, and give it the same base filename as the markdown file, with a number at the end if there are multiple images.
 So `filename.md` might embed `filename-1.jpg` and `filename-2.jpg`.
 I experimented with putting all the images in a separate folder, but I prefer them together with base file.
 
@@ -102,7 +102,7 @@ The markdown syntax for inserting an image is:
 ```
 ![](filename.jpg)
 ```
-However, if you need to change the size of the image, you need to use HTML syntax instead:
+However, if you want to change the size of the image, you need to use HTML syntax instead:
 ```
 <img src="filename.jpg" width="500" />
 ```
