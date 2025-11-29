@@ -30,6 +30,8 @@ This document assumes you have some technical proficiency with VS Code and git o
 - Keep them under version control using git.
 - View and edit them with whatever programs works the best for the file at hand.
 
+The rest of this document describes how you might mimic some of the features of OneNote in other ways.
+
 ## Notebooks, Sections, and Pages
 
 I think of a single git repo as the equivalent of a OneNote notebook.
