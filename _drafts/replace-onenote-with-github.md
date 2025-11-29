@@ -26,15 +26,26 @@ Or if you are trying to decide if you should or could, maybe this will help.
 
 This document assumes you have some technical proficiency with VS Code and git or could learn them.
 
+## TL;DR
+
+- Replace a OneNote notebook with a set of standard files.
+- Organize them in a directory structure.
+- Keep them under version control using git.
+- View and edit them with whatever programs works the best for the file at hand.
+
 ## Notebooks, Sections, and Pages
 
 I think of a single git repo as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
 Markdown files and PDFs are the equivalent of OneNote pages.
 
+Use Markdown for text notes and PDFs for everything else.
+The Markdown files can include images.
+
 ## Tags
 
 If you want to use tags, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your markdown files.
+
 Front matter is a block of yml at the start of the file that looks like this:
 ```
 ---
@@ -44,8 +55,8 @@ tags:
 ---
 ```
 
-The Foam VS Code extension has a tags explorer feature that recognized both frontmatter tags and inline tags.
-It presents them as a tree and lets you quickly jump to any tags it finds.
+The Foam VS Code extension has a tags explorer feature that recognized both front matter tags and inline tags.
+It presents them as a tree as if the tags were directories and lets you quickly jump to any tags it finds.
 
 ## Search
 
@@ -73,7 +84,7 @@ There are some VS Code extensions that help, like "Markdown Table Prettifier."
 Another option is to use a tool that is already excelent at working with tables.
 Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view, not the raw markdown table) from the clipboard and turn it into a spreadsheet table.
 After working with it in the spreadsheet app, you need it as a markdown table again to paste it back into your document.
-[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy from the shreadsheet and paste into tableconvert, then copy the markdown and paste it into your file.
+[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy the table from the shreadsheet and paste into tableconvert, then copy the markdown and paste it into your file.
 It's a couple of steps, but to me that's easier than trying to work with a markdown table in plain text.
 
 ## Spell Checking
@@ -86,13 +97,13 @@ To get spell checking, I use VS Code locally with a spell check extension to edi
 
 To insert an image on a page, I upload the image to the same folder as the markdown file, and give it the same base filename as the markdown file, with a number at the end if there are multiple images.
 So `filename.md` might embed `filename-1.jpg` and `filename-2.jpg`.
-I experimented with putting all the images in a separate folder, but now I prefer them together with base file.
+I experimented with putting all the images in a separate folder, but I prefer them together with base file.
 
 The markdown syntax for inserting an image is:
 ```
 ![](filename.jpg)
 ```
-However, if you need to change the size of the image, you need to use HTML syntax:
+However, if you need to change the size of the image, you need to use HTML syntax instead:
 ```
 <img src="filename.jpg" width="500" />
 ```
@@ -110,9 +121,9 @@ This gives you an infinate canvas and the ability to use a stylus if you like.
 
 To create a drawing, create a new file with a name ending in ".excalidraw.svg".
 The drawing commands, which Excalidraw calls "the scene", are stored in the svg file itself.
-This means VS Code and GitHub see the file as an image and render it as such, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
+This means VS Code and GitHub see the file as an svg image and render it as such, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
 
-You can also edit these file in a browser with [excalidraw.com](https://excalidraw.com/).
+You can also edit these files in a browser with [excalidraw.com](https://excalidraw.com/).
 
 ## Version Control
 
@@ -134,7 +145,7 @@ You could also just use the GitHub web UI in the phone's browser.
 ## Print to OneNote
 
 I just print to a PDF and place the PDF in the folder where it belongs.
-To view it in the GitHub web UI, select the file.
+To view a PDF in the GitHub web UI, select the file.
 To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
 
 ## Annotate a PDF
@@ -143,7 +154,7 @@ To annotate a PDF, I use a native app to highlight text and insert text annotati
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
 Okular is one app that works.
 
-If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool found here](https://www.i2pdf.com/add-margin-to-pdf).
+If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
 The site is full of ads, and I wouldn't use this tool for anything else and not for any private files.
 
