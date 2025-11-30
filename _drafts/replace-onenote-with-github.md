@@ -159,8 +159,9 @@ You have the option of choosing between the normal formatting of the page or the
 
 If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
 
-If you have an iPhone or iPad handy, you can take a screenshot while viewing the page, then select "Full Page" at the top.
+If you have an iPhone handy, you can take a screenshot while viewing the page, then select "Full Page" at the top.
 After that, you can save the page as a PDF or image.
+I do see a way to do it on an iPad.
 
 If you want to save the contents of the page as markdown, you can use the Reader View, MarkDownload or MarkSnip Chrome extensions.
 I like Reader View.
