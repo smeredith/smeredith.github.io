@@ -23,10 +23,7 @@ I can even charge it with a low-wattage 5V USB-A phone charger or portable batte
 
 Beside the microphone not working, the only other problem I have encountered is that once in a while, the device does not come out of suspend properly when I open the lid.
 I see a gray screen and a working mouse cursor, but I do not see the login screen as expected.
-To recover, restart the COSMIC greeter from the console:
-- Switch to a TTY (Ctrl+Alt+F2).
-- `sudo systemctl restart cosmic-greeter`.
-- Switch back to the GUI session (Ctrl+Alt+F1).
+But if I blindly enter my password into the void, I can log in and I see the normal desktop.
 
 These are the high-level steps I followed to install the OS:
 1. Remove firmware write-protect screw under black pad in the center bottom of mainboard.
