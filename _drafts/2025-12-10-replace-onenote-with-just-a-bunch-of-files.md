@@ -1,3 +1,8 @@
+---
+layout: post
+title: Replacing OneNote with Just a Bunch of Files
+---
+
 # Replacing OneNote with Just a Bunch of Files
 
 I used to use OneNote on Windows.
