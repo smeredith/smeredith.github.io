@@ -1,23 +1,23 @@
-# Replacing OneNote with Markdown and PDFs
+# Replacing OneNote with Just a Bunch of Files
 
 I used to use OneNote on Windows.
-It worked pretty well--I could add content easily without much thought or work.
+It worked nicely--I could add content easily without much thought or work.
 I stopped using Windows a couple years ago, and therefor stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
-It's buggy, it's missing features, and pages often take forever to load.
+The web version is buggy, it's missing features, and is slow.
 
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
 I keep these files in GitHub, in a private repo.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
-This setup has a lot of benefits for me and I am happy to be done with OneNote.
-One thing I love is the transparency and portability of the file format.
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
+Having just a bunch of files gives you ultimate flexability.
+I keep the number of file formats I use to just the ones that the GitHub web interface can render.
 
 I used Obsidian for a while, and I prefer VS Code because it is such a good text editor.
 If I wanted to, I could use any of my note repos as an Obsidian vault, and it would just work.
 
-I am not trying to persuade you to switch from OneNote to plain text and PDF files.
+I am not trying to persuade you to switch from OneNote to just a bunch of files.
 But if you do want to, these ideas might make the switch easier for you.
 Or if you are trying to decide if you should or could, maybe this will help.
 
