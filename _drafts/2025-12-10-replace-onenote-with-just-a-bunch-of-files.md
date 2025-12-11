@@ -7,22 +7,22 @@ title: Replacing OneNote with Just a Bunch of Files
 
 I used to use OneNote on Windows.
 It worked nicely--I could add content easily without much thought or work.
-I stopped using Windows a couple years ago, and therefor stopped using OneNote on Windows.
+I switched to Linux a couple years ago, and therefor stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
 The web version is buggy, it's missing features, and is slow.
 
 As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
-I keep these files in GitHub, in a private repo.
+I keep these files in GitHub, in private repos.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
 OneNote stores things in a complex propriety format that makes migrating your files very difficult.
-Having just a bunch of files gives you ultimate flexability.
+Having Just a Bunch of Files gives you ultimate flexibility.
 I keep the number of file formats I use to just the ones that the GitHub web interface can render.
 
 I used Obsidian for a while, and I prefer VS Code because it is such a good text editor.
 If I wanted to, I could use any of my note repos as an Obsidian vault, and it would just work.
 
-I am not trying to persuade you to switch from OneNote to just a bunch of files.
+I am not trying to persuade you to switch from OneNote to Just a Bunch of Files.
 But if you do want to, these ideas might make the switch easier for you.
 Or if you are trying to decide if you should or could, maybe this will help.
 
@@ -118,31 +118,31 @@ However, if you want to change the size of the image, you need to use HTML synta
 
 You can use standard markdown links to link between pages in your repo, even referencing headers within a page if you like.
 You can also link to files like images and PDFs.
-And you can add external links as well.
+And you can add external links to the Internet as well.
 
 ## Whiteboard / Drawing / Diagrams
 
 For creating diagrams and drawings, I use the Excalidraw extension for VS Code by pomdtr.
-This gives you an infinate canvas and the ability to use a stylus if you like.
+This gives you an infinite canvas and the ability to use a stylus if you like.
 
 To create a drawing, create a new file with a name ending in ".excalidraw.svg".
-The drawing commands, which Excalidraw calls "the scene", are stored in the svg file itself.
-This means VS Code and GitHub see the file as an svg image and render it as such, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
+The data the app needs, which Excalidraw calls "the scene", is stored in the svg file itself.
+This means VS Code and GitHub see the file as an svg image and render it as an image, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
 
 You can also edit these files in a browser with [excalidraw.com](https://excalidraw.com/).
 
 ## Version Control
 
-OneNote has a built-in page history, but it is no where near as robust as git for version control.
+OneNote has built-in page history, but you don't get to control it and it is no where near as robust as git for version control.
 For example, moving a page in OneNote to a different section destroys the page history.
 
 It's automatic in OneNote, but you must think about it a little more when using git.
-For example, if you edit files both locally and using the GitHub UI, you might need to do a little more work to sync.
+For example, if you edit files both locally and using the GitHub UI, you may need to resolve a conflict at some point.
 
 ## Mobile App
 
 I use the GitHub app for iOS.
-You need an Internet connection for this.
+An Internet connection is required for this.
 I can search, browse, and edit notes.
 This has satisfied my mobile needs, which is usually to look something up or jot something down.
 
@@ -152,23 +152,23 @@ You could also just use the GitHub web UI in the phone's browser.
 
 I just print to a PDF and place the PDF in the folder where it belongs.
 To view a PDF in the GitHub web UI, select the file.
-To view it in VS Code, install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
+To view it in VS Code, first install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
 
 ## Screen Clipper
 
 There are a few options if you want to capture the contents of a web page into your notes.
 
 The easiest thing is to print to a PDF directly from your browser.
-This isn´t ideal because you end up with a paginated PDF.
+This isn't ideal because you end up with a paginated PDF.
 
 If you want one long single page PDF, you can go to https://www.sejda.com/html-to-pdf and paste the URL in there.
-You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn´t include ads.
+You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn't include ads.
 
 If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
 
 If you have an iPhone handy, you can take a screenshot while viewing the page, then select "Full Page" at the top.
 After that, you can save the page as a PDF or image.
-I do see a way to do it on an iPad.
+I don't see a way to do the same thing on an iPad.
 
 If you want to save the contents of the page as markdown, you can use the Reader View, MarkDownload or MarkSnip Chrome extensions.
 I like Reader View.
@@ -183,9 +183,10 @@ Okular is one app that works.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
-The site is full of ads, and I wouldn't use this tool for anything else and not for any private files.
+The site is full of ads, and I wouldn't use this tool for anything else.
+I also wouldn't trust it for any private files.
 
-If I need even more space in a PDF for notes, I use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF.
+If I need even more space in a PDF for notes, I use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF and then write on that.
 This is a great tool for doing various kinds of PDF manipulation, like merging and splitting PDFs and extracting pages from them.
 
 ## Hand-written notes
@@ -196,7 +197,7 @@ I'd start with a 70% zoom for writing.
 
 You could also use the native app Xournal++.
 You can export your written notes as PDF so they will be rendered in VS Code when you browse them.
-Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old ones unless you keep the .xopp file around too.
+Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old notes unless you keep the .xopp file around too.
 
 ## Dictation
 
@@ -211,7 +212,9 @@ Alternatively, you can encrypt your private PDFs with a password.
 
 ## Collaboration
 
-
+OneNote has real-time collaboration.
+I don't need that.
+But your Bunch of File is on GitHub, and git was born for collaboration.
 
 ## VS Code Markdown Extensions
 
