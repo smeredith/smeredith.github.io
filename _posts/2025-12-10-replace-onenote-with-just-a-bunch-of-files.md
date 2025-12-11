@@ -7,9 +7,9 @@ I used to use OneNote on Windows.
 It worked nicely--I could add content easily without much thought or work.
 I switched to Linux a couple years ago, and therefor stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
-The web version is buggy, it's missing features, and is slow.
+The web version is buggy, it's missing features that the desktop version has, and it's slow.
 
-As a replacement for OneNote, I use a set of markdown files, image files, and pdfs.
+As a replacement for OneNote, I use a set of markdown files, image files, and PDFs.
 I keep these files in GitHub, in private repos.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
@@ -124,8 +124,8 @@ For creating diagrams and drawings, I use the Excalidraw extension for VS Code b
 This gives you an infinite canvas and the ability to use a stylus if you like.
 
 To create a drawing, create a new file with a name ending in ".excalidraw.svg".
-The data the app needs, which Excalidraw calls "the scene", is stored in the svg file itself.
-This means VS Code and GitHub see the file as an svg image and render it as an image, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
+The data the app needs, which Excalidraw calls "the scene", is stored in the SVG file itself.
+This means VS Code and GitHub see the file as an SVG image and render it as an image, and Excalidraw uses the scene to let you continue to edit your drawing the next time you open it.
 
 You can also edit these files in a browser with [excalidraw.com](https://excalidraw.com/).
 
