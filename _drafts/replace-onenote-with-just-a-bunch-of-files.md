@@ -38,8 +38,9 @@ I think of a single git repo as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
 Markdown files and PDFs are the equivalent of OneNote pages.
 
-Use Markdown for text notes and PDFs for everything else.
-The Markdown files can include images.
+I use Markdown for text notes.
+Sometimes those notes include images.
+PDF covers pretty much everything else.
 
 ## Tags
 
@@ -54,12 +55,12 @@ tags:
 ---
 ```
 
-The Foam VS Code extension has a tags explorer feature that recognized both front matter tags and inline tags.
+The Foam VS Code extension has a tags explorer feature that recognizes both front matter tags and inline tags.
 It presents them as a tree as if the tags were directories and lets you quickly jump to any tags it finds.
 
 ## Search
 
-Searching for text in the markdown files is easy, fast, and works well.
+Searching for text in the markdown files is easy and fast.
 Plus, I get to use regular expressions.
 And I can search the entire repo whereas the OneNote web interfaces limits me to searching the current page or the current section.
 
@@ -67,7 +68,8 @@ However, OneNote will search for text within images on its pages using OCR.
 This includes images that are printouts of PDF.
 That's a win for OneNote, but this is not a very common scenario for me.
 To search for a PDF in my repo that contains some given text, I need to use an external tool.
-My file manager (Nemo) will do it fine.
+My file manager (Nemo) does it fine.
+Or use grep.
 
 ## Text Formatting
 
@@ -81,7 +83,7 @@ Tables are painful to work with in markdown.
 There are some VS Code extensions that help, like "Markdown Table Prettifier."
 
 Another option is to use a tool that is already excelent at working with tables.
-Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view, not the raw markdown table) from the clipboard and turn it into a spreadsheet table.
+Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view of a markdown file, not the raw markdown table) from the clipboard and turn it into a spreadsheet table.
 After working with it in the spreadsheet app, you need it as a markdown table again to paste it back into your document.
 [Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy the table from the shreadsheet and paste into tableconvert, then copy the markdown and paste it into your file.
 It's a couple of steps, but to me that's easier than trying to work with a markdown table in plain text.
