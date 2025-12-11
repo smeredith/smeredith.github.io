@@ -187,7 +187,7 @@ I also wouldn't trust it for any private files.
 If I need even more space in a PDF for notes, I use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF and then write on that.
 This is a great tool for doing various kinds of PDF manipulation, like merging and splitting PDFs and extracting pages from them.
 
-## Hand-written notes
+## Hand-written Notes
 
 I don't make handwritten notes using a stylus.
 If you do, VS Code with the Excalidraw extension is a good choice.
