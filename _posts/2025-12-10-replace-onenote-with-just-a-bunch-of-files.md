@@ -3,8 +3,6 @@ layout: post
 title: Replacing OneNote with Just a Bunch of Files
 ---
 
-# Replacing OneNote with Just a Bunch of Files
-
 I used to use OneNote on Windows.
 It worked nicely--I could add content easily without much thought or work.
 I switched to Linux a couple years ago, and therefor stopped using OneNote on Windows.
