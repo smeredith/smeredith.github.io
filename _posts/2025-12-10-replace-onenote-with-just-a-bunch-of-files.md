@@ -159,7 +159,7 @@ There are a few options if you want to capture the contents of a web page into y
 The easiest thing is to print to a PDF directly from your browser.
 This isn't ideal because you end up with a paginated PDF.
 
-If you want one long single page PDF, you can go to https://www.sejda.com/html-to-pdf and paste the URL in there.
+If you want one long single page PDF, you can go to [sejda](https://www.sejda.com/html-to-pdf) and paste the URL in there.
 You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn't include ads.
 
 If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
