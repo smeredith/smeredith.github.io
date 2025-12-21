@@ -12,6 +12,7 @@ The sound is pretty good, but the microphone does not work.
 The battery life is good enough, considering its age.
 Bluetooth works.
 The touchpad works.
+It has no fan so it is very quiet.
 
 It has 4 GB RAM and the installer automatically configured an 8.3 GB swap file.
 This has been fine.
