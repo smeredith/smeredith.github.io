@@ -194,8 +194,15 @@ If you do, VS Code with the Excalidraw extension is a good choice.
 I'd start with a 70% zoom for writing.
 
 You could also use the native app Xournal++.
-You can export your written notes as PDF so they will be rendered in VS Code when you browse them.
+Stylus support is very good in this app and you get pressure sensitivity.
+You can export your written notes as PDF so they will be rendered when you browse them.
 Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old notes unless you keep the .xopp file around too.
+
+Note that Xournal++ does not store your notes as PDF annotations the way a PDF annotation tool would.
+When you export as PDF, your notes are baked into the PDF.
+
+If your primary use of OneNote was to take hand-written notes, Xournal++ could be a complete replacement for you.
+But you would still have to organize your notes as files instead of Notebooks, Sections, and Pages.
 
 ## Dictation
 
