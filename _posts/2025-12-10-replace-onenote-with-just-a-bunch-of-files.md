@@ -178,6 +178,12 @@ To capture only part of a page, you can select it before opening the extension.
 To annotate a PDF, I use a native app to highlight text and insert text annotations.
 I like this more than using OneNote tools to draw on top of a PDF printout in a page or inserting various text boxes around the page.
 Okular is one app that works.
+Xournal++ works as well.
+
+> [!note]
+> Xournal++ does not store your notes as PDF annotations the way a PDF annotation tool would.
+> When you export as PDF, your notes are baked into the PDF.
+> See [Hand-written Notes](#Hand-written-Notes) below for more about Xournal++.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
@@ -194,15 +200,21 @@ If you do, VS Code with the Excalidraw extension is a good choice.
 I'd start with a 70% zoom for writing.
 
 You could also use the native app Xournal++.
+You can use it to annotate a PDF or just take notes from scratch.
 Stylus support is very good in this app and you get pressure sensitivity.
 You can export your written notes as PDF so they will be rendered when you browse them.
 Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old notes unless you keep the .xopp file around too.
 
-Note that Xournal++ does not store your notes as PDF annotations the way a PDF annotation tool would.
-When you export as PDF, your notes are baked into the PDF.
-
 If your primary use of OneNote was to take hand-written notes, Xournal++ could be a complete replacement for you.
 But you would still have to organize your notes as files instead of Notebooks, Sections, and Pages.
+
+As a reminder, I stick with common file types (PDF, plain text, and images) so I can read my files without special software.
+As a work-around, one could export to PDF at the end of a Xournal++ editing session.
+That would leave a standard PDF version of the Xournal++ file.
+
+To take that one step further, one could use `pdfattach` (from Poppler) to attach the .xopp file and the PDF being annotated (if any) to the exported PDF, then delete the stand-alone .xopp.
+That way, when browsing the files all you see is the final exported PDF with all your hand-written notes.
+If you want to make edits, you could use `pdfdetatch` to get the attached .xopp file back from the PDF and open it in Xournal++ again.
 
 ## Dictation
 
