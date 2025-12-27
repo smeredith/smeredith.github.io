@@ -5,39 +5,39 @@ title: Replacing OneNote with Just a Bunch of Files
 
 I used to use OneNote on Windows.
 It worked nicely--I could add content easily without much thought or work.
-I switched to Linux a couple years ago, and therefor stopped using OneNote on Windows.
+I switched to Linux a couple of years ago and therefore stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
 The web version is buggy, it's missing features that the desktop version has, and it's slow.
 
-As a replacement for OneNote, I use a set of markdown files, image files, and PDFs.
-I keep these files in GitHub, in private repos.
+As a replacement for OneNote, I use a set of Markdown files, image files, and PDFs.
+I keep these files in GitHub, in private repositories.
 I browse and edit them either in VS Code locally, via the GitHub web interface, or using the GitHub mobile app on my iPhone.
 
-OneNote stores things in a complex propriety format that makes migrating your files very difficult.
+OneNote stores things in a complex proprietary format that makes migrating your files very difficult.
 Having Just a Bunch of Files gives you ultimate flexibility.
 I keep the number of file formats I use to just the ones that the GitHub web interface can render.
 
-I used Obsidian for a while, and I prefer VS Code because it is such a good text editor.
-If I wanted to, I could use any of my note repos as an Obsidian vault, and it would just work.
+I used Obsidian for a while and I prefer VS Code because it is such a good text editor.
+If I wanted to, I could use any of my note repositories as an Obsidian vault, and it would just work.
 
 I am not trying to persuade you to switch from OneNote to Just a Bunch of Files.
 But if you do want to, these ideas might make the switch easier for you.
 Or if you are trying to decide if you should or could, maybe this will help.
 
-This document assumes you have some technical proficiency with VS Code and git or could learn them.
+This document assumes you have some technical proficiency with VS Code and Git or could learn them.
 
 ## TL;DR
 
 - Replace a OneNote notebook with a set of standard files.
 - Organize them in a directory structure.
-- Keep them under version control using git.
+- Keep them under version control using Git.
 - View and edit them with whatever programs works the best for the file at hand.
 
 The rest of this document describes how you might mimic some of the features of OneNote in other ways.
 
 ## Notebooks, Sections, and Pages
 
-I think of a single git repo as the equivalent of a OneNote notebook.
+I think of a single Git repository as the equivalent of a OneNote notebook.
 OneNote sections can be replicated with directories, nested arbitrarily deep.
 Markdown files and PDFs are the equivalent of OneNote pages.
 
@@ -47,9 +47,9 @@ PDF covers pretty much everything else.
 
 ## Tags
 
-If you want to use tags, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your markdown files.
+If you want to use tags, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your Markdown files.
 
-Front matter is a block of yml at the start of the file that looks like this:
+Front matter is a block of YAML at the start of the file that looks like this:
 ```
 ---
 tags:
@@ -63,33 +63,33 @@ It presents them as a tree as if the tags were directories and lets you quickly 
 
 ## Search
 
-Searching for text in the markdown files is easy and fast.
+Searching for text in the Markdown files is easy and fast.
 Plus, I get to use regular expressions.
-And I can search the entire repo whereas the OneNote web interfaces limits me to searching the current page or the current section.
+And I can search the entire repository whereas the OneNote web interface limits me to searching the current page or the current section.
 
 However, OneNote will search for text within images on its pages using OCR.
 This includes images that are printouts of PDF.
 That's a win for OneNote, but this is not a very common scenario for me.
-To search for a PDF in my repo that contains some given text, I need to use an external tool.
+To search for a PDF in my repository that contains some given text, I need to use an external tool.
 My file manager (Nemo) does it fine.
 Or use grep.
 
 ## Text Formatting
 
-I get the formatting I need from [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+I get the formatting I need from [Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to surround the text with `<mark>` and `</mark>`, which are not part of markdown.
+If you want <mark>yellow highlighting</mark> in VS Code and GitHub, you need to surround the text with `<mark>` and `</mark>`, which are not part of Markdown.
 
 ## Tables
 
-Tables are painful to work with in markdown.
+Tables are painful to work with in Markdown.
 There are some VS Code extensions that help, like "Markdown Table Prettifier."
 
-Another option is to use a tool that is already excelent at working with tables.
-Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view of a markdown file, not the raw markdown table) from the clipboard and turn it into a spreadsheet table.
-After working with it in the spreadsheet app, you need it as a markdown table again to paste it back into your document.
-[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy the table from the shreadsheet and paste into tableconvert, then copy the markdown and paste it into your file.
-It's a couple of steps, but to me that's easier than trying to work with a markdown table in plain text.
+Another option is to use a tool that is already excellent at working with tables.
+Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view of a Markdown file, not the raw Markdown table) from the clipboard and turn it into a spreadsheet table.
+After working with it in the spreadsheet app, you need it as a Markdown table again to paste it back into your document.
+[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy the table from the spreadsheet and paste into tableconvert, then copy the Markdown and paste it into your file.
+It's a couple of steps, but to me that's easier than trying to work with a Markdown table in plain text.
 
 ## Spell Checking
 
@@ -99,11 +99,11 @@ To get spell checking, I use VS Code locally with a spell check extension to edi
 
 ## Images
 
-To insert an image on a page, I save the image to the same folder as the markdown file, and give it the same base filename as the markdown file, with a number at the end if there are multiple images.
+To insert an image on a page, I save the image to the same folder as the Markdown file, and give it the same base filename as the Markdown file, with a number at the end if there are multiple images.
 So `filename.md` might embed `filename-1.jpg` and `filename-2.jpg`.
 I experimented with putting all the images in a separate folder, but I prefer them together with base file.
 
-The markdown syntax for inserting an image is:
+The Markdown syntax for inserting an image is:
 ```
 ![](filename.jpg)
 ```
@@ -114,7 +114,7 @@ However, if you want to change the size of the image, you need to use HTML synta
 
 ## Links
 
-You can use standard markdown links to link between pages in your repo, even referencing headers within a page if you like.
+You can use standard Markdown links to link between pages in your repository, even referencing headers within a page if you like.
 You can also link to files like images and PDFs.
 And you can add external links to the Internet as well.
 
@@ -131,10 +131,10 @@ You can also edit these files in a browser with [excalidraw.com](https://excalid
 
 ## Version Control
 
-OneNote has built-in page history, but you don't get to control it and it is no where near as robust as git for version control.
+OneNote has built-in page history, but you don't get to control it and it is nowhere near as robust as Git for version control.
 For example, moving a page in OneNote to a different section destroys the page history.
 
-It's automatic in OneNote, but you must think about it a little more when using git.
+It's automatic in OneNote, but you must think about it a little more when using Git.
 For example, if you edit files both locally and using the GitHub UI, you may need to resolve a conflict at some point.
 
 ## Mobile App
@@ -168,9 +168,9 @@ If you have an iPhone handy, you can take a screenshot while viewing the page, t
 After that, you can save the page as a PDF or image.
 I don't see a way to do the same thing on an iPad.
 
-If you want to save the contents of the page as markdown, you can use the Reader View, MarkDownload or MarkSnip Chrome extensions.
+If you want to save the contents of the page as Markdown, you can use the Reader View, MarkDownload or MarkSnip Chrome extensions.
 I like Reader View.
-To save the contents as markdown, you hold shift while pressing the save button.
+To save the contents as Markdown, you hold shift while pressing the save button.
 To capture only part of a page, you can select it before opening the extension.
 
 ## Annotate a PDF
@@ -214,7 +214,7 @@ That would leave a standard PDF version of the Xournal++ file.
 
 To take that one step further, one could use `pdfattach` (from Poppler) to attach the .xopp file and the PDF being annotated (if any) to the exported PDF, then delete the stand-alone .xopp.
 That way, when browsing the files all you see is the final exported PDF with all your hand-written notes.
-If you want to make edits, you could use `pdfdetatch` to get the attached .xopp file back from the PDF and open it in Xournal++ again.
+If you want to make edits, you could use `pdfdetach` to get the attached .xopp file back from the PDF and open it in Xournal++ again.
 
 ## Dictation
 
@@ -231,11 +231,11 @@ Alternatively, you can encrypt your private PDFs with a password.
 
 OneNote has real-time collaboration.
 I don't need that.
-But your Bunch of File is on GitHub, and git was born for collaboration.
+But your Bunch of File is on GitHub, and Git was born for collaboration.
 
 ## VS Code Markdown Extensions
 
-- For markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier."
+- For Markdown, I use "Markdown All in One," "Markdown Paste," "Markdown Table Prettifier."
 - For personal knowledge base features, I use "Foam."
 - For spellcheck, I use "Code Spell Checker" by Street Side Software.
 - To view PDFs inside VS Code, I use vscode-pdf extension from tomoki1207.
