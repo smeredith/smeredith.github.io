@@ -7,7 +7,7 @@ I used to use OneNote on Windows.
 It worked nicely--I could add content easily without much thought or work.
 I switched to Linux a couple of years ago and therefore stopped using OneNote on Windows.
 I can still access my notebooks via the web interface, but I hate it.
-The web version is buggy, it's missing features that the desktop version has, and it's slow.
+The web version is buggy, missing features that the desktop version has, and slow.
 
 As a replacement for OneNote, I use a set of Markdown files, image files, and PDFs.
 I keep these files in GitHub, in private repositories.
@@ -15,7 +15,7 @@ I browse and edit them either in VS Code locally, via the GitHub web interface, 
 
 OneNote stores things in a complex proprietary format that makes migrating your files very difficult.
 Having Just a Bunch of Files gives you ultimate flexibility.
-I keep the number of file formats I use to just the ones that the GitHub web interface can render.
+I limit the file formats I use to those that the GitHub web interface can render.
 
 I used Obsidian for a while and I prefer VS Code because it is such a good text editor.
 If I wanted to, I could use any of my note repositories as an Obsidian vault, and it would just work.
@@ -31,7 +31,7 @@ This document assumes you have some technical proficiency with VS Code and Git o
 - Replace a OneNote notebook with a set of standard files.
 - Organize them in a directory structure.
 - Keep them under version control using Git.
-- View and edit them with whatever programs works the best for the file at hand.
+- View and edit them with whatever programs work best for the file at hand.
 
 The rest of this document describes how you might mimic some of the features of OneNote in other ways.
 
@@ -43,11 +43,11 @@ Markdown files and PDFs are the equivalent of OneNote pages.
 
 I use Markdown for text notes.
 Sometimes those notes include images.
-PDF covers pretty much everything else.
+PDFs covers pretty much everything else.
 
 ## Tags
 
-If you want to use tags, I recommend [front matter yaml](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your Markdown files.
+If you want to use tags, I recommend [front matter YAML](https://jekyllrb.com/docs/front-matter/) and inline tags like `#mytag1` in your Markdown files.
 
 Front matter is a block of YAML at the start of the file that looks like this:
 ```
@@ -68,11 +68,11 @@ Plus, I get to use regular expressions.
 And I can search the entire repository whereas the OneNote web interface limits me to searching the current page or the current section.
 
 However, OneNote will search for text within images on its pages using OCR.
-This includes images that are printouts of PDF.
-That's a win for OneNote, but this is not a very common scenario for me.
+This includes images that are printouts of PDFs.
+That is a win for OneNote, but it is not a very common scenario for me.
 To search for a PDF in my repository that contains some given text, I need to use an external tool.
 My file manager (Nemo) does it fine.
-Or use grep.
+Or I can use `grep`.
 
 ## Text Formatting
 
@@ -88,20 +88,20 @@ There are some VS Code extensions that help, like "Markdown Table Prettifier."
 Another option is to use a tool that is already excellent at working with tables.
 Google Sheets, Excel, or LibreOffice Calc can all take a table (copied from the rendered view of a Markdown file, not the raw Markdown table) from the clipboard and turn it into a spreadsheet table.
 After working with it in the spreadsheet app, you need it as a Markdown table again to paste it back into your document.
-[Tableconvert](https://tableconvert.com/excel-to-markdown) can to it: copy the table from the spreadsheet and paste into tableconvert, then copy the Markdown and paste it into your file.
-It's a couple of steps, but to me that's easier than trying to work with a Markdown table in plain text.
+[TableConvert](https://tableconvert.com/excel-to-markdown) can do this: copy the table from the spreadsheet and paste it into TableConvert, then copy the Markdown output and paste it into your file.
+It is a couple of steps, but to me that is easier than trying to work with a Markdown table in plain text.
 
 ## Spell Checking
 
-When you edit a file in the GitHub web interface, it does not spell check your text.
-Even the browser's built-in spell checker does not work in that interface.
+When you edit a file in the GitHub web interface, it does not spell-check your text.
+Even the browser’s built-in spell checker does not work in that interface.
 To get spell checking, I use VS Code locally with a spell check extension to edit the files.
 
 ## Images
 
 To insert an image on a page, I save the image to the same folder as the Markdown file, and give it the same base filename as the Markdown file, with a number at the end if there are multiple images.
 So `filename.md` might embed `filename-1.jpg` and `filename-2.jpg`.
-I experimented with putting all the images in a separate folder, but I prefer them together with base file.
+I experimented with putting all images in a separate folder, but I prefer keeping them together with the base file.
 
 The Markdown syntax for inserting an image is:
 ```
@@ -131,7 +131,7 @@ You can also edit these files in a browser with [excalidraw.com](https://excalid
 
 ## Version Control
 
-OneNote has built-in page history, but you don't get to control it and it is nowhere near as robust as Git for version control.
+OneNote has built-in page history, but you do not get to control it, and it is nowhere near as robust as Git for version control.
 For example, moving a page in OneNote to a different section destroys the page history.
 
 It's automatic in OneNote, but you must think about it a little more when using Git.
@@ -144,22 +144,23 @@ An Internet connection is required for this.
 I can search, browse, and edit notes.
 This has satisfied my mobile needs, which is usually to look something up or jot something down.
 
-You could also just use the GitHub web UI in the phone's browser.
+You could also just use the GitHub web UI in your phone’s browser.
 
 ## Print to OneNote
 
 I just print to a PDF and place the PDF in the folder where it belongs.
 To view a PDF in the GitHub web UI, select the file.
-To view it in VS Code, first install the vscode-pdf extension from tomoki1207 and from then on you can preview the file by clicking on it in.
+To view it in VS Code, first install the `vscode-pdf` extension by tomoki1207.
+After that, you can preview the file by clicking on it.
 
 ## Screen Clipper
 
 There are a few options if you want to capture the contents of a web page into your notes.
 
-The easiest thing is to print to a PDF directly from your browser.
-This isn't ideal because you end up with a paginated PDF.
+The easiest option is to print to a PDF directly from your browser.
+This is not ideal because you end up with a paginated PDF.
 
-If you want one long single page PDF, you can go to [sejda](https://www.sejda.com/html-to-pdf) and paste the URL in there.
+If you want a single long-page PDF, you can go to [Sejda](https://www.sejda.com/html-to-pdf) and paste the URL there.
 You have the option of choosing between the normal formatting of the page or the version formatted for printing, which is better when it doesn't include ads.
 
 If you want one long PNG of the page, you can save that directly from Chrome following the instructions in [this article.](https://www.lifewire.com/take-screenshot-using-dev-tools-on-google-chrome-5097913)
@@ -183,12 +184,12 @@ Xournal++ works as well.
 > [!note]
 > Xournal++ does not store your notes as PDF annotations the way a PDF annotation tool would.
 > When you export as PDF, your notes are baked into the PDF.
-> See [Hand-written Notes](#Hand-written-Notes) below for more about Xournal++.
+> See [Hand-written Notes](#hand-written-notes) below for more about Xournal++.
 
 If you need more space on a PDF to take notes, you can increase the size of its margins using [the I2PDF tool](https://www.i2pdf.com/add-margin-to-pdf).
 You can add up to 3 inches per side.
-The site is full of ads, and I wouldn't use this tool for anything else.
-I also wouldn't trust it for any private files.
+The site is full of ads, and I would not use this tool for anything else.
+I also would not trust it with private files.
 
 If I need even more space in a PDF for notes, I use [BentoPDF](https://bentopdf.com/) to add blank pages anywhere in a PDF and then write on that.
 This is a great tool for doing various kinds of PDF manipulation, like merging and splitting PDFs and extracting pages from them.
@@ -205,7 +206,7 @@ Stylus support is very good in this app and you get pressure sensitivity.
 You can export your written notes as PDF so they will be rendered when you browse them.
 Xournal++ can open the PDF again if you want to add more notes to the file later, but you can't go back and edit your old notes unless you keep the .xopp file around too.
 
-If your primary use of OneNote was to take hand-written notes, Xournal++ could be a complete replacement for you.
+If your primary use of OneNote was handwritten notes, Xournal++ could be a complete replacement.
 But you would still have to organize your notes as files instead of Notebooks, Sections, and Pages.
 
 As a reminder, I stick with common file types (PDF, plain text, and images) so I can read my files without special software.
@@ -223,7 +224,7 @@ I don't need to do this often, but if I want to dictate my notes, I would use th
 ## Encrypted Sections
 
 OneNote allows you to encrypt an entire section.
-As a replacement, I recommend you keep notes and documents that really need to be encrypted in a password manager.
+As a replacement, I recommend keeping notes and documents that truly need encryption in a password manager.
 
 Alternatively, you can encrypt your private PDFs with a password.
 
@@ -231,7 +232,7 @@ Alternatively, you can encrypt your private PDFs with a password.
 
 OneNote has real-time collaboration.
 I don't need that.
-But your Bunch of File is on GitHub, and Git was born for collaboration.
+But your Bunch of Files is on GitHub, and Git was born for collaboration.
 
 ## VS Code Markdown Extensions
 
