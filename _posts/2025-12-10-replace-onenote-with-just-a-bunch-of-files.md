@@ -225,9 +225,20 @@ I don't need to do this often, but if I want to dictate my notes, I would use th
 ## Encrypted Sections
 
 OneNote allows you to encrypt an entire section.
-As a replacement, I recommend keeping notes and documents that truly need encryption in a password manager.
 
-Alternatively, you can encrypt your private PDFs with a password.
+To replicate this, you can encrypt your private PDFs with a password.
+For example, the following encrypts input.pdf and creates encrypted.pdf. 
+```
+qpdf --encrypt USER-PASSWORD OWNER-PASSWORD 256 -- input.pdf encrypted.pdf
+```
+Now encrypted.pdf requires a password to open.
+
+To remove the encryption:
+```
+qpdf --password=OWNER-PASSWORD --decrypt encrypted.pdf unencrypted.pdf
+```
+
+For background, see [qpdf documentation](https://qpdf.readthedocs.io/en/stable/encryption.html#pdf-encryption).
 
 ## Collaboration
 
