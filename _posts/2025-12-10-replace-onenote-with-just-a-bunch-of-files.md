@@ -210,12 +210,13 @@ If your primary use of OneNote was handwritten notes, Xournal++ could be a compl
 But you would still have to organize your notes as files instead of Notebooks, Sections, and Pages.
 
 As a reminder, I stick with common file types (PDF, plain text, and images) so I can read my files without special software.
-As a work-around, one could export to PDF at the end of a Xournal++ editing session.
+In support of that goal, one could export to PDF at the end of a Xournal++ editing session.
 That would leave a standard PDF version of the Xournal++ file.
 
-To take that one step further, one could use `pdfattach` (from Poppler) to attach the .xopp file and the PDF being annotated (if any) to the exported PDF, then delete the stand-alone .xopp.
+To take that one step further, one could use `pdfattach` (from Poppler) to attach the .xopp file and the PDF being annotated (if there is one) to the exported PDF, then delete the stand-alone .xopp file and PDF file being annotated (if there is one).
 That way, when browsing the files all you see is the final exported PDF with all your hand-written notes.
-If you want to make edits, you could use `pdfdetach` to get the attached .xopp file back from the PDF and open it in Xournal++ again.
+If you want to make edits, you could use `pdfdetach` to get the attached .xopp file and PDF being annotated (if there is one) back from the exported PDF and open it in Xournal++ again.
+Repeat the attachment process once you are done editing.
 
 ## Dictation
 
