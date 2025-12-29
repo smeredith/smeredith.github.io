@@ -50,7 +50,7 @@ url: http://www.bitmine.org
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
-theme: minimal
+theme: jekyll-theme-minimal
 
 # Conversion
 markdown: GFM
