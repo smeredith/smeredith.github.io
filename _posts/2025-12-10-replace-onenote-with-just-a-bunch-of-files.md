@@ -181,7 +181,7 @@ I like this more than using OneNote tools to draw on top of a PDF printout in a 
 Okular is one app that works.
 Xournal++ works as well.
 
-> [!note]
+> Note: 
 > Xournal++ does not store your notes as PDF annotations the way a PDF annotation tool would.
 > When you export as PDF, your notes are baked into the PDF.
 > See [Hand-written Notes](#hand-written-notes) below for more about Xournal++.
