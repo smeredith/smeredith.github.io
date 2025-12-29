@@ -2,11 +2,10 @@
 # This file contains configuration flags to customize your site
 #
 
-# Name of your site (displayed in the header)
 name: bitmine
-
-# Short bio or description (displayed in the header)
+title: bitmine
 description: A technology blog by Steve Meredith
+theme: jekyll-theme-cayman
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 # avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -49,8 +48,6 @@ url: http://www.bitmine.org
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
-
-theme: jekyll-theme-cayman
 
 # Conversion
 markdown: GFM
